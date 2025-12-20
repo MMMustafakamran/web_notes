@@ -1,0 +1,1467 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\geometry{margin=0.8in}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=cyan,
+    pdftitle={Web Development Comprehensive Teaching Notes}
+}
+
+% Code snippet styling
+\definecolor{codeblue}{rgb}{0,0,0.8}
+\definecolor{codegreen}{rgb}{0,0.5,0}
+\definecolor{codegray}{rgb}{0.4,0.4,0.4}
+\definecolor{codepurple}{rgb}{0.5,0,0.5}
+\definecolor{backcolor}{rgb}{0.97,0.97,0.97}
+
+\lstset{
+    backgroundcolor=\color{backcolor},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codeblue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    numbers=left,
+    tabsize=2,
+    showstringspaces=false,
+    frame=single
+}
+
+\title{\textbf{Web Development: Comprehensive Teaching Notes}}
+\author{Antigravity AI Assistant}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Chapter 1: HTML - HyperText Markup Language}
+
+This document provides comprehensive teaching notes for HTML, covering everything from basic structure to advanced semantic elements and media integration.
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Exam Tips \& Hints]
+\begin{itemize}
+    \item \textbf{Semantic Tags}: Always use semantic tags like \texttt{<header>}, \texttt{<nav>}, and \texttt{<footer>} instead of just \texttt{<div>}. This is a frequent exam question.
+    \item \textbf{Tables}: Practice \texttt{rowspan} and \texttt{colspan} thoroughly. Designers often test your ability to structure complex tables from a visual diagram.
+    \item \textbf{Attributes}: Remember that \texttt{alt} is mandatory for accessibility in \texttt{<img>} tags.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Introduction to HTML}
+HTML stands for \textbf{HyperText Markup Language}. It was created by Tim Berners-Lee in 1989 to distribute information across a network of computers.
+
+\begin{itemize}
+    \item \textbf{Hypertext}: Documents contain links that allow jumping to other places or documents.
+    \item \textbf{Markup}: Uses tags and attributes to define the structure and presentation of data.
+    \item \textbf{Interpretation}: Directly interpreted by the web browser.
+    \item \textbf{Case Sensitivity}: HTML is \textbf{not} case-sensitive. Multiple spaces are ignored.
+\end{itemize}
+
+\subsection{Basic Construction of an HTML Page}
+Every HTML5 document should follow this basic structure:
+
+\end{lstlisting}
+
+\begin{tcolorbox}[colback=blue!5,colframe=blue!75,title=Practical Example: Basic HTML Page]
+A simple page demonstrating headings, lists, and links:
+\begin{lstlisting}[language=HTML]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My First Web Page</title>
+</head>
+<body>
+    <h1>Welcome to My Portfolo</h1>
+    <p>This is a small demonstration of <strong>HTML fundamentals</strong>.</p>
+    
+    <h2>My Skills</h2>
+    <ul>
+        <li>HTML5 (Structure)</li>
+        <li>CSS3 (Design)</li>
+        <li>JavaScript (Interactivity)</li>
+    </ul>
+
+    <h2>Projects</h2>
+    <ol>
+        <li><a href="https://github.com/user/project1">Weather App</a></li>
+        <li><a href="project2.html">Personal Blog</a></li>
+    </ol>
+</body>
+</html>
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsubsection{Key tags in the structure:}
+\begin{itemize}
+    \item \texttt{<!DOCTYPE html>}: Tells the browser to expect HTML5.
+    \item \texttt{<html>}: The root element that wraps all content.
+    \item \texttt{<head>}: Contains metadata (title, character set, links to external files) not visible on the page.
+    \item \texttt{<body>}: Contains the visible content of the web page.
+\end{itemize}
+
+\subsection{Elements, Tags, and Attributes}
+\begin{itemize}
+    \item \textbf{Element}: Defined by a start tag, content, and an end tag (e.g., \texttt{<p>Text</p>}).
+    \item \textbf{Tag}: The angle brackets surrounding an element name. Most occur in pairs (opening and closing).
+    \item \textbf{Attribute}: Provides additional information about an element (e.g., \texttt{id}, \texttt{class}, \texttt{src}, \texttt{href}). Defined within the opening tag.
+\end{itemize}
+
+\subsection{Text Formatting and Headings}
+\subsubsection{Headings}
+HTML provides six levels of headings from \texttt{<h1>} (most important) to \texttt{<h6>} (least important). Search engines use these to understand page hierarchy.
+
+\subsubsection{Text Elements}
+\begin{itemize}
+    \item \texttt{<p>}: Paragraph.
+    \item \texttt{<b>} or \texttt{<strong>}: Bold/Strong importance.
+    \item \texttt{<i>} or \texttt{<em>}: Italic/Emphasized text.
+    \item \texttt{<mark>}: Highlighted text.
+    \item \texttt{<small>}: Smaller text.
+    \item \texttt{<strike>}: Strikethrough text.
+    \item \texttt{<u>} or \texttt{<ins>}: Underlined/Inserted text.
+    \item \texttt{<sub>} and \texttt{<sup>}: Subscript and Superscript.
+\end{itemize}
+
+\subsubsection{Special Characters}
+Use entities for symbols not on the keyboard:
+\begin{itemize}
+    \item \texttt{\&nbsp;}: Non-breaking space
+    \item \texttt{\&copy;}: \copyright
+    \item \texttt{\&reg;}: \textregistered
+    \item \texttt{\&euro;}: \texteuro
+    \item \texttt{\&gt;}: $>$
+\end{itemize}
+
+\subsection{Lists}
+\subsubsection{Unordered Lists (\texttt{<ul>})}
+Used for items where order doesn't matter.
+\begin{itemize}
+    \item Each item is wrapped in \texttt{<li>}.
+    \item Attributes: \texttt{type} (circle, square, disc).
+\end{itemize}
+
+\subsubsection{Ordered Lists (\texttt{<ol>})}
+Used for sequential data.
+\begin{itemize}
+    \item Attributes: \texttt{type} (1, A, a, I, i), \texttt{start}, \texttt{reversed}.
+\end{itemize}
+
+\subsection{Links and Navigation}
+\subsubsection{Types of Links}
+\begin{itemize}
+    \item \textbf{Internal Links}: Link to another page in the same website using a \textbf{relative path}.
+    \item \textbf{External Links}: Link to a different website using an \textbf{absolute path} (starting with \texttt{http://} or \texttt{https://}).
+\end{itemize}
+
+\subsubsection{Implementation}
+\begin{lstlisting}[language=HTML]
+<a href="destination.html" target="_blank">Clickable Text</a>
+\end{lstlisting}
+\begin{itemize}
+    \item \texttt{href}: The destination URL.
+    \item \texttt{target="\_blank"}: Opens the link in a new tab.
+\end{itemize}
+
+\subsection{Media: Images, Video, and Audio}
+    \item \textbf{Image Maps}: Allow multiple links (hotspots) on a single image using \texttt{<map>} and \texttt{<area>}.
+\end{itemize}
+
+\begin{tcolorbox}[colback=orange!5,colframe=orange!75,title=Practical Example: Image Maps]
+Defining clickable regions on a local image:
+\begin{lstlisting}[language=HTML]
+<img src="world-map.jpg" alt="World Map" usemap="#mapname">
+
+<map name="mapname">
+  <!-- Circular hotspot -->
+  <area shape="circle" coords="100,100,50" href="europe.html" alt="Europe">
+  <!-- Rectangular hotspot -->
+  <area shape="rect" coords="200,50,400,150" href="asia.html" alt="Asia">
+</map>
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsubsection{Video and Audio (HTML5)}
+\begin{lstlisting}[language=HTML]
+<video controls autoplay loop muted>
+  <source src="movie.mp4" type="video/mp4">
+</video>
+
+<audio controls>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+\end{lstlisting}
+Attributes: \texttt{controls}, \texttt{autoplay}, \texttt{muted}, \texttt{loop}.
+
+\subsection{HTML Tables}
+Used to display data in a grid (rows and columns).
+
+\begin{itemize}
+    \item \texttt{<table>}: Starts the table.
+    \item \texttt{<tr>}: Table Row.
+    \item \texttt{<td>}: Table Data (cell).
+    \item \texttt{<th>}: Table Header cell (bold and centered by default).
+    \texttt{<caption>}: Adds a title to the table.
+\end{itemize}
+
+    \item \texttt{rowspan} and \texttt{colspan}: Allow cells to span multiple rows or columns.
+\end{itemize}
+
+\begin{tcolorbox}[colback=green!5,colframe=green!75,title=Practical Example: Advanced Table Layout]
+A complex schedule table using spanning:
+\begin{lstlisting}[language=HTML]
+<table border="1">
+  <tr>
+    <th rowspan="2">Day</th>
+    <th colspan="2">Activities</th>
+  </tr>
+  <tr>
+    <th>Morning</th>
+    <th>Evening</th>
+  </tr>
+  <tr>
+    <td>Monday</td>
+    <td>Coding</td>
+    <td>Gym</td>
+  </tr>
+  <tr>
+    <td>Tuesday</td>
+    <td colspan="2">Project Deadline (Full Day)</td>
+  </tr>
+</table>
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{HTML Forms}
+Used to collect user input and send it to a server.
+
+\begin{itemize}
+    \item \texttt{<form>}: Wraps the form elements.
+    \begin{itemize}
+        \item \texttt{action}: URL where data is sent.
+        \item \texttt{method}: \texttt{GET} (visible in URL) or \texttt{POST} (secure/hidden).
+    \end{itemize}
+    \item \textbf{Common Elements}:
+    \begin{itemize}
+        \item \texttt{<input>}: versatile input field (type="text", "password", "submit", etc.).
+        \item \textbf{HTML5 Enhancements}: \texttt{type="email"}, \texttt{type="date"}, \texttt{type="number"}, \texttt{type="color"}. These provide built-in validation.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Semantic HTML and Accessibility}
+Semantic HTML gives meaning to code, helping search engines and screen readers.
+
+\subsubsection{Block vs. Inline}
+\begin{itemize}
+    \item \textbf{Block-level}: Starts on a new line, takes full width (e.g., \texttt{<div>}, \texttt{<h1>}, \texttt{<p>}, \texttt{<ul>}).
+    \item \textbf{Inline-level}: Stays in the flow, only takes necessary width (e.g., \texttt{<span>}, \texttt{<a>}, \texttt{<img>}).
+\end{itemize}
+
+\end{itemize}
+
+\subsection{Chapter 1 Review: Questions \& Answers}
+\begin{enumerate}
+    \item \textbf{Q: What is the difference between an absolute and a relative link?}
+    \\ \textbf{A:} An absolute link contains the full URL (e.g., \texttt{https://google.com}), while a relative link points to a file within the same directory or project (e.g., \texttt{contact.html}).
+    
+    \item \textbf{Q: What is the purpose of the \texttt{alt} attribute in an \texttt{<img>} tag?}
+    \\ \textbf{A:} It provides alternative text for screen readers and is displayed if the image fails to load, improving accessibility.
+    
+    \item \textbf{Q: How do you create an image map in HTML?}
+    \\ \textbf{A:} Use the \texttt{<img>} tag with \texttt{usemap}, and define the clickable areas using \texttt{<map>} and \texttt{<area>} tags.
+    
+    \item \textbf{Q: What is the difference between block and inline elements?}
+    \\ \textbf{A:} Block-level elements (like \texttt{<div>}) always start on a new line and take up the full width available. Inline elements (like \texttt{<span>}) do not start on a new line and only take up as much width as necessary.
+    
+    \item \textbf{Q: What does the \texttt{target="\_blank"} attribute do in an anchor tag?}
+    \\ \textbf{A:} It opens the linked document in a new browser tab or window.
+    
+    \item \textbf{Q: List three new HTML5 form input types and their benefits.}
+    \\ \textbf{A:} \texttt{email}, \texttt{date}, and \texttt{number}. These provide built-in validation and better user interfaces (like date pickers) on mobile devices.
+    
+    \item \textbf{Q: What is the purpose of Semantic HTML elements like \texttt{<main>} and \texttt{<article>}?}
+    \\ \textbf{A:} They provide structural meaning to the code, improving SEO and helping search engines/assistive technologies understand the page hierarchy.
+    
+    \item \textbf{Q: What is the purpose of the \texttt{id} attribute in HTML?}
+    \\ \textbf{A:} It provides a unique identifier for an element, which can be used by CSS for styling and by JavaScript for DOM manipulation.
+    
+    \item \textbf{Q: Which tag is used to create an ordered list?}
+    \\ \textbf{A:} The \texttt{<ol>} tag.
+\end{enumerate}
+
+\newpage
+
+\section{Chapter 2: CSS - Cascading Style Sheets}
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Exam Tips \& Hints]
+\begin{itemize}
+    \item \textbf{Specificity}: High-probability topic. Remember: Inline Styles $>$ ID $>$ Class/Attribute $>$ Element.
+    \item \textbf{Box Model}: Understand that \texttt{padding} is inside the border and \texttt{margin} is outside.
+    \item \textbf{Selectors}: Be comfortable with pseudo-classes like \texttt{:hover} and \texttt{:nth-child()}.
+\end{itemize}
+\end{tcolorbox}
+
+This document covers the fundamentals and advanced properties of CSS, used to control the visual presentation of web pages.
+
+\subsection{What is CSS?}
+CSS stands for \textbf{Cascading Style Sheets}.
+\begin{itemize}
+    \item \textbf{History}: Created by Hakon Lie in 1994; now a W3C standard.
+    \item \textbf{Purpose}: Controls layout, enforces uniformity, saves time, and enables multiple device compatibility.
+    \item \textbf{Rules}: A CSS rule consists of a \textbf{Selector} and a \textbf{Declaration Block}.
+    \begin{itemize}
+        \item \texttt{selector \{ property: value; \}}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Inserting CSS}
+There are three ways to apply CSS to an HTML document:
+
+\begin{enumerate}
+    \item \textbf{Inline Styles}: Added directly to an element using the \texttt{style} attribute.
+    \begin{itemize}
+        \item Example: \texttt{<h1 style="color:red;">Title</h1>}
+    \end{itemize}
+    \item \textbf{Internal/Embedded Styles}: Defined inside a \texttt{<style>} tag within the \texttt{<head>} section.
+    \item \textbf{External Style Sheets}: Defined in a separate \texttt{.css} file and linked in the \texttt{<head>}.
+    \begin{itemize}
+        \item Example: \texttt{<link rel="stylesheet" type="text/css" href="mystyle.css">}
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Cascading Order}: Inline styles have the highest priority, followed by internal and external style sheets.
+
+    \item \textbf{Attribute Selector}: Styles elements based on their attributes.
+\end{itemize}
+
+\begin{tcolorbox}[colback=purple!5,colframe=purple!75,title=Practical Example: Specific Selectors]
+Different ways to target elements:
+\begin{lstlisting}[language=CSS]
+/* Tag: all paragraphs */
+p { font-family: Arial; }
+
+/* ID: unique header */
+#main-header { background-color: navy; color: white; }
+
+/* Class: reusable button */
+.btn-submit { border-radius: 5px; cursor: pointer; }
+
+/* Attribute: target specific inputs */
+input[type="text"] { border: 1px solid gray; }
+\end{lstlisting}
+\end{tcolorbox}
+
+    \item \textbf{Margin}: Transparent area outside the border (space between elements).
+\end{enumerate}
+
+\begin{tcolorbox}[colback=yellow!5,colframe=yellow!75,title=Practical Example: Box Model Visualization]
+How properties combine to create the total size:
+\begin{lstlisting}[language=CSS]
+.box {
+  width: 200px;    /* Content width */
+  padding: 20px;   /* 20px on all sides */
+  border: 5px solid black;
+  margin: 15px;    /* Space outside the border */
+}
+
+/* Total width = 200 + 20(left) + 20(right) + 5(left border) + 5(right border) = 250px */
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{Visual Properties}
+\subsubsection{Colors}
+Colors can be specified by:
+\begin{itemize}
+    \item \textbf{Name}: \texttt{Tomato}, \texttt{DodgerBlue}.
+    \item \textbf{RGB}: \texttt{rgb(255, 99, 71)}.
+    \item \textbf{HEX}: \texttt{\#ff6347}.
+\end{itemize}
+
+\subsubsection{Fonts and Text}
+\begin{itemize}
+    \item \textbf{Font}: \texttt{font-family}, \texttt{font-size}, \texttt{font-weight}.
+    \item \textbf{Text}: \texttt{text-align}, \texttt{text-decoration}, \texttt{text-transform}, \texttt{color}.
+\end{itemize}
+
+\subsubsection{Backgrounds}
+\begin{itemize}
+    \item \texttt{background-color}, \texttt{background-image}, \texttt{background-repeat} (repeat-x, repeat-y, no-repeat).
+    \item \texttt{background-attachment} (fixed, scroll).
+    \item \texttt{background-position} (e.g., \texttt{right top}).
+    \item \textbf{Shorthand}: \texttt{background: \#ffffff url("img.png") no-repeat right top;}
+\end{itemize}
+
+\subsection{Advanced Styling}
+\subsubsection{Links}
+Links can be styled based on their state:
+\begin{itemize}
+    \item \texttt{a:link}, \texttt{a:visited}, \texttt{a:hover}, \texttt{a:active}.
+\end{itemize}
+
+\subsubsection{Borders and Outlines}
+\begin{itemize}
+    \item \textbf{Borders}: \texttt{border-style} (solid, dashed, dotted), \texttt{border-width}, \texttt{border-color}.
+    \item \textbf{Outline}: A line drawn around elements, outside the borders, to make the element "stand out".
+\end{itemize}
+
+\subsection{Chapter 2 Review: Questions \& Answers}
+\begin{enumerate}
+    \item \textbf{Q: What is the "Cascading" in CSS?}
+    \\ \textbf{A:} It refers to the order of priority used to resolve conflicts when multiple styles apply to the same element. Priority: Inline Styles $>$ Internal/External Styles $>$ Browser Defaults.
+    
+    \item \textbf{Q: What is the difference between \texttt{padding} and \texttt{margin}?}
+    \\ \textbf{A:} Padding is the space \textit{inside} the border (between content and border), while margin is the space \textit{outside} the border (between the element and neighbors).
+    
+    \item \textbf{Q: How do you select all \texttt{<a>} tags that have a \texttt{target} attribute?}
+    \\ \textbf{A:} Use an attribute selector: \texttt{a[target] \{ ... \}}.
+    
+    \item \textbf{Q: What does \texttt{box-sizing: border-box} do?}
+    \\ \textbf{A:} It forces the browser to include padding and borders in the element's total width and height, making layout calculations much easier.
+    
+    \item \textbf{Q: Which state selector is used to style a link when the mouse is over it?}
+    \\ \textbf{A:} The \texttt{:hover} pseudo-class.
+\end{enumerate}
+
+\begin{lstlisting}[language=CSS]
+div {
+  transition: width 2s, height 2s, transform 2s;
+}
+div:hover {
+  width: 300px;
+  transform: rotate(180deg);
+}
+\end{lstlisting}
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Practical Example: Hover Card Effect]
+Creating an interactive card that scales up:
+\begin{lstlisting}[language=CSS]
+.card {
+  width: 250px;
+  background: white;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Enlarge slightly */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+\end{lstlisting}
+\end{tcolorbox}
+
+\newpage
+
+This document covers the principles of creating websites that look good on all devices and introduces the Bootstrap 5 framework for faster development.
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Exam Tips \& Hints]
+\begin{itemize}
+    \item \textbf{Viewport}: The \texttt{<meta name="viewport" ...>} tag is the single most common question about RWD setup.
+    \item \textbf{Grid Sizing}: Understand the difference between \texttt{.container} (fixed widths at breakpoints) and \texttt{.container-fluid} (100\% width always).
+    \item \textbf{Breakpoints}: Memorize the standard Bootstrap breakpoints (sm, md, lg, xl, xxl).
+    \item \textbf{12 Columns}: Every row in Bootstrap is divided into 12 columns. Ensure your \texttt{col-*} classes in a single row add up to 12 for standard layout.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Responsive Web Design (RWD) Fundamentals}
+Responsive Web Design is about creating websites that automatically adjust to different screen sizes, from mobile phones to large desktops.
+
+\subsubsection{The Viewport Meta Tag}
+To ensure proper rendering on mobile devices, always include the viewport meta tag in the \texttt{<head>}:
+\begin{lstlisting}[language=HTML]
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+\end{lstlisting}
+
+\subsubsection{Box-Sizing}
+Standard box model adds padding and borders to the width, which can break layouts. Use \texttt{box-sizing: border-box} to include them within the defined width:
+\begin{lstlisting}[language=CSS]
+* {
+  box-sizing: border-box;
+}
+\end{lstlisting}
+
+\subsubsection{Responsive Images}
+Make images scale automatically to fit their container:
+\begin{lstlisting}[language=CSS]
+img {
+  max-width: 100%;
+  height: auto;
+}
+\end{lstlisting}
+
+\subsection{Layout Techniques}
+\subsubsection{Grid System (12 Columns)}
+Modern responsive design often uses a 12-column grid. The page is divided into 12 equal parts, and elements are assigned a number of columns.
+\begin{itemize}
+    \item \textbf{Float-based}: Older method using \texttt{float: left} and percentage widths.
+    \item \textbf{Flexbox}: Modern method using \texttt{display: flex}.
+    \item \textbf{CSS Grid}: Powerful layout engine using \texttt{display: grid}.
+\end{itemize}
+
+\subsubsection{Media Queries (\texttt{@media})}
+Allows applying CSS rules based on device characteristics (like width).
+\begin{lstlisting}[language=CSS]
+/* Styling for mobile (Mobile First) */
+.column { width: 100%; }
+
+/* Styling for desktop (larger than 768px) */
+@media screen and (min-width: 768px) {
+  .column { width: 50%; }
+}
+\end{lstlisting}
+
+\begin{tcolorbox}[colback=teal!5,colframe=teal!75,title=Practical Example: Mobile First Design]
+Standard workflow starting from mobile and scaling up:
+\begin{lstlisting}[language=CSS]
+/* Default (Mobile) */
+.content {
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Tablets (min 600px) */
+@media screen and (min-width: 600px) {
+  .content { padding: 20px; }
+}
+
+/* Desktop (min 1024px) */
+@media screen and (min-width: 1024px) {
+  .content { font-size: 18px; }
+}
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{Introduction to Bootstrap 5}
+Bootstrap is a free front-end framework for faster and easier web development. It includes design templates for typography, forms, buttons, tables, and many UI components.
+
+\subsubsection{Getting Started}
+Include Bootstrap via CDN in your \texttt{<head>}:
+\begin{lstlisting}[language=HTML]
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+\end{lstlisting}
+
+\subsubsection{The Grid System}
+Built with flexbox and allows up to 12 columns.
+\begin{itemize}
+    \item \textbf{Structure}: \texttt{.container} $>$ \texttt{.row} $>$ \texttt{.col-*}
+    \item \textbf{Classes for breakpoints}:
+    \begin{itemize}
+        \item \texttt{.col-}: Extra small ($<$576px)
+        \item \texttt{.col-sm-}: Small ($\ge$576px)
+        \item \texttt{.col-md-}: Medium ($\ge$768px)
+        \item \texttt{.col-lg-}: Large ($\ge$992px)
+        \item \texttt{.col-xl-}: Extra Large ($\ge$1200px)
+        \item \texttt{.col-xxl-}: Extra Extra Large ($\ge$1400px)
+    \end{itemize}
+\end{itemize}
+
+\begin{tcolorbox}[colback=cyan!5,colframe=cyan!75,title=Practical Example: Bootstrap 12-Column Grid]
+A responsive row that changes layout based on screen size:
+\begin{lstlisting}[language=HTML]
+<div class="container">
+  <div class="row">
+    <!-- Full width on mobile, half on medium, third on large -->
+    <div class="col-12 col-md-6 col-lg-4">Column 1</div>
+    <div class="col-12 col-md-6 col-lg-4">Column 2</div>
+    <div class="col-12 col-md-12 col-lg-4">Column 3</div>
+  </div>
+</div>
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{Bootstrap Components}
+Boostrap provides a wide range of pre-styled components:
+\begin{itemize}
+    \item \textbf{Alerts}: Contextual feedback (e.g., \texttt{.alert-success}, \texttt{.alert-danger}).
+    \item \textbf{Badges}: Labels and counts within other elements.
+    \item \textbf{Buttons}: Custom styles for actions (e.g., \texttt{.btn}, \texttt{.btn-primary}, \texttt{.btn-outline-secondary}).
+    \item \textbf{Cards}: Flexible content containers with headers, footers, and images.
+    \item \textbf{Carousel}: A slideshow for cycling through images or text.
+    \item \textbf{Navbar}: Responsive navigation headers.
+    \item \textbf{Pagination}: Large hit areas for multi-page navigation.
+    \item \textbf{Progress Bars}: Indicate work progress with labels.
+    \item \textbf{Spinners \& Toasts}: Loading indicators and push-notifications.
+\end{itemize}
+
+\begin{tcolorbox}[colback=indigo!5,colframe=indigo!75,title=Practical Example: Bootstrap Components]
+Using a Navbar and a simple Alert:
+\begin{lstlisting}[language=HTML]
+<!-- Responsive Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#myNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="myNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Success Alert -->
+<div class="alert alert-success mt-3">
+  Registration Successful!
+</div>
+\end{lstlisting}
+\end{tcolorbox}
+\subsection{Chapter 3 Review: Questions \& Answers}
+\begin{enumerate}
+    \item \textbf{Q: What is the primary goal of the Responsive Web Design (RWD)?}
+    \\ \textbf{A:} To create web pages that provide an optimal viewing experience—easy reading and navigation with a minimum of resizing, panning, and scrolling—across a wide range of devices.
+    
+    \item \textbf{Q: What is the difference between \texttt{.container} and \texttt{.container-fluid} in Bootstrap?}
+    \\ \textbf{A:} \texttt{.container} sets a \texttt{max-width} at each responsive breakpoint, while \texttt{.container-fluid} is always \texttt{width: 100\%}.
+    
+    \item \textbf{Q: How does Bootstrap's grid system work?}
+    \\ \textbf{A:} It uses a series of containers, rows, and columns to layout and align content. It’s built with flexbox and is fully responsive with 12 available columns per row.
+    
+    \item \textbf{Q: What is the "Mobile First" approach?}
+    \\ \textbf{A:} Designing for the smallest screen (mobile) first and then using media queries to add styles for larger screens. Bootstrap is mobile-first.
+    
+    \item \textbf{Q: How do you make an image responsive in Bootstrap?}
+    \\ \textbf{A:} Add the class \texttt{.img-fluid} to the \texttt{<img>} tag. This applies \texttt{max-width: 100\%;} and \texttt{height: auto;}.
+\end{enumerate}
+
+\newpage
+
+\section{Chapter 4: JavaScript - The Language of the Web}
+
+JavaScript is a versatile, high-level language used for both client-side and server-side development. This chapter covers everything from basic syntax to advanced ES6 features and DOM manipulation.
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Exam Tips \& Hints]
+\begin{itemize}
+    \item \textbf{Variables}: Difference between \texttt{var}, \texttt{let}, and \texttt{const} is a classic theoretical question. Mention block-scope vs function-scope.
+    \item \textbf{Hoisting}: Remember that \texttt{var} declarations are hoisted but not initialized. This can lead to \texttt{undefined} being logged if a variable is accessed before its declaration within the same scope.
+    \item \textbf{Equality}: Understand the difference between \texttt{==} (loose, with coercion) and \texttt{===} (strict). Multiple MCQs often focus on this.
+    \item \textbf{Array Methods}: \texttt{map()}, \texttt{filter()}, and \texttt{reduce()} are highly important. Be careful with \texttt{reverse()} and \texttt{sort()} as they modify the original array in-place.
+    \item \textbf{Types}: Remember that \texttt{typeof []} is \texttt{"object"}.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{JavaScript Fundamentals}
+\subsubsection{Variables}
+\begin{itemize}
+    \item \textbf{\texttt{var}}: Function-scoped, can be redeclared and hoisted.
+    \item \textbf{\texttt{let}}: Block-scoped, cannot be redeclared, not hoisted (preferred).
+    \item \textbf{\texttt{const}}: Block-scoped, constant value (cannot be reassigned).
+\end{itemize}
+
+\subsubsection{Data Types}
+\begin{itemize}
+    \item \textbf{Primitive}: \texttt{String}, \texttt{Number}, \texttt{Boolean}, \texttt{Undefined}, \texttt{Null}, \texttt{Symbol}, \texttt{BigInt}.
+    \item \textbf{Complex}: \texttt{Object}, \texttt{Array}, \texttt{Function}.
+    \item \textit{Note:} \texttt{typeof null} returns \texttt{"object"} (a known bug).
+\end{itemize}
+
+\subsubsection{Operators}
+\begin{itemize}
+    \item \textbf{Assignment}: \texttt{=}, \texttt{+=}, \texttt{-=}, etc.
+    \item \textbf{Comparison}: \texttt{==} (equal value), \texttt{===} (equal value and type), \texttt{!=}, \texttt{!==}.
+    \item \textbf{Logical}: \texttt{\&\&} (AND), \texttt{||} (OR), \texttt{!} (NOT).
+\end{itemize}
+
+\subsubsection{Control Structures}
+\begin{itemize}
+    \item \textbf{Conditionals}: \texttt{if}, \texttt{else if}, \texttt{else}, \texttt{switch}.
+    \item \textbf{Loops}: 
+    \begin{itemize}
+        \item \texttt{for}: Classic iterator.
+        \item \texttt{for...in}: Iterates over object keys.
+        \item \texttt{for...of}: Iterates over iterable values (like array elements).
+        \item \texttt{while} \& \texttt{do...while}.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Strings and Arrays}
+\subsubsection{String Methods}
+Common methods: \texttt{concat()}, \texttt{charAt()}, \texttt{replace()}, \texttt{toLowerCase()}, \texttt{toUpperCase()}, \texttt{trim()}, \texttt{split()}.
+
+    \item \textbf{Ordering}: \texttt{sort()} (alphabetical), \texttt{reverse()}.
+\end{itemize}
+
+\begin{tcolorbox}[colback=pink!5,colframe=pink!75,title=Practical Example: Functional Programming]
+Using \texttt{map} and \texttt{filter} to process data:
+\begin{lstlisting}[language=JavaScript]
+const products = [
+  { name: 'Laptop', price: 1200 },
+  { name: 'Phone', price: 800 },
+  { name: 'Tablet', price: 500 }
+];
+
+// 1. Filter products cheaper than 1000
+const affordable = products.filter(p => p.price < 1000);
+
+// 2. Map to an array of names
+const names = affordable.map(p => p.name); 
+
+console.log(names); // ['Phone', 'Tablet']
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{Functions}
+\subsubsection{Definitions}
+\begin{enumerate}
+    \item \textbf{Declaration}: \texttt{function name() \{ ... \}} (Hoisted)
+    \item \textbf{Expression}: \texttt{const name = function() \{ ... \}} (Anonymous or named)
+    \item \textbf{Arrow Function}: \texttt{const name = () =$>$ \{ ... \}} (Shorter syntax, no \texttt{this} binding)
+\end{enumerate}
+
+\subsubsection{Parameters and Arguments}
+\begin{itemize}
+    \item \textbf{Default Parameters}: \texttt{function greet(name = "Guest") \{ ... \}}
+    \item \textbf{Arguments Object}: Array-like object containing all arguments passed to a function.
+    \item \textbf{Rest Parameters}: \texttt{function sum(...nums) \{ ... \}} (Collects remaining arguments into an array).
+\end{itemize}
+
+\subsection{Object-Oriented JavaScript (Classes)}
+Classes are syntactical sugar over prototypes.
+\begin{lstlisting}[language=JavaScript]
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+  // Getter
+  get area() { return this.height * this.width; }
+  // Setter
+  set side(val) { this.height = val; this.width = val; }
+}
+const square = new Rectangle(10, 10);
+\end{lstlisting}
+
+\begin{tcolorbox}[colback=brown!5,colframe=brown!75,title=Practical Example: Class Inheritance]
+Creating specialized classes from a base class:
+\begin{lstlisting}[language=JavaScript]
+class Animal {
+  constructor(name) { this.name = name; }
+  speak() { console.log(`${this.name} makes a noise.`); }
+}
+
+class Dog extends Animal {
+  speak() { console.log(`${this.name} barks!`); }
+}
+
+const d = new Dog('Mitzie');
+d.speak(); // Mitzie barks!
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{The Document Object Model (DOM)}
+The DOM is a programming interface for HTML documents. It represents the page as a tree of objects.
+
+\subsubsection{Selecting Elements}
+\begin{itemize}
+    \item \texttt{document.getElementById('id')}
+    \item \texttt{document.querySelector('.selector')}
+    \item \texttt{document.querySelectorAll('.selector')}
+\end{itemize}
+
+\subsubsection{Manipulating Elements}
+\begin{itemize}
+    \item \textbf{Content}: \texttt{element.innerHTML}, \texttt{element.textContent}, \texttt{element.value} (for inputs).
+    \item \textbf{Attributes}: \texttt{getAttribute()}, \texttt{setAttribute()}, \texttt{removeAttribute()}, \texttt{hasAttribute()}.
+    \item \textbf{Styles}: \texttt{element.style.color = 'red';} (uses camelCase for CSS properties).
+    \item \textbf{Creation}: \texttt{document.createElement('div')}, \texttt{parent.appendChild(child)}.
+\end{itemize}
+
+\subsection{Chapter 4 Review: Questions \& Answers}
+\begin{enumerate}
+    \item \textbf{Q: What is the difference between \texttt{let} and \texttt{var}?}
+    \\ \textbf{A:} \texttt{let} is block-scoped and cannot be redeclared, whereas \texttt{var} is function-scoped and can be redeclared. \texttt{let} is the modern preference.
+    
+    \item \textbf{Q: What will \texttt{typeof []} return?}
+    \\ \textbf{A:} \texttt{"object"}. Arrays are a specialized type of object in JavaScript.
+    
+    \item \textbf{Q: Explain the difference between \texttt{===} and \texttt{==}.}
+    \\ \textbf{A:} \texttt{===} (Strict Equality) checks both value and type, while \texttt{==} (Loose Equality) performs type coercion before comparing values.
+    
+    \item \textbf{Q: What will be the output of \texttt{console.log(x)} if \texttt{var x = 21;} is at the top, and inside a function \texttt{foo}, we have \texttt{console.log(x); var x = 20;} before calling \texttt{foo()}?}
+    \\ \textbf{A:} \texttt{undefined}. Due to hoisting, the local declaration \texttt{var x} is moved to the top of the function scope but is not yet assigned a value when \texttt{console.log(x)} is executed.
+    
+    \item \textbf{Q: Explain the difference between \texttt{map()} and \texttt{forEach()}.}
+    \\ \textbf{A:} \texttt{map()} creates and returns a \textbf{new array} by applying a transformation to every element, while \texttt{forEach()} simply iterates over the array and returns \texttt{undefined}.
+\end{enumerate}
+\begin{lstlisting}[language=JavaScript]
+const btn = document.querySelector('#myBtn');
+btn.addEventListener('click', (event) => {
+  console.log('Button clicked!', event.target);
+});
+\end{lstlisting}
+
+\begin{tcolorbox}[colback=orange!5,colframe=orange!75,title=Practical Example: Dynamic DOM Update]
+Changing text and style on a button click:
+\begin{lstlisting}[language=JavaScript]
+const heading = document.querySelector('h1');
+const colorBtn = document.querySelector('#colorBtn');
+
+colorBtn.addEventListener('click', () => {
+  heading.textContent = 'Color Changed!';
+  heading.style.color = 'blue';
+  
+  // Create a new element
+  const p = document.createElement('p');
+  p.innerText = 'This was added dynamically.';
+  document.body.appendChild(p);
+});
+\end{lstlisting}
+\end{tcolorbox}
+
+\newpage
+
+\section{Chapter 5: React - Modern Front-end Development}
+
+React is a powerful JavaScript library for building user interfaces, developed by Facebook. It focuses on reusable components and efficient rendering via the Virtual DOM.
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Exam Tips \& Hints]
+\begin{itemize}
+    \item \textbf{Virtual DOM}: Understand that the Virtual DOM is a lightweight copy of the Real DOM. React uses it to calculate the minimum changes (Reconciliation) before updating the actual browser DOM.
+    \item \textbf{Hooks}: \texttt{useState} and \texttt{useEffect} are extremely common in practical coding questions.
+    \item \textbf{Class Context}: Remember that in class components, custom methods must be bound to \texttt{this} or written as arrow functions to access state. 
+    \item \textbf{Data Flow}: Data flows \textit{down} via props and \textit{up} via function callbacks.
+    \item \textbf{Keys}: Expect a question on why \texttt{key} props are needed when mapping lists (helping React's reconciliation process).
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Core Concepts}
+\subsubsection{React vs React Native}
+\begin{itemize}
+    \item \textbf{React}: For web applications (Single Page Apps).
+    \item \textbf{React Native}: For mobile application development (Android/iOS).
+\end{itemize}
+
+\subsubsection{The Virtual DOM}
+React creates an in-memory database cache (Virtual DOM) that tracks changes. When the UI changes, React compares the Virtual DOM to the real DOM and updates only the necessary parts, leading to better performance.
+
+\subsubsection{JSX (JavaScript XML)}
+A syntax extension that looks like HTML but lives in JavaScript.
+\begin{itemize}
+    \item Must have a single root element.
+    \item Use \texttt{className} instead of \texttt{class}.
+    \item Use \texttt{htmlFor} instead of \texttt{for} for labels.
+\end{itemize}
+
+    \item \textbf{Class Components (Container)}: Use ES6 classes and have access to \texttt{this}, \texttt{state}, and lifecycle methods.
+\end{itemize}
+
+\begin{tcolorbox}[colback=blue!5,colframe=blue!75,title=Practical Example: Simple Functional Component]
+A reusable component that displays a greeting:
+\begin{lstlisting}[language=JavaScript]
+import React from 'react';
+
+const Welcome = (props) => {
+  return (
+    <div className="welcome-card">
+      <h1>Hello, {props.name}!</h1>
+      <p>Welcome to our React application.</p>
+    </div>
+  );
+};
+
+export default Welcome;
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{State and Props}
+\subsubsection{State}
+An internal data store for a component. When state changes, the component re-renders.
+\begin{itemize}
+    \item Always use \texttt{this.setState()} in class components to update state.
+    \item In functional components, use the \texttt{useState} hook.
+\end{itemize}
+
+\subsubsection{Props (Properties)}
+Data passed from a parent component to a child component. Props are read-only for the child.
+
+\begin{tcolorbox}[colback=green!5,colframe=green!75,title=Practical Example: State and Props]
+Managing a counter with \texttt{useState}:
+\begin{lstlisting}[language=JavaScript]
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{Handling Events}
+\begin{itemize}
+    \item React events are named using camelCase (e.g., \texttt{onClick}, \texttt{onSubmit}).
+    \item \textbf{\texttt{this} Context}: In class components, \texttt{this} is lost in custom functions. Solutions:
+    \begin{itemize}
+        \item Bind in constructor: \texttt{this.myFunc = this.myFunc.bind(this)}.
+        \item Use \textbf{Arrow Functions}: \texttt{myFunc = () =$>$ \{ ... \}}.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Forms and Interactivity}
+\begin{itemize}
+    \item \textbf{Controlled Components}: Input values are driven by state.
+    \item \textbf{\texttt{e.preventDefault()}}: Used in form submission to stop the default page refresh.
+    \item \textbf{Functions as Props}: Passing a function from parent to child allows the child to communicate back to the parent (e.g., deleting an item from a list held in parent state).
+\end{itemize}
+
+\subsection{Development Tools and Setup}
+\begin{itemize}
+    \item \textbf{React Dev Tools}: Browser extension for inspecting component hierarchies and state/props.
+    \item \textbf{Create React App (CRA)}: A standard toolchain for setting up a modern React project.
+    \begin{itemize}
+        \item \texttt{npx create-react-app my-app}
+        \item \texttt{npm start}: Runs the app in development mode.
+    \end{itemize}
+\end{itemize}
+
+\subsection{React Router}
+Used to handle navigation in a Single Page App without refreshing the page.
+\begin{itemize}
+    \item \textbf{\texttt{<BrowserRouter>}}: Wraps the whole app.
+    \item \textbf{\texttt{<Route>}}: Defines a path and the component to render.
+    \item \textbf{\texttt{<Link>}} and \texttt{<NavLink>}: Replace \texttt{<a>} tags for internal navigation.
+    \item \textbf{Route Parameters}: \texttt{path="/post/:id"}.
+\end{itemize}
+
+\subsection{Advanced Topics}
+\subsubsection{Higher-Order Components (HOCs)}
+A function that takes a component and returns a new ("enhanced") component. Used for shared logic like authentication or loading states.
+\begin{lstlisting}[language=JavaScript]
+const Protected = withAuth(Dashboard);
+\end{lstlisting}
+
+\subsection{Chapter 5 Review: Questions \& Answers}
+    \item \textbf{Q: What is the correct syntax to create a React component (class-based)?}
+    \\ \textbf{A:} \texttt{class MyComponent extends React.Component \{ ... \}}.
+    
+    \item \textbf{Q: How do you pass data from a parent to a child component?}
+    \\ \textbf{A:} Via \textbf{props}.
+    
+    \item \textbf{Q: Which method is used to update the state of a class component?}
+    \\ \textbf{A:} \texttt{this.setState()}.
+    
+    \item \textbf{Q: What will happen if you don't bind a function in a class component?}
+    \\ \textbf{A:} \texttt{this} will be \texttt{undefined} when the function is called, leading to an error when trying to access \texttt{this.setState}.
+    
+    \item \textbf{Q: Explain the React "Reconciliation" process.}
+    \\ \textbf{A:} It is the process through which React updates the DOM. React creates a Virtual DOM tree, compares it with the previous one (diffing), and then applies only the necessary changes to the Real DOM.
+    
+    \item \textbf{Q: Why should you not update state directly (e.g., \texttt{this.state.count = 1})?}
+    \\ \textbf{A:} Direct mutation does not trigger a re-render. You must use \texttt{setState()} or the \texttt{set} function from \texttt{useState} to notify React of state changes so it can update the UI.
+\end{enumerate}
+\subsubsection{Hooks (ES6+)}
+\begin{itemize}
+    \item \textbf{\texttt{useState}}: Adds state to functional components.
+    \item \textbf{\texttt{useEffect}}: Handles side effects (like data fetching). Replaces lifecycle methods like \texttt{componentDidMount}.
+\end{itemize}
+
+\subsubsection{Data Fetching (Axios)}
+Axios is a popular library to fetch data from APIs.
+\begin{lstlisting}[language=JavaScript]
+useEffect(() => {
+  axios.get('https://api.example.com/posts')
+    .then(res => setPosts(res.data));
+}, []);
+\end{lstlisting}
+
+\begin{tcolorbox}[colback=purple!5,colframe=purple!75,title=Practical Example: Data Fetching Hook]
+Fetching user profile on mount:
+\begin{lstlisting}[language=JavaScript]
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
+function UserProfile({ userId }) {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Side effect: fetch data
+    axios.get(`/api/users/${userId}`)
+      .then(response => setUser(response.data))
+      .catch(error => console.error(error));
+  }, [userId]); // Runs when userId changes
+
+  if (!user) return <div>Loading...</div>;
+  return <h1>{user.name}</h1>;
+}
+\end{lstlisting}
+\end{tcolorbox}
+
+\newpage
+
+\section{Chapter 6: Express.js - Web Application Framework}
+
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It is "unopinionated," meaning it gives developers freedom in how they structure their apps.
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Exam Tips \& Hints]
+\begin{itemize}
+    \item \textbf{Middleware}: The \texttt{next()} function is critical. If you don't call it, the request hangs.
+    \item \textbf{Routing}: Route parameters (e.g., \texttt{:id}) vs query strings (\texttt{?id=1}).
+    \item \textbf{Methods}: Use \texttt{GET} for retrieval and \texttt{POST} or \texttt{PUT} for data submission/update.
+    \item \textbf{RegEx Routing}: Practice the special characters (\texttt{?}, \texttt{+}, \texttt{*}) in route paths.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Getting Started}
+\subsubsection{Setup}
+\begin{enumerate}
+    \item Create a directory: \texttt{mkdir myapp}
+    \item Initialize npm: \texttt{npm init}
+    \item Install Express: \texttt{npm install express}
+\end{enumerate}
+
+\subsubsection{Hello World Example}
+\begin{lstlisting}[language=JavaScript]
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+\end{lstlisting}
+
+\subsection{Modules and Asynchrony}
+\begin{itemize}
+    \item \textbf{Modules}: Use \texttt{module.exports} to share code across files and \texttt{require()} to import it.
+    \item \textbf{Async Programming}: Node is single-threaded and non-blocking. Use asynchronous APIs (callbacks, Promises) to avoid blocking the event loop.
+    \item \textbf{Error-First Callbacks}: A convention where the first argument of a callback is the error object.
+\end{itemize}
+
+\subsection{Middleware}
+Middleware functions are the backbone of Express. They have access to the request (\texttt{req}), response (\texttt{res}), and the \texttt{next} function in the application’s request-response cycle.
+
+    \item \textbf{Third-party}: Community modules like \texttt{morgan} (logging) or \texttt{cors}.
+\end{enumerate}
+
+\begin{tcolorbox}[colback=gray!5,colframe=gray!75,title=Practical Example: Custom Logger Middleware]
+A function that logs the request method and URL:
+\begin{lstlisting}[language=JavaScript]
+const logger = (req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  next(); // Pass control to the next handler
+};
+
+app.use(logger); // Apply to all routes
+\end{lstlisting}
+\end{tcolorbox}
+
+    \item \textbf{Chaining}: Use \texttt{app.route()} to define multiple methods for a single path.
+\end{itemize}
+
+\begin{tcolorbox}[colback=blue!5,colframe=blue!75,title=Practical Example: URL Parameters]
+Extracting data from the request URL:
+\begin{lstlisting}[language=JavaScript]
+// GET /shop/electronics/iphone
+app.get('/shop/:category/:item', (req, res) => {
+  const { category, item } = req.params;
+  res.send(`Searching for ${item} in ${category}`);
+});
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{Templating with EJS}
+EJS (Embedded JavaScript) is a template engine that lets you generate HTML with plain JavaScript.
+\begin{itemize}
+    \item \textbf{Setup}: \texttt{app.set('view engine', 'ejs');}
+    \item \textbf{Syntax}:
+    \begin{itemize}
+        \item \texttt{<\% \%>}: Executes logic (loops, conditionals).
+        \item \texttt{<\%= \%>}: Outputs a value to the page.
+    \end{itemize}
+    \item \textbf{Rendering}: \texttt{res.render('index', \{ name: 'John' \});}
+\end{itemize}
+
+\begin{tcolorbox}[colback=green!5,colframe=green!75,title=Practical Example: RESTful API Implementation]
+Standard CRUD endpoints for a "Task" resource:
+\begin{lstlisting}[language=JavaScript]
+let tasks = [{ id: 1, title: 'Learn Express' }];
+
+app.get('/tasks', (req, res) => res.json(tasks));
+
+app.post('/tasks', (req, res) => {
+  const newTask = { id: Date.now(), ...req.body };
+  tasks.push(newTask);
+  res.status(201).json(newTask);
+});
+
+app.delete('/tasks/:id', (req, res) => {
+  tasks = tasks.filter(t => t.id != req.params.id);
+  res.status(204).send();
+});
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{Chapter 6 Review: Questions \& Answers}
+\begin{enumerate}
+    \item \textbf{Q: What is Express.js?}
+    \\ \textbf{A:} A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+    
+    \item \textbf{Q: What is middleware in Express?}
+    \\ \textbf{A:} Functions that have access to the request object (\texttt{req}), the response object (\texttt{res}), and the next middleware function in the application’s request-response cycle.
+    
+    \item \textbf{Q: How do you define a route that matches both \texttt{/acd} and \texttt{/abcd} in Express?}
+    \\ \textbf{A:} Use a question mark for optional character: \texttt{app.get('/ab?cd', ...)}.
+    
+    \item \textbf{Q: What does the \texttt{+} sign mean in a route path like \texttt{/ab+cd}?}
+    \\ \textbf{A:} It means the preceding character (\texttt{b}) can occur one or more times (e.g., \texttt{/abcd}, \texttt{/abbcd}).
+    
+    \item \textbf{Q: What is the purpose of \texttt{app.set('view engine', 'ejs')}?}
+    \\ \textbf{A:} It identifies the template engine that should be used to render views (HTML templates).
+\end{enumerate}
+
+\newpage
+
+\section{Chapter 7: MongoDB and Mongoose - Database Management}
+
+MongoDB is a NoSQL, document-oriented database that stores data in flexible, JSON-like documents. This means fields can vary from document to document and data structure can be changed over time.
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Exam Tips \& Hints]
+\begin{itemize}
+    \item \textbf{RDBMS vs NoSQL}: Be prepared to compare Tables/Collections and Rows/Documents.
+    \item \textbf{Mongoose Schema}: Know how to define types and required fields in a Mongoose schema.
+    \item \textbf{Relationships}: Understand the pros and cons of Embedding vs Referencing.
+    \item \textbf{\_id}: Every document has a unique \texttt{\_id} field by default.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Core Concepts}
+\begin{longtable}{ll}
+\toprule
+RDBMS Terminology & MongoDB Terminology \\
+\midrule
+Database & Database \\
+Table & Collection \\
+Row / Tuple & Document \\
+Column & Field \\
+Table Join & Embedded Documents / \$lookup \\
+Primary Key & Primary Key (Default \texttt{\_id}) \\
+\bottomrule
+\end{longtable}
+
+\subsubsection{Advantages of MongoDB}
+\begin{itemize}
+    \item \textbf{Schema-less}: Documents in a collection don't need the same fields.
+    \item \textbf{Easy Scalability}: Designed to scale out across servers.
+    \item \textbf{High Performance}: Uses internal memory for faster data access.
+\end{itemize}
+
+\subsection{MongoDB Shell Commands}
+\begin{itemize}
+    \item \textbf{\texttt{use mydb}}: Switch to or create a database.
+    \item \textbf{\texttt{db.createCollection('users')}}: Create a new collection.
+    \item \textbf{\texttt{db.users.insert(\{name: 'John'\})}}: Insert a document.
+    \item \textbf{\texttt{db.users.find()}}: Query all documents.
+    \item \textbf{\texttt{db.users.update(\{name: 'John'\}, \{\$set: \{age: 30\}\})}}: Update a document.
+    \item \textbf{\texttt{db.users.remove(\{name: 'John'\})}}: Remove a document.
+    \item \textbf{\texttt{db.dropDatabase()}}: Delete the current database.
+\end{itemize}
+
+\subsection{Using MongoDB with Node.js}
+\subsubsection{Native MongoDB Driver}
+Requires the \texttt{mongodb} npm package.
+\begin{lstlisting}[language=JavaScript]
+const { MongoClient } = require('mongodb');
+const url = "mongodb://localhost:27017/";
+
+MongoClient.connect(url, (err, db) => {
+  if (err) throw err;
+  const dbo = db.db("mydb");
+  dbo.collection("customers").findOne({}, (err, result) => {
+    console.log(result.name);
+    db.close();
+  });
+});
+\end{lstlisting}
+
+\subsection{Mongoose - Elegant Object Modeling}
+Mongoose provides a schema-based solution to model your application data.
+    \item \textbf{Schema}: Defines the structure of the document.
+    \item \textbf{Model}: A constructor that creates documents based on the schema.
+\end{itemize}
+
+\subsubsection{Defining a Schema and Model}
+\begin{lstlisting}[language=JavaScript]
+const mongoose = require('mongoose');
+
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: { type: String, required: true },
+  createdAt: { type: Date, default: Date.now }
+});
+
+const User = mongoose.model('User', userSchema);
+\end{lstlisting}
+
+\begin{tcolorbox}[colback=green!5,colframe=green!75,title=Practical Example: Schema and Validation]
+Defining a strict schema for a "Product" collection:
+\begin{lstlisting}[language=JavaScript]
+const productSchema = new mongoose.Schema({
+  name: { type: String, required: [true, 'Name is required'] },
+  price: { type: Number, min: 0 },
+  category: { type: String, enum: ['Electronics', 'Books', 'Clothing'] },
+  inStock: { type: Boolean, default: true }
+});
+
+const Product = mongoose.model('Product', productSchema);
+\end{lstlisting}
+\end{tcolorbox}
+
+    \item \textbf{Many-to-Many}: Create a third "junction" collection to track relationships between two other collections.
+\end{enumerate}
+
+\begin{tcolorbox}[colback=yellow!5,colframe=yellow!75,title=Practical Example: Mongoose Relationships]
+Using \texttt{ref} and \texttt{populate()} to link data:
+\begin{lstlisting}[language=JavaScript]
+// Post Schema
+const postSchema = new mongoose.Schema({
+  title: String,
+  author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+});
+
+// Query with Populate
+Post.find()
+  .populate('author') // Replaces ID with actual User object
+  .then(posts => console.log(posts));
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{Chapter 7 Review: Questions \& Answers}
+\begin{enumerate}
+    \item \textbf{Q: What is a NoSQL database?}
+    \\ \textbf{A:} A non-relational database that stores data in formats other than tabular relations, such as JSON-like documents. NoSQL databases like MongoDB are highly flexible and scalable.
+    
+    \item \textbf{Q: How does a MongoDB document differ from an RDBMS row?}
+    \\ \textbf{A:} A document is a BSON (Binary JSON) object that can have a nested structure and varying fields, whereas a row in RDBMS must strictly adhere to a pre-defined table schema.
+    
+    \item \textbf{Q: What is Mongoose?}
+    \\ \textbf{A:} An Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a straight-forward, schema-based solution to model your application data.
+    
+    \item \textbf{Q: Explain the difference between Embedding and Referencing in MongoDB.}
+    \\ \textbf{A:} Embedding stores related data inside a single document (One-to-One), while Referencing stores the ID of another document in a separate collection (One-to-Many), similar to foreign keys.
+    
+    \item \textbf{Q: What is the purpose of the \texttt{\_id} field in MongoDB?}
+    \\ \textbf{A:} It is a unique Primary Key automatically assigned to every document to ensure it can be uniquely identified within a collection.
+    
+    \item \textbf{Q: What does CRUD stand for in the context of MongoDB?}
+    \\ \textbf{A:} Create, Read, Update, and Delete. It represents the four basic operations for database management.
+\end{enumerate}
+
+\newpage
+
+\section{Chapter 8: Node.js - Server-Side JavaScript Runtime}
+
+Node.js is a powerful JavaScript platform built on Chrome's V8 engine. It allows developers to use JavaScript to write server-side code, enabling "Full-stack JavaScript" development.
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Exam Tips \& Hints]
+\begin{itemize}
+    \item \textbf{Event Loop}: A fundamental concept. Understand the roles of the Call Stack, libuv, and the Task Queue.
+    \item \textbf{NPM}: Know the difference between \texttt{dependencies} and \texttt{devDependencies}.
+    \item \textbf{Global Objects}: Remember \texttt{\_\_dirname} and \texttt{\_\_filename} are provided by the Node.js wrapper, not part of standard JS.
+    \item \textbf{Callback Pattern}: Error-first callbacks (\texttt{err} as the first argument) is a standard convention.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Core Principles}
+\begin{itemize}
+    \item \textbf{Asynchronous \& Event-Driven}: All APIs of Node.js library are asynchronous (non-blocking). A Node-based server never waits for an API to return data.
+    \item \textbf{Single-Threaded}: Node.js uses a single-threaded model with event looping. This makes it highly scalable for I/O intensive apps, though it's not ideal for CPU-intensive tasks.
+    \item \textbf{Platform Independent}: Runs on Windows, Linux, and macOS.
+\end{itemize}
+
+\subsection{The Node.js Event Loop}
+\begin{itemize}
+    \item \textbf{libuv}: A library that Node.js uses to perform asynchronous I/O and manage a thread pool.
+    \item \textbf{Call Stack}: Where the code being executed lives.
+    \item \textbf{Event Queue}: When an async task (like a timer or file read) completes, its callback is sent to this queue.
+    \item \textbf{Event Loop}: Monitors the call stack and event queue. If the stack is empty, it pushes the first task from the queue to the stack for execution.
+\end{itemize}
+
+\subsection{Node Package Manager (NPM)}
+NPM is the default package manager for Node.js.
+\begin{itemize}
+    \item \textbf{\texttt{package.json}}: Holds metadata about the project and its dependencies.
+    \item \textbf{\texttt{package-lock.json}}: Records the exact version of every installed dependency to ensure consistent builds across environments.
+    \item \textbf{Commands}:
+    \begin{itemize}
+        \item \texttt{npm init}: Initialize a new project.
+        \item \texttt{npm install <pkg>}: Install a package and add it to \texttt{dependencies}.
+        \item \texttt{npm ci}: A cleaner, faster install for automated environments (CI/CD).
+        \item \texttt{npm audit}: Checks for security vulnerabilities in dependencies.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Global Objects and Modules}
+\begin{itemize}
+    \item \textbf{\texttt{\_\_dirname}}: Directory name of the current script.
+    \item \textbf{\texttt{\_\_filename}}: File name of the current script.
+    \item \textbf{\texttt{process}}: Provides information about, and control over, the current Node.js process.
+    \item \textbf{\texttt{console}}: Used for printing to stdout and stderr.
+\end{itemize}
+
+    \item \textbf{Net}: Used to create TCP servers and clients.
+\end{enumerate}
+
+\begin{tcolorbox}[colback=cyan!5,colframe=cyan!75,title=Practical Example: Reading and Writing Files]
+Using the built-in \texttt{fs} module (promises version):
+\begin{lstlisting}[language=JavaScript]
+const fs = require('fs').promises;
+
+async function manageFiles() {
+  try {
+    // Write to a file
+    await fs.writeFile('test.txt', 'Hello Node.js!');
+    // Read from the file
+    const data = await fs.readFile('test.txt', 'utf8');
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+manageFiles();
+\end{lstlisting}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=purple!5,colframe=purple!75,title=Practical Example: Simple HTTP Server]
+Creating a server without any frameworks:
+\begin{lstlisting}[language=JavaScript]
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello from Node.js Server!');
+});
+
+server.listen(3000, '127.0.0.1', () => {
+  console.log('Server running at http://127.0.0.1:3000/');
+});
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{Chapter 8 Review: Questions \& Answers}
+\begin{enumerate}
+    \item \textbf{Q: What is Node.js?}
+    \\ \textbf{A:} A JavaScript runtime built on Chrome's V8 engine that allows you to execute JavaScript on the server-side, outside of a web browser.
+    
+    \item \textbf{Q: How does the Event Loop handle asynchronous operations?}
+    \\ \textbf{A:} When an async operation completes, its callback is placed in an Event Queue. The Event Loop continuously checks if the Call Stack is empty; if it is, it takes the first callback from the queue and pushes it onto the stack for execution.
+    
+    \item \textbf{Q: What is the difference between \texttt{dependencies} and \texttt{devDependencies} in \texttt{package.json}?}
+    \\ \textbf{A:} \texttt{dependencies} are required for the application to run (e.g., Express), while \texttt{devDependencies} are only needed during development/testing (e.g., Nodemon, Jest).
+    
+    \item \textbf{Q: What is an "Error-First Callback"?}
+    \\ \textbf{A:} A convention in Node.js where the first argument of a callback function is reserved for an error object, and the second argument is for the successful data.
+    
+    \item \textbf{Q: What is the role of \texttt{package-lock.json}?}
+    \\ \textbf{A:} It locks down the exact versions of dependencies (and their sub-dependencies) to ensure that every developer and production environment installs exactly the same package tree.
+    
+    \item \textbf{Q: What is the default port for most Node.js development servers (like those used with Express)?}
+    \\ \textbf{A:} Traditionally, port \texttt{3000} or \texttt{8080} are used, though port \texttt{3000} is the most common default in many tutorials and templates.
+    
+    \item \textbf{Q: Which Node.js module is used to create a simple HTTP server?}
+    \\ \textbf{A:} The built-in \texttt{http} module.
+\end{enumerate}
+
+\newpage
+
+\section{Chapter 9: Redux - State Management}
+
+Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Exam Tips \& Hints]
+\begin{itemize}
+    \item \textbf{Principles}: Single source of truth (Store), State is read-only (Actions), Changes are made with pure functions (Reducers).
+    \item \textbf{Data Flow}: Unidirectional data flow: Action $\rightarrow$ Reducer $\rightarrow$ Store $\rightarrow$ View.
+    \item \textbf{Hooks}: Familiarize yourself with \texttt{useSelector} and \texttt{useDispatch} for modern Redux.
+    \item \textbf{Immutability}: Never mutate the state directly in a reducer; always return a new object/array.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Core Concepts}
+\begin{enumerate}
+    \item \textbf{Store}: The centralized place where the state of the application is stored.
+    \item \textbf{Actions}: Plain JavaScript objects that describe "what happened". Every action must have a \texttt{type} property.
+    \item \textbf{Reducers}: Pure functions that specify how the application's state changes in response to an action.
+    \item \textbf{Dispatch}: The method used to send actions to the store.
+    \item \textbf{Connect}: A function (mostly used in class components) from \texttt{react-redux} to link React components to the Redux store.
+\end{enumerate}
+
+\begin{tcolorbox}[colback=blue!5,colframe=blue!75,title=Practical Example: Basic Redux Setup]
+A simple counter example:
+\begin{lstlisting}[language=JavaScript]
+// 1. Action Types
+const INCREMENT = 'INCREMENT';
+
+// 2. Action Creator
+const incrementAction = () => ({ type: INCREMENT });
+
+// 3. Reducer
+const counterReducer = (state = { count: 0 }, action) => {
+  switch (action.type) {
+    case INCREMENT:
+      return { ...state, count: state.count + 1 };
+    default:
+      return state;
+  }
+};
+
+// 4. Store
+import { createStore } from 'redux';
+const store = createStore(counterReducer);
+
+// 5. Usage
+store.dispatch(incrementAction());
+console.log(store.getState()); // { count: 1 }
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{Chapter 9 Review: Questions \& Answers}
+\begin{enumerate}
+    \item \textbf{Q: What are the three principles of Redux?}
+    \\ \textbf{A:} 1. Single source of truth, 2. State is read-only, 3. Changes are made with pure functions.
+    
+    \item \textbf{Q: What is a Reducer in Redux?}
+    \\ \textbf{A:} A function that takes the current state and an action as arguments, and returns the next state. It must be a pure function.
+    
+    \item \textbf{Q: Explain the role of the \texttt{Provider} component in \texttt{react-redux}.}
+    \\ \textbf{A:} It makes the Redux store available to any nested components that need to access it.
+    
+    \item \textbf{Q: What is the benefit of using Redux over standard React state?}
+    \\ \textbf{A:} It provides a centralized store for global state, making it easier to manage and debug data that needs to be shared across many components.
+    
+    \item \textbf{Q: How do you handle asynchronous actions in Redux?}
+    \\ \textbf{A:} Using middleware like \texttt{redux-thunk} or \texttt{redux-saga}, which allow actions to return functions or generators instead of just objects.
+\end{enumerate}
+
+\end{document}

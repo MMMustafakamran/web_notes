@@ -1,0 +1,310 @@
+Serial No:
+Sessional Exam-I 
+Total Time: 1 Hour
+Total Marks: 60
+
+________________
+Signature of Invigilator
+
+CS-4032: Web Programming(BSCS-A,B)
+
+Monday, 26th February, 2024
+Course Instructor
+Mr. Aqib Rehman
+
+
+____________________    ____________     _____________     __________________
+Student Name                             Roll No.                   Course Section            Student Signature
+
+
+DO NOT OPEN THE QUESTION BOOK OR START UNTIL INSTRUCTED.
+Instructions: 
+1.	Attempt on question paper. Attempt all of them. Read the question carefully, understand the question, and then attempt it. 
+2.	No additional sheet will be provided for rough work. Use the back of the last page for rough work.
+3.	If you need more space, write on the back side of the paper and clearly mark question and part number etc.
+4.	After asked to commence the exam, please verify that you have Fourteen (14) different printed pages including this title page. There are total of 3 questions.
+5.	Calculator sharing is strictly prohibited.
+6.	Use permanent ink pens only. Any part done using soft pencil will not be marked and cannot be claimed for rechecking.
+
+
+	Q-1	Q-2	Q-3	Total
+Marks Obtained				
+Total
+Marks	12	30	18	60
+
+
+
+
+
+
+ 
+Question 1 [3*4=12 Marks]
+i.	Define the types of CSS and explain their pros and cons with scenario [4 Marks]
+Inline CSS is useful when applying unique or temporary styles to specific elements. Quick and easy to implement directly within HTML elements using the style attribute. Overrides external and internal styles, providing immediate control over individual elements. Difficult to apply consistent styling across multiple elements.
+Internal CSS is suitable for small to medium-sized projects where styles are specific to a single HTML document. Provides better organization compared to inline CSS. Allows for styling multiple elements within a single HTML document. Styles are not reusable across multiple HTML pages unless copied and pasted.
+External CSS is ideal for large-scale projects with multiple HTML pages, where consistent styling is essential. Separates content from presentation. Allows for centralized management of styles across multiple HTML documents. May lead to conflicts or unintended styling changes if selectors are not properly scoped or overridden.
+
+ii.	What is HTML 5? Explain about Semantic HTML tags. [4 Marks]
+HTML5 is the latest version of Hypertext Markup Language. Bring more new elements i.e. date, color and added more attributes in existing elements i.e. required etc.
+Semantic HTML tags in HTML5 are elements that carry meaning beyond just presentation or formatting. They provide context and structure to the content of a web page, making it more accessible to both users and search engines. i.e. header, nav, footer etc.
+
+iii.	What is MERN stack and what is the role of JavaScript in it? Also, discuss about JavaScript language; is it same as C++ or other high-level programming languages? [4 Marks]
+
+The MERN stack is a popular open-source web development stack used for building dynamic web applications. It consists of four key technologies: MongoDB for database, Express as a backend server, React as a frontend: A JavaScript library for building user interfaces, Node as a backend: A server-side JavaScript runtime environment
+
+
+
+
+
+
+
+
+
+
+
+
+
+Question 2 [12+12+6=30 Marks]
+i.	Write the html code to design the below web page (Start from body tag). You have to use the correct html tags, attributes by critically analyzing the design. [12 Marks]
+ 
+<body>
+
+<h2>Sales Report</h2>
+<p>
+This sale report is published in <del>2022</del> <ins>2023</ins>
+It consist of <b>two</b> sales region.</p>
+<p>
+<i>The regions detail is following.</i>
+<ol type="i">
+<li>North</li>
+<li>South</li>
+</ol>
+<i>The product detail is following.</i>
+<ol type="I">
+<li>Apple iPhone 12</li>
+<li>Apple iPhone 13 Pro Max</li>
+</ol>
+
+You can check the further deatil by clicking on <a href="detailProduct.html"> view more </a>
+that will redirect you on detailProduct.html page.
+</p>
+<table border="1" align= "center">
+<caption>
+caption: sales table
+</caption>
+    <tr>
+        <th rowspan="2">Sales Region</th>
+        <th colspan="2">Apple iPhone 12</th>
+        <th colspan="2">Apple iPhone 13 Pro Max</th>
+    </tr>
+    <tr>
+        <th>Units Sold</th>
+        <th>Revenue ($)</th>
+        <th>Units Sold</th>
+        <th>Revenue ($)</th>
+    </tr>
+    <tr>
+        <td rowspan="2"><u>North</u></td>
+        <td><u>150</u></td>
+        <td>$3000</td>
+        <td>120</td>
+        <td>$2400</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>$2000</td>
+        <td>80</td>
+        <td>$1600</td>
+    </tr>
+    <tr>
+        <td rowspan="2"><u>South</u></td>
+        <td><u>200</u></td>
+        <td>$4000</td>
+        <td>180</td>
+        <td>$3600</td>
+    </tr>
+    <tr>
+        <td>150</td>
+        <td>$3000</td>
+        <td>130</td>
+        <td>$2600</td>
+    </tr>
+</table>
+
+</body>
+
+ 
+
+ii.	Write the html code for designing the below html form (Start from body tag). You have to use the correct html tags, attributes by critically analyzing the design. By clicking on “Read terms and condition” a link must be opened in a new tab. [12 Marks]
+ 
+ 
+
+<body>
+
+<h2>My Account</h2>
+
+<form action="/submit-form" method="post">
+
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" placeholder="Enter your username" required minlength="4" maxlength="20">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="8">
+
+    <label for="birthdate">Birthdate:</label>
+    <input type="date" id="birthdate" name="birthdate" required>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+        <option value="">Select your gender</option>
+    </select>
+
+    <label for="color">Favorite Color:</label>
+    <input type="color" id="color" name="color" required>
+
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country" placeholder="Enter your country" required>
+
+    <label for="comments">Comments:</label>
+    <textarea id="comments" name="comments" placeholder="Enter your comments"></textarea>
+
+    <label for="newsletter">Subscribe to Newsletter:</label>
+    <input type="checkbox" id="newsletter" name="newsletter">
+
+    <label for="terms">Agree to Terms:</label>
+    <input type="checkbox" id="terms" name="terms" required>
+    <a href="/terms" target="_blank">Read terms and conditions</a>
+<br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+ 
+iii.	Consider the form of Question 2 part ii, now you need to make it stylish by adding following appropriate css.   [6 Marks]
+Write down the internal css:
+•	To set background color of Username and password label as yellow by defining class as a selector.
+•	To set Gender font color as green.
+Write down the inline css:
+•	To change the font size of Subscribe to Newsletter: as 20px and add top and bottom margin of 10px and 5px padding on all sides. 
+
+
+<style>
+        .yellow-background {
+            background-color: yellow;
+        }
+
+        #gender {
+            color: green;
+        }
+    </style>
+
+<label for="newsletter" style="font-size: 20px; margin-top: 10px; margin-bottom: 10px; padding: 5px;">Subscribe to Newsletter:</label>
+    
+ 
+Question 3 [12+6=18 Marks]
+i.	Design a responsive webpage without using bootstrap. Your page must include 3 divs in such an order that in first div there is a menu with 4 different menu items and in the second div there is your feedback about web programming subject so far and in the third div there are the suggestions about the course in order to improve it in your point of view.  You are required to make it responsive on 2 size of devices: a small device and a large device. A small device is a handy mobile phone for which you need to show each div with 100% width and the second large size device is a desktop system which you got from your mom as a gift on your last birthday. The size of second device (a desktop system) size is in between 600px-800px. Write the appropriate media queries for implementing this. You must design for mobile phone first. On mobile phone as your eye side is weak so write a media query to change the font to 80px, and set the background color as lightblue [12 Marks]
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> {1 mark}
+
+<style>
+* {
+  box-sizing: border-box;   {1 mark}
+}
+[class*="col-"] {              {2 marks}
+  width: 100%;
+}
+ 
+@media only screen and (min-width: 601px) { {2 marks}
+.col-3 {
+width: 25%; 
+float: left;
+padding: 15px;  
+border: 1px solid red;}
+}
+@media only screen and (max-width: 600px) {2 marks}
+body{font-size: 80px;
+    background-color: lightblue;}
+}
+</style>
+</head>
+<body>
+<div class="col-3">              {4 marks}
+<ul>
+<li> item1</li>
+<li> item2</li>
+<li> item3</li>
+<li> item4</li>
+</ul>
+</div>
+<div class="col-3">
+<p> My feedback about the course is….</p>
+</div>
+<div class="col-3">
+<p> In order to improve my suggestions are….</p>
+</div>
+<div class="col-3">
+</div>
+</body>
+
+
+
+
+
+ 
+
+ii.	Use the bootstrap to design the responsive webpage. Write the html code to design a webpage, which uses the card class to show a card. Design 2 cards one for yourself and other for your friend. Your card must include Full name, expertise/skills, your positive qualities, your contact information (you can give your social media accounts info here) and profile image (consider some dummy names for images). Both cards must be display in a separate row in extra small size, small size and medium size devices and on large size devices, the ratio should be 25% and 75%. Moreover, on extra extra large size devices the second card div size must be double of first card div size. [6 Marks]
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> {1 mark}
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+
+        <!-- First Card -->
+        <div class="col-lg-3 col-xxl-3"> {1 marks}
+            <div class="card">  {3 marks}
+                <img src="profile1.jpg" class="card-img-top" alt="Profile Image">
+                <div class="card-body">
+                    <h5 class="card-title">name1</h5>
+                    <p class="card-text">Expertise/Skills: Web Development, Programming</p>
+                    <p class="card-text">Positive Qualities: Hardworking, Creative, Team Player</p>
+                    <p class="card-text">Contact Information: Social Media: test1@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+<!-- Second Card -->
+        <div class="col-lg-9 col-xxl-6"> {1 marks}
+            <div class="card">
+                <img src="profile2.jpg" class="card-img-top" alt="Profile Image">
+                <div class="card-body">
+                    <h5 class="card-title">Friend Name</h5>
+                    <p class="card-text">Expertise/Skills: Design, Marketing</p>
+                    <p class="card-text">Positive Qualities: Creative, Detail-oriented, Friendly</p>
+                    <p class="card-text">Contact Information: Email: friend@gmail.com<br>Social Media: @friend</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+  
+
+
+
+
+
+
+
+
+
+
+

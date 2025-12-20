@@ -1,0 +1,257 @@
+Q1. Select the correct option. (7 Marks)
+1. Which CSS property is used to change text color? [1 mark]
+a. font-style
+b. color
+c. text-color
+d. background
+2. In CSS, which of the following selectors has the highest specificity? [1 mark]
+a. .card
+b. div p
+c. #header
+d. p
+3. What is the primary purpose of the alt attribute in an &lt;img&gt; tag? [1 mark]
+a. To provide a title for the image when a user hovers over it.
+b. To provide alternative text for screen readers and if the image fails to load.
+c. To specify the URL or source of the image file.
+d. To link the image to another webpage.
+4. Which CSS property and value would you use to make an element&#39;s position fixed relative to
+the browser window, even when scrolling? [1 mark]
+a. position: absolute;
+
+
+
+
+ Page 2 of 8
+b. position: static;
+c. position: relative;
+d. position: fixed;
+5. A &lt;div&gt; is a block-level element by default. An &lt;a&gt; tag is an inline element. What is the key
+difference? [1 mark]
+a. Block elements cannot contain inline elements.
+b. Block elements start on a new line and take up the full width available.
+c. Inline elements cannot have margins or padding.
+d. Inline elements must have a fixed width and height.
+6. The CSS pseudo-class :hover is used to select an element when... [1 mark]
+a. it is the first child of its parent.
+b. the user&#39;s mouse pointer is over it.
+c. it is currently selected by the user.
+d. it has been visited before.
+7. What is the correct CSS syntax for making all &lt;p&gt; elements bold? [1 mark]
+a. p {text-size: bold;}
+b. &lt;p style=&quot;font-size:bold;&quot;&gt;
+c. p {font-weight: bold;}
+d. p: bold;
+Q1: b, c, b,d, b, b, c
+Q2. Complete the following statements with the correct values (16.5 Marks)
+1. To make a hyperlink open in a new browser tab, the attribute of the &lt;a&gt; tag is _____ and
+should be set to ______. [1 mark]
+2. The CSS property used to set the background color is ________. [1 mark]
+3. The ______ property in CSS is a shorthand for setting margin-top, margin-right, margin-
+bottom, and margin-left in one declaration. [1 mark]
+4. In an HTML form, to group related radio buttons together so that only one can be selected at
+a time, they must all share the same ______ attribute. [1 mark]
+5. The ______ attribute is used to provide a unique identifier for an HTML element. [1 mark]
+6. In CSS, the property to control the space inside an element&#39;s border is ______. [1 mark]
+7. Comments in a CSS file start with /* and end with ______. [1 mark]
+
+
+
+
+ Page 3 of 8
+8. Name the three ways to apply CSS to an HTML document. [1.5 marks]
+1. ______________
+2. ______________
+3. ______________
+9. Complete the following code [2 marks]
+&lt;form action=&quot;/login&quot; method=&quot;post&quot;&gt;
+&lt;label for=&quot;______ &quot;&gt;Username:&lt;/label&gt;
+&lt;input type=&quot;______&quot; id=&quot;username&quot; name=&quot;username&quot;&gt;
+&lt;label&gt;Password:&lt;/label&gt;
+&lt;input type=&quot;password&quot; id=&quot;pass&quot; name=&quot;______&quot;&gt;
+&lt;input type=&quot;______&quot; value=&quot;Login&quot;&gt;
+&lt;/form&gt;
+10. In a registration form user should have the option to select her province from: KP, Punjab,
+Balochistan, Sindh; complete the following code. [4 marks]
+&lt;_____&gt;
+&lt;____&gt;______
+&lt;____&gt;______
+&lt;____&gt;______
+&lt;____&gt;______
+_______
+11. In a registration form user shall be able to select her gender, when the user selects Male, the Female
+option shall de-select automatically, and vice versa. [3 marks]
+&lt;______ type=”_____” ____________________________
+_________________________________________________
+Q2:
+1. target and _blank (.5+.5)
+2. background-color
+3. margin
+4. name
+5. id
+6. Padding
+
+
+
+
+ Page 4 of 8
+7. *\
+8. inline, internal, external
+9. username, text , password, submit
+10. &lt;select&gt;, option, &lt;/option&gt; &lt;/select&gt;
+11. input, radio, value=”m” &gt;male&lt;/input&gt;
+input, radio, value=”fm” &gt;female&lt;/input&gt;
+
+Q3: Write a CSS stylesheet that applies the following styles: [3 marks]
+ Background color of the body = lightgray
+ Heading (h1) color = darkblue and center aligned
+ Paragraph (p) font size = 14px and color = black
+body {
+background-color: lightgray;
+}
+h1 {
+color: darkblue;
+text-align: center;
+}
+p {
+font-size: 14px;
+color: black;
+}
+
+Q4. Write HTML and CSS code to create a simple webpage that displays: [6 marks]
+ A navigation bar with three links: Home, About, Contact (horizontally aligned)
+ The navigation bar should have a lightblue background
+ Links should have no underline and change color to red on hover
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+
+
+
+
+ Page 5 of 8
+&lt;title&gt;Simple Webpage&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;nav&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+nav {
+background-color: lightblue;
+}
+
+/* Remove bullet points and align links horizontally */
+nav ul {
+list-style: none;
+display: flex;
+}
+
+nav a {
+text-decoration: none; /* No underline */
+}
+
+nav a:hover {
+
+
+
+
+ Page 6 of 8
+color: red;
+}
+
+Q5. Write responsive styling for the webpage to make it mobile and large screen friendly. Here is the
+code: [10 marks]
+&lt;body class=&quot;container&quot;&gt;
+&lt;header class=&quot;header&quot;&gt;Page Title&lt;/header&gt;
+&lt;aside class=&quot;sidebar&quot;&gt;Sidebar&lt;/aside&gt;
+&lt;main class=&quot;content&quot;&gt;Main Content Area&lt;/main&gt;
+&lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/body&gt;
+
+Headers appear at the top, aside on the left side and main content to the right. You are required to
+make it mobile and laptop screens friendly. The mobile screen shall appear when the screen size is
+400px, the laptop screen style shall appear when the screen size is greater than 400px and less than
+1350px.
+
+On mobile screen, the sidebar shall disappear, while on the laptop screen, the sidebar shall appear
+on the left side.
+
+You only need to write the CSS code.
+
+/* ------------------------- */
+/* �� Laptop Screen (401px–1349px) */
+/* ------------------------- */
+@media (min-width: 401px) and (max-width: 1349px) {
+.sidebar {
+display: block; /* Sidebar visible */
+}
+}
+
+
+
+
+ Page 7 of 8
+/* ------------------------- */
+/* �� Mobile Screen (≤400px) */
+/* ------------------------- */
+@media (max-width: 400px) {
+.sidebar {
+display: none; /* Sidebar hidden */
+}
+}
+
+Q6. Write small, specific snippets of code as per the instructions. [07 marks]
+1. HTML Table: Create HTML table with vertical headers as shown in the following image
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;th&gt;Name:&lt;/th&gt;
+&lt;td&gt;Bill Gates&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;th&gt;Telephone:&lt;/th&gt;
+&lt;td&gt;&lt;i&gt;555 77 854&lt;/i&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;Telephone:&lt;/th&gt;
+&lt;td&gt;&lt;i&gt;555 77 855&lt;/i&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+
+
+
+ Page 8 of 8
+&lt;/table&gt;
+
+2. CSS styling: Add Styling to the above table. Its every odd row shall have red background and white
+text [2]
+tr:nth-child(odd) {
+background-color: red;
+color: white;
+}
+
+Q7. CSS Styling: Given the HTML &lt;button class=&quot;btn-primary&quot;&gt;Submit&lt;/button&gt;, write the CSS rules
+to style this button. The .btn-primary class should have: [5 marks]
+
+o A background color of navy.
+o A text color of white.
+o 10px of padding on the top and bottom and 20px on the left and right.
+o No border.
+
+.btn-primary {
+background-color: navy;
+color: white;
+padding: 10px 20px; /* 10px top/bottom, 20px left/right */
+border: none; /* No border */
+}

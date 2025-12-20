@@ -1,0 +1,850 @@
+
+CS-4032: Web Programming(BSCS-A,B)
+Date: 4th Jun, 2024
+Course Instructor(s)
+Mr. Aqib Rehman
+Final Exam
+
+Total Time: 3 Hours
+Total Marks: 155
+
+
+______________________        ______________     _______________      __________________
+Student Name                             Roll No.                   Course Section            Student Signature
+
+Do not write anything on the question paper except the information required above.
+
+Instructions: 
+1.	Read the question carefully, understand the question, and then attempt your answers in the provided answer booklet in the given questions order. 
+2.	Verify that you have Ten (10) printed page of the question paper including this page. There are Three (3) questions.
+3.	This exam is closed book. Mobiles, Internet and note-sharing is not allowed. Please see that the area in your threshold is free of any material classified as useful in the paper, i.e. mobile/internet or else there may be a charge of cheating.
+4.	Read the questions carefully for clarity of context and understanding of meaning and make assumptions wherever required, for neither the invigilator will address your queries, nor the teacher/examiner will come to the examination hall for any assistance. 
+5.	Use only your own stationary.
+6.	Use only permanent ink-pens. Only the questions attempted with permanent ink-pens will be considered. Any part done using soft pencil cannot be claimed for checking/rechecking.
+
+
+Q1: Objectives										[60 Marks]
+
+
+a.	Give the answers in the table at the end of mcqs on question paper.
+1.	Which HTML attribute is used to define inline styles?
+o	a) style
+o	b) class
+o	c) styles
+o	d) font
+2.	What is the correct HTML element for the largest heading?
+o	a) <h1>
+o	b) <h6>
+o	c) <head>
+o	d) <header>
+3.	Which HTML attribute is used to provide a unique identifier for an element?
+o	a) id
+o	b) class
+o	c) name
+o	d) tag
+4.	What does the <ol> tag represent in HTML?
+o	a) Ordered List
+o	b) Object List
+o	c) Original List
+o	d) Outer List
+5.	Which property is used to change the background color in CSS?
+o	a) background-color
+o	b) bgcolor
+o	c) color
+o	d) background
+6.	How do you select an element with id "main" in CSS?
+o	a) #main
+o	b) .main
+o	c) main
+o	d) *main
+7.	Which CSS property controls the text size?
+o	a) font-size
+o	b) text-size
+o	c) font-style
+o	d) text-style
+8.	Which property is used to change the font of an element?
+o	a) font-family
+o	b) font-weight
+o	c) font-style
+o	d) font-type
+9.	Which Bootstrap class provides a responsive fixed-width container?
+o	a) .container
+o	b) .container-fluid
+o	c) .fixed-container
+o	d) .row
+10.	How do you create a responsive grid system in Bootstrap?
+o	a) Using rows and columns
+o	b) Using flexbox
+o	c) Using tables
+o	d) Using divs
+11.	What is the correct syntax to create a function in JavaScript?
+o	a) function myFunction() {}
+o	b) def myFunction() {}
+o	c) create myFunction() {}
+o	d) method myFunction() {}
+12.	How do you write "Hello World" in an alert box?
+o	a) alert("Hello World");
+o	b) msg("Hello World");
+o	c) msgBox("Hello World");
+o	d) alertBox("Hello World");
+13.	What will the following code output? console.log(typeof []);
+o	a) object
+o	b) array
+o	c) list
+o	d) undefined
+14.	What is the correct syntax to create a React component?
+o	a) class MyComponent extends React.Component {}
+o	b) component MyComponent extends React.Component {}
+o	c) function MyComponent extends React.Component {}
+o	d) class MyComponent extends React.Element {}
+15.	How do you pass data from parent to child component in React?
+o	a) Via props
+o	b) Via state
+o	c) Via context
+o	d) Via hooks
+16.	Which method in React is used to update the state of a component?
+o	a) this.setState
+o	b) this.updateState
+o	c) this.changeState
+o	d) this.modifyState
+17.	What is the purpose of keys in React?
+o	a) To help identify which items have changed, are added, or removed
+o	b) To uniquely identify elements for accessibility purposes
+o	c) To pass down values to components
+o	d) To store component state
+18.	Which command is used to install a package globally in Node.js?
+o	a) npm install -g package-name
+o	b) npm install package-name
+o	c) npm install global package-name
+o	d) npm install -global package-name
+19.	What is the default port for a Node.js application?
+o	a) 3000
+o	b) 8080
+o	c) 80
+o	d) 5000
+20.	How do you create both client and server in Node.js?
+o	a) Using the http module
+o	b) Using the net module
+o	c) Using the express module
+o	d) Using the url module
+o	e) Using the dns module
+21.	Which method is used to retrieve all documents from a MongoDB collection?
+o	a) find()
+o	b) getAll()
+o	c) retrieve()
+o	d) fetch()
+22.	What does CRUD stand for in the context of MongoDB?
+o	a) Create, Read, Update, Delete
+o	b) Connect, Read, Update, Delete
+o	c) Create, Retrieve, Update, Delete
+o	d) Connect, Retrieve, Update, Delete
+23.	How do you create a new Express application?
+o	a) var app = express()
+o	b) var app = new express()
+o	c) var app = Express()
+o	d) var app = new Express()
+24.	Which method is used to define a GET route in Express?
+o	a) app.get()
+o	b) app.route()
+o	c) app.fetch()
+o	d) app.retrieve()
+25.	How do you start a server in Express?
+o	a) app.listen()
+o	b) app.start()
+o	c) app.run()
+o	d) app.launch()
+26.	Which middleware function is used to parse incoming request bodies in Express?
+o	a) body-parser
+o	b) json-parser
+o	c) urlencoded-parser
+o	d) data-parser
+27.	How do you connect a MongoDB database to a Node.js application using Mongoose?
+o	a) mongoose.connect()
+o	b) mongoose.bind()
+o	c) mongoose.link()
+o	d) mongoose.attach()
+28.	Which of the following is true about React components?
+o	a) They can be stateful or stateless.
+o	b) They must always be stateful.
+o	c) They cannot hold any state.
+o	d) They must always be class-based.
+29.	Which CSS framework is designed to be used with React?
+o	a) Bootstrap
+o	b) Tailwind CSS
+o	c) Material-UI
+o	d) Foundation
+30.	What command is used to create a new React application using Create React App?
+o	a) npx create-react-app my-app
+o	b) npm create-react-app my-app
+o	c) npx react-create-app my-app
+o	d) npm create-app my-app
+31.	Which HTTP method is typically used to update data on a server?
+o	a) PUT
+o	b) GET
+o	c) POST
+o	d) DELETE
+32.	How do you make a JSON response in an Express route?
+o	a) res.json()
+o	b) res.send()
+o	c) res.return()
+o	d) res.end()
+33.	In MongoDB, which of the following is not a valid collection operation?
+o	a) db.collection.drop()
+o	b) db.collection.rename()
+o	c) db.collection.update()
+o	d) db.collection.copy()
+34.	Which command is used to initialize a new Node.js project?
+o	a) npm init
+o	b) npm start
+o	c) npm new
+o	d) npm create
+35.	Which of the following is not a valid JavaScript data type?
+o	a) Undefined
+o	b) Null
+o	c) Number
+o	d) Character
+36.	Which method is used to add one or more elements to the start of an array and returns the new length of the array?
+o	a) push()
+o	b) pop()
+o	c) concat()
+o	d) unshift()
+37.	How can you create an array in JavaScript?
+o	a) var arr = [];
+o	b) var arr = Array.create();
+o	c) var arr = new Array();
+o	d) Both a and c
+o	e) All
+38.	Which statement is used to handle runtime errors in JavaScript?
+o	a) try...catch
+o	b) exception...handle
+o	c) error...catch
+o	d) attempt...handle
+39.	How do you define middleware in Express.js?
+o	a) app.use()
+o	b) app.middleware()
+o	c) app.next()
+o	d) app.route()
+40.	Which of the following is a built-in middleware function in Express.js?
+o	a) morgan
+o	b) cookie-parser
+o	c) express.Router
+o	d) express.json
+Fill the Answer of Q1 Part a. in this table.
+1. a) style	15. a) Via props	29. c) Material-UI
+2. a) <h1>	16. a) this.setState	30. a) npx create-react-app my-app
+3. a) id	17. a) To help identify which items have changed, are added, or removed	31. a) PUT
+4. a) Ordered List	18. a) npm install -g package-name	32. a) res.json()
+5. a) background-color	19. a) 3000	33. d) db.collection.copy()
+6. a) #main	20. a) Using the http module	34. a) npm init
+7. a) font-size	21. a) find()	35. d) Character
+8. a) font-family	22. a) Create, Read, Update, Delete	36. d) unshift()
+9. a) .container	23. a) var app = express()	37. d) Both a and c
+10. a) Using rows and columns	24. a) app.get()	38. a) try...catch
+11. a) function myFunction() {}	25. a) app.listen()	39. a) app.use()
+12. a) alert("Hello World");	26. a) body-parser	40. d) express.json
+13. a) object	27. a) mongoose.connect()	
+14. a) class MyComponent extends React.Component {}	28. a) They can be stateful or stateless.	
+
+b.	Solve on question paper.
+1.	Show the output after clicking ShowCount button. If there is any error do not write the output only explain the error. [5 Marks]
+import React from 'react';
+
+class MyComponent extends React.Component {
+state = {
+count: 0
+}
+
+foo(e) {
+this.setState({ count: this.state.count -5 });
+}
+
+render() {
+return (
+<div>
+<p>Count: {this.state.count}</p>
+<button onClick={this.foo}>ShowCount</button>
+</div>
+);
+}
+}
+export default MyComponent;	Output
+No Output
+	Error
+foo must be an arrow function in order to use this
+2.	After clicking 3 times Add Item button what will be shown on the screen [5 Marks]
+import React from 'react';
+
+class List extends React.Component {
+        state = {
+            items: ['Item 1', 'Item 2']
+        }
+    addItem= (e) => {
+        this.setState({
+            items: ['New Item'] });
+        }
+    render() {
+        return (
+            <div>
+                <ul>
+     {this.state.items.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
+                <button onClick={this.addItem}>Add Item</button>
+            </div>
+        );
+    }
+}
+export default List;	Output
+New Item
+	
+
+3.	Write the output. [5 Marks]
+const x = 1
+const y = 2
+const z = 3
+console.count(
+  'z: ' + z + ' has been checked .. how many times?'
+)
+setTimeout(function(){
+  console.count(
+    'z: ' + z + ' has been checked .. how many times?'
+  )
+}, 1000);
+console.count(
+  'y: ' + y + ' has been checked .. how many times?'
+)	Output
+	z: 3 has been checked .. how many times?: 1
+y: 2 has been checked .. how many times?: 1
+z: 3 has been checked .. how many times?: 2
+
+
+4.	What will be the output of the following Express.js script when a GET request is made to /about? [5 Marks]
+const express = require('express');
+const app = express();
+const port = 3000;
+    app.use((req, res, next) => {
+        console.log('t1');
+        next();
+    });
+    app.get('/about1', (req, res) => {
+        console.log('about1');
+    });
+    app.use(function(req, res, next){
+        console.log('t2');
+    });
+    app.post('/about1', (req, res) => {
+        console.log('about2');
+    });
+    app.post('/about', (req, res) => {
+        console.log('about3');
+    });
+    app.get('/about', (req, res) => {
+        console.log('about4');
+    });
+    app.listen(port, () => {
+        console.log(`Server running at http://localhost:${port}/`);
+    });	Output
+t1
+t2
+
+
+
+
+
+Q2: Solve on Answer book									[40 marks]
+a.	Create a React component that fetches data from an API endpoint and displays the data in a list.  Fetch the data when the component mounts.  {API url is www.webapi.com/users, each user object has name, email, and age.} [15 Marks]
+import React, { Component } from 'react';
+import axios from 'axios';
+
+class UserList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: [],
+      loading: true,
+      error: null,
+    };
+  }
+
+  componentDidMount() {
+    this.fetchUsers();
+  }
+
+  fetchUsers = async () => {
+    try {
+      const response = await axios.get('https://www.webapi.com/users');
+      this.setState({ users: response.data, loading: false });
+    } catch (error) {
+      this.setState({ error, loading: false });
+    }
+  };
+
+  render() {
+    const { users, loading, error } = this.state;
+
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    }
+
+    return (
+      <div>
+        <h1>User List</h1>
+        <ul>
+          {users.map((user) => (
+            <li key={user.email}>
+              <p>Name: {user.name}</p>
+              <p>Email: {user.email}</p>
+              <p>Age: {user.age}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default UserList;
+
+b.	Consider the question Q2 part a. and instead of third party API create your own web server with express and save the required info in json format and write a route /getUsers with get method. You are required to write a server code and just calling and receiving logic on client side. [10 Marks]
+
+// server.js
+const express = require('express');
+const app = express();
+const PORT = 3001;
+
+// In-memory JSON data
+const users = [
+  { name: "John Doe", email: "john@example.com", age: 30 },
+  { name: "Jane Smith", email: "jane@example.com", age: 25 },
+  { name: "Alice Johnson", email: "alice@example.com", age: 35 }
+];
+
+app.get('/getUsers', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(JSON.stringify(users));
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+// src/UserList.js
+import React, { Component } from 'react';
+import axios from 'axios';
+
+class UserList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: [],
+      loading: true,
+      error: null,
+    };
+  }
+
+  componentDidMount() {
+    this.fetchUsers();
+  }
+
+  fetchUsers = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/getUsers');
+      this.setState({ users: response.data, loading: false });
+    } catch (error) {
+      this.setState({ error, loading: false });
+    }
+  };
+
+  render() {
+    const { users, loading, error } = this.state;
+
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    }
+
+    return (
+      <div>
+        <h1>User List</h1>
+        <ul>
+          {users.map((user) => (
+            <li key={user.email}>
+              <p>Name: {user.name}</p>
+              <p>Email: {user.email}</p>
+              <p>Age: {user.age}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default UserList;
+
+c.	Consider the Q2 part b. and instead of sending information from json, Get the data from MongoDB. Consider the MongoDB has already contains the collection of users. You are required to write a code of accessing data from MongoDB and sending to the client only. [15 Marks]
+// server.js
+const express = require('express');
+const mongoose = require('mongoose');
+const app = express();
+const PORT = 3001;
+
+// MongoDB connection URI
+const mongoURI = 'mongodb://localhost:27017/mydatabase';
+
+// Connect to MongoDB
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
+
+// Define a user schema and model
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  age: Number
+});
+
+const User = mongoose.model('User', userSchema);
+
+// Route to get users
+app.get('/getUsers', async (req, res) => {
+  try {
+    const users = await User.find({});
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+
+Q3: Solve on Answer Book								[55 marks]
+
+a.	Consider the Assignment 3 question on Redux. Explain the Redux concept using practical example code, which you have shown in Assignment#3. Note: Assignment marks will be calculated based on this question obtained marks. [10 Marks]
+1.	Store: The centralized place where the state of the application is stored.
+2.	Actions: Plain JavaScript objects that describe what happened.
+3.	Reducers: Functions that determine how the state should change in response to an action.
+4.	Dispatch: A method used to send actions to the store.
+5.	Connect: A function provided by react-redux to connect React components to the Redux store.
+Practical Example: Managing a List of Books
+Step 1: Install Dependencies
+First, install redux and react-redux:
+sh
+Copy code
+npm install redux react-redux
+Step 2: Set Up Redux Store
+src/store.js
+javascript
+Copy code
+import { createStore } from 'redux';
+import rootReducer from './reducers';
+
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+export default store;
+Step 3: Define Actions
+src/actions/bookActions.js
+javascript
+Copy code
+export const ADD_BOOK = 'ADD_BOOK';
+export const REMOVE_BOOK = 'REMOVE_BOOK';
+
+export const addBook = (book) => ({
+  type: ADD_BOOK,
+  payload: book
+});
+
+export const removeBook = (isbn) => ({
+  type: REMOVE_BOOK,
+  payload: isbn
+});
+Step 4: Create Reducers
+src/reducers/bookReducer.js
+javascript
+Copy code
+import { ADD_BOOK, REMOVE_BOOK } from '../actions/bookActions';
+
+const initialState = {
+  books: []
+};
+
+const bookReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_BOOK:
+      return {
+        ...state,
+        books: [...state.books, action.payload]
+      };
+    case REMOVE_BOOK:
+      return {
+        ...state,
+        books: state.books.filter(book => book.isbn !== action.payload)
+      };
+    default:
+      return state;
+  }
+};
+
+export default bookReducer;
+src/reducers/index.js
+javascript
+Copy code
+import { combineReducers } from 'redux';
+import bookReducer from './bookReducer';
+
+const rootReducer = combineReducers({
+  bookList: bookReducer
+});
+
+export default rootReducer;
+Step 5: Set Up Provider in React
+src/index.js
+javascript
+Copy code
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import App from './App';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+Step 6: Create React Components
+src/components/BookList.js
+javascript
+Copy code
+import React from 'react';
+import { connect } from 'react-redux';
+import { removeBook } from '../actions/bookActions';
+
+const BookList = ({ books, removeBook }) => {
+  return (
+    <div>
+      <h2>Book List</h2>
+      <ul>
+        {books.map((book, index) => (
+          <li key={index}>
+            {book.title} - {book.isbn}
+            <button onClick={() => removeBook(book.isbn)}>Remove</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const mapStateToProps = (state) => ({
+  books: state.bookList.books
+});
+
+const mapDispatchToProps = {
+  removeBook
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookList);
+src/components/AddBook.js
+javascript
+Copy code
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { addBook } from '../actions/bookActions';
+
+const AddBook = ({ addBook }) => {
+  const [title, setTitle] = useState('');
+  const [isbn, setIsbn] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addBook({ title, isbn });
+    setTitle('');
+    setIsbn('');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Title:</label>
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>ISBN:</label>
+        <input
+          type="text"
+          value={isbn}
+          onChange={(e) => setIsbn(e.target.value)}
+        />
+      </div>
+      <button type="submit">Add Book</button>
+    </form>
+  );
+};
+
+const mapDispatchToProps = {
+  addBook
+};
+
+export default connect(null, mapDispatchToProps)(AddBook);
+src/App.js
+javascript
+Copy code
+import React from 'react';
+import BookList from './components/BookList';
+import AddBook from './components/AddBook';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Book Manager</h1>
+      <AddBook />
+      <BookList />
+    </div>
+  );
+}
+
+export default App;
+
+
+a.	In the Express Server topic we have studied about Templates. You are required to use the templates for showing books data on requesting /showBooks route. The book object contains isbn, title, and price. [15 Marks]
+
+App.js
+const express = require('express');
+const app = express();
+const port = 3000;
+
+// Set EJS as the templating engine
+app.set('view engine', 'ejs');
+
+// Sample book data
+const books = [
+    { isbn: '978-3-16-148410-0', title: 'Book One', price: 29.99 },
+    { isbn: '978-1-4028-9462-6', title: 'Book Two', price: 39.99 },
+    { isbn: '978-0-12-374856-0', title: 'Book Three', price: 24.99 }
+];
+
+// Route to display books
+app.get('/showBooks', (req, res) => {
+    res.render('books', { books: books });
+});
+
+// Start the server
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
+
+
+views/books.ejs
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Books List</h1>
+    <table>
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Price</th>
+        </tr>
+        <% books.forEach(function(book) { %>
+            <tr>
+                <td><%= book.isbn %></td>
+                <td><%= book.title %></td>
+                <td><%= book.price %></td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+</html>
+
+b.	Explain the following routes and provide the examples of urls which can be called on the following routes: [7*4=28 Marks]
+1. 
+app.get('/ab?cd', (req, res) => {
+  res.send('ab?cd')
+})
+●	b zero time or 1 time
+●	This route path will match acd and abcd.
+
+2.
+app.get('/ab+cd', (req, res) => {
+  res.send('ab+cd')
+})
+●	b 1 time or many time
+●	This route path will match abcd, abbcd, abbbcd, and so on.
+
+3.
+app.get('/ab*cd', (req, res) => {
+  res.send('ab*cd')
+})
+●	Anything 0 or many times
+●	This route path will match abcd, abxcd, abRANDOMcd, ab123cd, and so on.
+
+
+4.
+app.get('/ab(cd)?e', (req, res) => {
+  res.send('ab(cd)?e')
+})
+●	(cd) 0 or many time
+●	This route path will match /abe and /abcde.
+
+5.
+app.get(/.*fly$/, (req, res) => {
+  res.send('/.*fly$/')
+})
+●	Anything in the start but end at fly
+●	This route path will match butterfly and dragonfly, but not butterflyman, dragonflyman, and so on.
+
+6.
+app.get('/flights/:from-:to', (req, res) => {
+  res.send(req.params)
+})
+●	:from and :to can be replace with any value, - will be used hardcoded
+●	flights/LAX-SFO
+
+7.
+app.all('/secret', (req, res, next) => {
+  console.log('Accessing the secret section ...')
+  next() 
+})
+●	all methods i.e. get, post, put on secret route will land here
+
+
+c.	Bonus: Draw a smiley. Keep smiling and brighten someone's day! [2 Marks]
