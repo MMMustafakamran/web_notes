@@ -4,6 +4,10 @@
 
 Introduction to JavaScript
 
+Introduction to JavaScript
+
+*(Extracted via OCR)*
+
 
 ---
 
@@ -16,7 +20,7 @@ Easy to Learn
 ES6 (ECMAScript 6) introduced and standardized in 2015
 
 
-### Images found on this page:
+### Images:
 
 ![page_2_img_1.jpeg](Lecture 1 - Introduction to JavaScript, Control Structure, String_images/page_2_img_1.jpeg)
 
@@ -35,7 +39,7 @@ Since 2016, versions are named by year (ECMAScript 2016, 2017, 2018, 2019, 2020)
 The 15th edition, ECMAScript 2024, is published in July 2024.
 
 
-### Images found on this page:
+### Images:
 
 ![page_3_img_1.jpeg](Lecture 1 - Introduction to JavaScript, Control Structure, String_images/page_3_img_1.jpeg)
 
@@ -56,7 +60,7 @@ quotes
 • Output on console using console.log
 
 
-### Images found on this page:
+### Images:
 
 ![page_4_img_1.jpeg](Lecture 1 - Introduction to JavaScript, Control Structure, String_images/page_4_img_1.jpeg)
 
@@ -86,7 +90,7 @@ var x = "I am one hundred"
 console.log(x) // I am one hundred
 
 
-### Images found on this page:
+### Images:
 
 ![page_5_img_1.jpeg](Lecture 1 - Introduction to JavaScript, Control Structure, String_images/page_5_img_1.jpeg)
 
@@ -106,7 +110,7 @@ console.log("a == b:", a == b)
 console.log("a === b:", a === b)
 
 
-### Images found on this page:
+### Images:
 
 ![page_6_img_1.jpeg](Lecture 1 - Introduction to JavaScript, Control Structure, String_images/page_6_img_1.jpeg)
 
@@ -132,7 +136,7 @@ var person = { firstName:"John",
 lastName:"Doe", age:50 };
 
 
-### Images found on this page:
+### Images:
 
 ![page_7_img_1.jpeg](Lecture 1 - Introduction to JavaScript, Control Structure, String_images/page_7_img_1.jpeg)
 
@@ -169,7 +173,7 @@ typeof (3 + 4)
 // Returns "number"
 
 
-### Images found on this page:
+### Images:
 
 ![page_8_img_1.jpeg](Lecture 1 - Introduction to JavaScript, Control Structure, String_images/page_8_img_1.jpeg)
 
@@ -195,7 +199,7 @@ null == undefined
 // true
 
 
-### Images found on this page:
+### Images:
 
 ![page_9_img_1.jpeg](Lecture 1 - Introduction to JavaScript, Control Structure, String_images/page_9_img_1.jpeg)
 
@@ -226,7 +230,7 @@ typeof x
 // Returns "undefined" (if x has no value)
 
 
-### Images found on this page:
+### Images:
 
 ![page_10_img_1.jpeg](Lecture 1 - Introduction to JavaScript, Control Structure, String_images/page_10_img_1.jpeg)
 
@@ -252,7 +256,7 @@ typeof function myFunc(){}
 // Returns "function"
 
 
-### Images found on this page:
+### Images:
 
 ![page_11_img_1.jpeg](Lecture 1 - Introduction to JavaScript, Control Structure, String_images/page_11_img_1.jpeg)
 
@@ -278,7 +282,7 @@ Yes
 No
 
 
-### Images found on this page:
+### Images:
 
 ![page_12_img_1.jpeg](Lecture 1 - Introduction to JavaScript, Control Structure, String_images/page_12_img_1.jpeg)
 
@@ -370,7 +374,7 @@ result = parseInt(numOne) + parseInt(numTwo)
 document.getElementById("result").innerHTML = “Result “+ result;
 
 
-### Images found on this page:
+### Images:
 
 ![page_16_img_1.png](Lecture 1 - Introduction to JavaScript, Control Structure, String_images/page_16_img_1.png)
 

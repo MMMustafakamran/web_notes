@@ -4,6 +4,10 @@
 
 JavaScript Arrays
 
+JavaScript Arrays
+
+*(Extracted via OCR)*
+
 
 ---
 
@@ -16,7 +20,7 @@ cars = ["Saab", "Volvo", "BMW"];
 //We can use Array with var, let and const
 
 
-### Images found on this page:
+### Images:
 
 ![page_2_img_1.jpeg](Lecture 2 - JS arrays_images/page_2_img_1.jpeg)
 
@@ -36,7 +40,7 @@ array, containing the values of the joined arrays.
 Array1.concat(Array2)
 
 
-### Images found on this page:
+### Images:
 
 ![page_3_img_1.jpeg](Lecture 2 - JS arrays_images/page_3_img_1.jpeg)
 
@@ -67,7 +71,7 @@ array.
 array.copyWithin(target, start, end)
 
 
-### Images found on this page:
+### Images:
 
 ![page_5_img_1.jpeg](Lecture 2 - JS arrays_images/page_5_img_1.jpeg)
 
@@ -107,7 +111,7 @@ const fruits = ["Banana", "Orange", "Apple", "Mango"];
 • entries() does not change the original array.
 
 
-### Images found on this page:
+### Images:
 
 ![page_7_img_1.png](Lecture 2 - JS arrays_images/page_7_img_1.png)
 
@@ -124,7 +128,7 @@ console.log(x);
 }
 
 
-### Images found on this page:
+### Images:
 
 ![page_8_img_1.jpeg](Lecture 2 - JS arrays_images/page_8_img_1.jpeg)
 
@@ -155,7 +159,7 @@ const array1 = [1, 2, 3, 4];
 console.log(array1.fill(0, 2, 3));
 
 
-### Images found on this page:
+### Images:
 
 ![page_10_img_1.jpeg](Lecture 2 - JS arrays_images/page_10_img_1.jpeg)
 
@@ -188,7 +192,7 @@ const result = ages.filter(age => age > 18);
 console.log(result);
 
 
-### Images found on this page:
+### Images:
 
 ![page_12_img_1.jpeg](Lecture 2 - JS arrays_images/page_12_img_1.jpeg)
 
@@ -208,7 +212,7 @@ not check the remaining values)
 • Other wise it returns undefined
 
 
-### Images found on this page:
+### Images:
 
 ![page_13_img_1.jpeg](Lecture 2 - JS arrays_images/page_13_img_1.jpeg)
 
@@ -225,7 +229,7 @@ const found = ages.find(age => age > 18);
 console.log(found);
 
 
-### Images found on this page:
+### Images:
 
 ![page_14_img_1.jpeg](Lecture 2 - JS arrays_images/page_14_img_1.jpeg)
 
@@ -254,7 +258,7 @@ console.log(map1);
 2,8,18,32
 
 
-### Images found on this page:
+### Images:
 
 ![page_16_img_1.jpeg](Lecture 2 - JS arrays_images/page_16_img_1.jpeg)
 
@@ -270,7 +274,7 @@ forEach() is not executed for array elements
 without values.
 
 
-### Images found on this page:
+### Images:
 
 ![page_17_img_1.jpeg](Lecture 2 - JS arrays_images/page_17_img_1.jpeg)
 
@@ -284,7 +288,7 @@ const array1 = ['a', '2', 'c'];
 array1.forEach(element => console.log(element));
 
 
-### Images found on this page:
+### Images:
 
 ![page_18_img_1.jpeg](Lecture 2 - JS arrays_images/page_18_img_1.jpeg)
 
@@ -302,7 +306,7 @@ returns another list of the same size with the transformed members
 (example: transforming list of strings to uppercase).
 
 
-### Images found on this page:
+### Images:
 
 ![page_19_img_1.jpeg](Lecture 2 - JS arrays_images/page_19_img_1.jpeg)
 
@@ -321,7 +325,7 @@ end argument.
 array.slice(start, end)
 
 
-### Images found on this page:
+### Images:
 
 ![page_20_img_1.jpeg](Lecture 2 - JS arrays_images/page_20_img_1.jpeg)
 
@@ -355,7 +359,7 @@ array.pop()
 • Use shift() to remove element from first position.
 
 
-### Images found on this page:
+### Images:
 
 ![page_22_img_1.jpeg](Lecture 2 - JS arrays_images/page_22_img_1.jpeg)
 
@@ -374,7 +378,7 @@ console.log(plants.shift());
 console.log(plants);
 
 
-### Images found on this page:
+### Images:
 
 ![page_23_img_1.jpeg](Lecture 2 - JS arrays_images/page_23_img_1.jpeg)
 
@@ -393,7 +397,7 @@ unshift().
 array.push(item1, item2, ..., itemX)
 
 
-### Images found on this page:
+### Images:
 
 ![page_24_img_1.jpeg](Lecture 2 - JS arrays_images/page_24_img_1.jpeg)
 
@@ -415,7 +419,7 @@ animals.unshift(‘FirstAnimal’);
 console.log(animals);
 
 
-### Images found on this page:
+### Images:
 
 ![page_25_img_1.png](Lecture 2 - JS arrays_images/page_25_img_1.png)
 
@@ -435,7 +439,7 @@ We can also use ‘Infinity’ parameter for all
 sub arrays.
 
 
-### Images found on this page:
+### Images:
 
 ![page_26_img_1.jpeg](Lecture 2 - JS arrays_images/page_26_img_1.jpeg)
 
@@ -451,7 +455,7 @@ const flatNumbers = numbers.flat();
 console.log(flatNumbers);
 
 
-### Images found on this page:
+### Images:
 
 ![page_27_img_1.jpeg](Lecture 2 - JS arrays_images/page_27_img_1.jpeg)
 
@@ -469,7 +473,7 @@ const flatNumbers1 = numbers1.flat(Infinity);
 console.log(flatNumbers1);
 
 
-### Images found on this page:
+### Images:
 
 ![page_28_img_1.png](Lecture 2 - JS arrays_images/page_28_img_1.png)
 
@@ -499,7 +503,7 @@ console.log(fruits.sort());
 console.log(fruits.reverse());
 
 
-### Images found on this page:
+### Images:
 
 ![page_30_img_1.jpeg](Lecture 2 - JS arrays_images/page_30_img_1.jpeg)
 
