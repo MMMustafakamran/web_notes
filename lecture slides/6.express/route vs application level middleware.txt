@@ -1,0 +1,39 @@
+const express = require('express');
+const app = express();
+
+// Application-level middleware: Logging middleware
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  next();
+});
+
+// Router-level middleware: Authentication middleware for '/api' routes
+const apiRouter = express.Router();
+apiRouter.use((req, res, next) => {
+  // Simulate authentication logic
+  const isAuthenticated = true; // Assuming the user is authenticated
+  if (isAuthenticated) {
+    next(); // Allow the request to proceed
+  } else {
+    res.status(401).send('Unauthorized'); // Respond with 401 Unauthorized
+  }
+});
+
+// Route: '/api/data'
+apiRouter.get('/data', (req, res) => {
+  res.send('Data from the API');
+});
+
+// Mount the router at '/api'
+app.use('/api', apiRouter);
+
+// Route: '/'
+app.get('/', (req, res) => {
+  res.send('Home page');
+});
+
+// Start the Express server
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
