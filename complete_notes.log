@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.20)  20 DEC 2025 19:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.20)  20 DEC 2025 19:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -731,25 +731,25 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 ) (complete_notes.aux)
 \openout1 = `complete_notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-Package hyperref Info: Link coloring ON on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+Package hyperref Info: Link coloring ON on input line 65.
  (complete_notes.out)
 (complete_notes.out)
 \@outlinefile=\write4
@@ -818,11 +818,11 @@ topdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 53.
+(Font)              <12> on input line 68.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 53.
+(Font)              <8> on input line 68.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 53.
+(Font)              <6> on input line 68.
  [1
 
 {C:/Users/dynamic computer/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (
@@ -835,16 +835,29 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
 (C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.
 fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-) [2])
+)
+! Misplaced alignment tab character &.
+<argument> ...numberline {3}Chapter 3: Bootstrap &
+                                                   RWD}\Hy@toclinkend 
+l.32 ...Chapter 3: Bootstrap & RWD}{16}{section.3}
+                                                  %
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[2])
 \tf@toc=\write5
 \openout5 = `complete_notes.toc'.
 
- [3]
+ [3] (chapters/ch1_html.tex
 
 ! Undefined control sequence.
 \lstlisting ->\def \lstenv@name 
                                 {lstlisting}\begingroup \lst@setcatcodes \ca...
-l.84 \end{lstlisting}
+l.27 \end{lstlisting}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -858,7 +871,7 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.84 \end{lstlisting}
+l.27 \end{lstlisting}
                      
 I'm ignoring this, since I wasn't doing a \def {lstlisting}\begingroup \makeatl
 etter \catcode `\==12\relax \catcode \active =\active \lstlisting@.
@@ -870,7 +883,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.84 \end{lstlisting}
+l.27 \end{lstlisting}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -879,7 +892,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.84 \end{lstlisting}
+l.27 \end{lstlisting}
                      
 Things are pretty mixed up, but I think the worst is over.
 
@@ -893,7 +906,7 @@ misc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 ) [4] [5]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 158.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 101.
 
 
 ! LaTeX Error: Lonely \item--perhaps a missing list environment.
@@ -902,21 +915,21 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.188     \item \textbf
+l.131     \item \textbf
                        {Image Maps}: Allow multiple links (hotspots) on a si...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 188
+Underfull \hbox (badness 10000) detected at line 131
 [][]
  []
 
 ! Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -928,7 +941,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@enditemize ...x \else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -939,7 +952,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -948,7 +961,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -959,7 +972,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -970,7 +983,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -979,7 +992,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -990,7 +1003,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1001,7 +1014,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1012,14 +1025,14 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
 ! Undefined control sequence.
 \enit@enditemize ...ist \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1030,7 +1043,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1039,7 +1052,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1050,7 +1063,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1061,7 +1074,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1070,7 +1083,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1081,7 +1094,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1092,7 +1105,7 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
@@ -1103,7 +1116,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1112,7 +1125,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.189 \end{itemize}
+l.132 \end{itemize}
                    
 Things are pretty mixed up, but I think the worst is over.
 
@@ -1123,21 +1136,21 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.228     \item \texttt
+l.171     \item \texttt
                        {rowspan} and \texttt{colspan}: Allow cells to span m...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 228
+Underfull \hbox (badness 10000) detected at line 171
 [][]
  []
 
 ! Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1148,7 +1161,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@enditemize ...x \else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1159,7 +1172,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1168,7 +1181,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1179,7 +1192,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1190,7 +1203,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1199,7 +1212,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1210,7 +1223,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1221,7 +1234,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1232,14 +1245,14 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
 ! Undefined control sequence.
 \enit@enditemize ...ist \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1250,7 +1263,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1259,7 +1272,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1270,7 +1283,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1281,7 +1294,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1290,7 +1303,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1301,7 +1314,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1312,7 +1325,7 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
@@ -1323,7 +1336,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1332,7 +1345,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.229 \end{itemize}
+l.172 \end{itemize}
                    
 Things are pretty mixed up, but I think the worst is over.
 
@@ -1340,7 +1353,7 @@ Things are pretty mixed up, but I think the worst is over.
 ! Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1351,7 +1364,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@enditemize ...x \else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1362,7 +1375,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1371,7 +1384,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1382,7 +1395,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1393,7 +1406,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1402,7 +1415,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1413,7 +1426,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1424,7 +1437,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1435,14 +1448,14 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
 ! Undefined control sequence.
 \enit@enditemize ...ist \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1453,7 +1466,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1462,7 +1475,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1473,7 +1486,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1484,7 +1497,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1493,7 +1506,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1504,7 +1517,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1515,7 +1528,7 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
@@ -1526,7 +1539,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1535,11 +1548,11 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.281 \end{itemize}
+l.224 \end{itemize}
                    
 Things are pretty mixed up, but I think the worst is over.
 
-(qa_fragments/ch1_qa.tex [8]) [9] [10]
+(qa_fragments/ch1_qa.tex [8]) [9]) [10] (chapters/ch2_css.tex
 
 ! LaTeX Error: Lonely \item--perhaps a missing list environment.
 
@@ -1547,22 +1560,22 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.327     \item \textbf
-                       {Attribute Selector}: Styles elements based on their ...
+l.41     \item \textbf
+                      {Attribute Selector}: Styles elements based on their a...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 327
+Underfull \hbox (badness 10000) detected at line 41
 [][]
  []
 
 ! Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1572,8 +1585,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@enditemize ...x \else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1583,8 +1596,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -1592,8 +1605,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1603,8 +1616,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1614,8 +1627,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -1623,8 +1636,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1634,8 +1647,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1645,8 +1658,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1656,15 +1669,15 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 I'm forgetting what you said and using zero instead.
 
 ! Undefined control sequence.
 \enit@enditemize ...ist \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1674,8 +1687,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -1683,8 +1696,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1694,8 +1707,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1705,8 +1718,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -1714,8 +1727,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1725,8 +1738,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1736,8 +1749,8 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 I'm forgetting what you said and using zero instead.
 
 
@@ -1747,8 +1760,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -1756,8 +1769,8 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.328 \end{itemize}
-                   
+l.42 \end{itemize}
+                  
 Things are pretty mixed up, but I think the worst is over.
 
 
@@ -1780,8 +1793,8 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.332 \begin{lstlisting}[language=CSS]
-                                      
+l.46 \begin{lstlisting}[language=CSS]
+                                     
 The following languages weren't loadable:
     ,css$
 This may cause errors in the sequel.
@@ -1793,8 +1806,8 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.332 \begin{lstlisting}[language=CSS]
-                                      
+l.46 \begin{lstlisting}[language=CSS]
+                                     
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -1805,22 +1818,22 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.347     \item \textbf
-                       {Margin}: Transparent area outside the border (space ...
+l.61     \item \textbf
+                      {Margin}: Transparent area outside the border (space b...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 347
+Underfull \hbox (badness 10000) detected at line 61
 [][]
  []
 
 ! Undefined control sequence.
 \enit@endenumerate ->\enit@after 
                                  \endlist \ifx \enit@series \relax \else \if...
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1831,8 +1844,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@endenumerate ...\else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1842,8 +1855,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -1851,8 +1864,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1862,8 +1875,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1873,8 +1886,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -1882,8 +1895,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1893,8 +1906,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1904,8 +1917,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1915,15 +1928,15 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 I'm forgetting what you said and using zero instead.
 
 ! Undefined control sequence.
 \enit@endenumerate ...t \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1933,8 +1946,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -1942,8 +1955,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1953,8 +1966,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1964,8 +1977,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -1973,8 +1986,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1984,8 +1997,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1995,8 +2008,8 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 I'm forgetting what you said and using zero instead.
 
 
@@ -2006,8 +2019,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -2015,8 +2028,8 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.348 \end{enumerate}
-                     
+l.62 \end{enumerate}
+                    
 Things are pretty mixed up, but I think the worst is over.
 
 
@@ -2039,8 +2052,8 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.352 \begin{lstlisting}[language=CSS]
-                                      
+l.66 \begin{lstlisting}[language=CSS]
+                                     
 The following languages weren't loadable:
     ,css$
 This may cause errors in the sequel.
@@ -2052,8 +2065,8 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.352 \begin{lstlisting}[language=CSS]
-                                      
+l.66 \begin{lstlisting}[language=CSS]
+                                     
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2153,7 +2166,7 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.402 \begin{lstlisting}[language=CSS]
+l.116 \begin{lstlisting}[language=CSS]
                                       
 The following languages weren't loadable:
     ,css$
@@ -2166,7 +2179,7 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.402 \begin{lstlisting}[language=CSS]
+l.116 \begin{lstlisting}[language=CSS]
                                       
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2191,7 +2204,7 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.414 \begin{lstlisting}[language=CSS]
+l.128 \begin{lstlisting}[language=CSS]
                                       
 The following languages weren't loadable:
     ,css$
@@ -2204,12 +2217,29 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.414 \begin{lstlisting}[language=CSS]
+l.128 \begin{lstlisting}[language=CSS]
                                       
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[14] [15]
+[14]) [15] (chapters/ch3_bootstrap.tex
+! Misplaced alignment tab character &.
+<argument> Chapter 3: Bootstrap &
+                                  RWD
+l.1 \section{Chapter 3: Bootstrap & RWD}
+                                        
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `alignment tab' on input line 1.
+
+
 (C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
 lang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
@@ -2229,8 +2259,8 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.452 \begin{lstlisting}[language=CSS]
-                                      
+l.25 \begin{lstlisting}[language=CSS]
+                                     
 The following languages weren't loadable:
     ,css$
 This may cause errors in the sequel.
@@ -2242,13 +2272,13 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.452 \begin{lstlisting}[language=CSS]
-                                      
+l.25 \begin{lstlisting}[language=CSS]
+                                     
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (0.57143pt too wide) in paragraph at lines 451--452
+Overfull \hbox (0.57143pt too wide) in paragraph at lines 24--25
 \T1/cmr/m/n/10.95 Standard box model adds padding and bor-ders to the width, wh
 ich can break lay-outs. Use \T1/cmtt/m/n/10.95 box-sizing:
  []
@@ -2273,8 +2303,8 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.460 \begin{lstlisting}[language=CSS]
-                                      
+l.33 \begin{lstlisting}[language=CSS]
+                                     
 The following languages weren't loadable:
     ,css$
 This may cause errors in the sequel.
@@ -2286,8 +2316,8 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.460 \begin{lstlisting}[language=CSS]
-                                      
+l.33 \begin{lstlisting}[language=CSS]
+                                     
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2311,8 +2341,8 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.478 \begin{lstlisting}[language=CSS]
-                                      
+l.51 \begin{lstlisting}[language=CSS]
+                                     
 The following languages weren't loadable:
     ,css$
 This may cause errors in the sequel.
@@ -2324,8 +2354,8 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.478 \begin{lstlisting}[language=CSS]
-                                      
+l.51 \begin{lstlisting}[language=CSS]
+                                     
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2349,8 +2379,8 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.490 \begin{lstlisting}[language=CSS]
-                                      
+l.63 \begin{lstlisting}[language=CSS]
+                                     
 The following languages weren't loadable:
     ,css$
 This may cause errors in the sequel.
@@ -2362,8 +2392,8 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.490 \begin{lstlisting}[language=CSS]
-                                      
+l.63 \begin{lstlisting}[language=CSS]
+                                     
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2375,7 +2405,7 @@ See the xcolor package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.562 ...=Practical Example: Bootstrap Components]
+l.135 ...=Practical Example: Bootstrap Components]
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2387,7 +2417,7 @@ See the xcolor package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.562 ...=Practical Example: Bootstrap Components]
+l.135 ...=Practical Example: Bootstrap Components]
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2430,8 +2460,8 @@ l.43 \begin{lstlisting}[language=CSS]
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-) [19] [20]
-Overfull \hbox (10.32916pt too wide) in paragraph at lines 640--641
+) [19]) [20] (chapters/ch4_js.tex
+Overfull \hbox (10.32916pt too wide) in paragraph at lines 51--52
 \T1/cmr/m/n/10.95 Common meth-ods: \T1/cmtt/m/n/10.95 concat()\T1/cmr/m/n/10.95
  , \T1/cmtt/m/n/10.95 charAt()\T1/cmr/m/n/10.95 , \T1/cmtt/m/n/10.95 replace()\
 T1/cmr/m/n/10.95 , \T1/cmtt/m/n/10.95 toLowerCase()\T1/cmr/m/n/10.95 , \T1/cmtt
@@ -2447,22 +2477,22 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.642     \item \textbf
-                       {Ordering}: \texttt{sort()} (alphabetical), \texttt{r...
+l.53     \item \textbf
+                      {Ordering}: \texttt{sort()} (alphabetical), \texttt{re...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 642
+Underfull \hbox (badness 10000) detected at line 53
 [][]
  []
 
 ! Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2472,8 +2502,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@enditemize ...x \else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2483,8 +2513,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -2492,8 +2522,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2503,8 +2533,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2514,8 +2544,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -2523,8 +2553,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2534,8 +2564,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2545,8 +2575,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2556,15 +2586,15 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 I'm forgetting what you said and using zero instead.
 
 ! Undefined control sequence.
 \enit@enditemize ...ist \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2574,8 +2604,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -2583,8 +2613,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2594,8 +2624,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2605,8 +2635,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -2614,8 +2644,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2625,8 +2655,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2636,8 +2666,8 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 I'm forgetting what you said and using zero instead.
 
 
@@ -2647,8 +2677,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -2656,505 +2686,14 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.643 \end{itemize}
-                   
+l.54 \end{itemize}
+                  
 Things are pretty mixed up, but I think the worst is over.
 
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.647 \begin{lstlisting}[language=JavaScript]
-                                             
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.647 \begin{lstlisting}[language=JavaScript]
-                                             
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.681 \begin{lstlisting}[language=JavaScript]
-                                             
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.681 \begin{lstlisting}[language=JavaScript]
-                                             
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.697 \begin{lstlisting}[language=JavaScript]
-                                             
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.697 \begin{lstlisting}[language=JavaScript]
-                                             
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[22] (qa_fragments/ch4_qa.tex
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9     \begin{lstlisting}[language=JavaScript]
-                                               
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9     \begin{lstlisting}[language=JavaScript]
-                                               
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24     \begin{lstlisting}[language=JavaScript]
-                                                
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24     \begin{lstlisting}[language=JavaScript]
-                                                
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[23]
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46     \begin{lstlisting}[language=JavaScript]
-                                                
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46     \begin{lstlisting}[language=JavaScript]
-                                                
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.54 \begin{lstlisting}[language=JavaScript]
-                                            
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.54 \begin{lstlisting}[language=JavaScript]
-                                            
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.731 \begin{lstlisting}[language=JavaScript]
-                                             
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.731 \begin{lstlisting}[language=JavaScript]
-                                             
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.740 \begin{lstlisting}[language=JavaScript]
-                                             
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.740 \begin{lstlisting}[language=JavaScript]
-                                             
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[24] (qa_fragments/ch4_qa.tex
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9     \begin{lstlisting}[language=JavaScript]
-                                               
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9     \begin{lstlisting}[language=JavaScript]
-                                               
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24     \begin{lstlisting}[language=JavaScript]
-                                                
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24     \begin{lstlisting}[language=JavaScript]
-                                                
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46     \begin{lstlisting}[language=JavaScript]
-                                                
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46     \begin{lstlisting}[language=JavaScript]
-                                                
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.54 \begin{lstlisting}[language=JavaScript]
-                                            
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.54 \begin{lstlisting}[language=JavaScript]
-                                            
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-) [25] [26]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 59.
+[22] (qa_fragments/ch4_qa.tex [23]) [24] (qa_fragments/ch4_qa.tex) [25])
+[26] (chapters/ch5_react.tex
 
 ! LaTeX Error: Lonely \item--perhaps a missing list environment.
 
@@ -3162,22 +2701,22 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.792     \item \textbf
-                       {Class Components (Container)}: Use ES6 classes and h...
+l.33     \item \textbf
+                      {Class Components (Container)}: Use ES6 classes and ha...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 792
+Underfull \hbox (badness 10000) detected at line 33
 [][]
  []
 
 ! Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3187,8 +2726,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@enditemize ...x \else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3198,8 +2737,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -3207,8 +2746,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3218,8 +2757,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3229,8 +2768,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -3238,8 +2777,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3249,8 +2788,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3260,8 +2799,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3271,15 +2810,15 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 I'm forgetting what you said and using zero instead.
 
 ! Undefined control sequence.
 \enit@enditemize ...ist \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3289,8 +2828,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -3298,8 +2837,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3309,8 +2848,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3320,8 +2859,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -3329,8 +2868,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3340,8 +2879,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3351,8 +2890,8 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 I'm forgetting what you said and using zero instead.
 
 
@@ -3362,8 +2901,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -3371,163 +2910,11 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.793 \end{itemize}
-                   
+l.34 \end{itemize}
+                  
 Things are pretty mixed up, but I think the worst is over.
 
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.797 \begin{lstlisting}[language=JavaScript]
-                                             
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.797 \begin{lstlisting}[language=JavaScript]
-                                             
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[27]
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.826 \begin{lstlisting}[language=JavaScript]
-                                             
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.826 \begin{lstlisting}[language=JavaScript]
-                                             
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[28]
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 \begin{lstlisting}[language=JavaScript]
-                                             
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.883 \begin{lstlisting}[language=JavaScript]
-                                             
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-(qa_fragments/ch5_qa.tex
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.18 \begin{lstlisting}[language=JavaScript]
-                                            
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.18 \begin{lstlisting}[language=JavaScript]
-                                            
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[29]
+[27] [28] (qa_fragments/ch5_qa.tex [29]
 ! Misplaced alignment tab character &.
 <argument> Hooks &
                    Functional Components
@@ -3540,165 +2927,14 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.37 \begin{lstlisting}[language=JavaScript]
-                                            
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.37 \begin{lstlisting}[language=JavaScript]
-                                            
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
-Overfull \hbox (36.59444pt too wide) in paragraph at lines 891--892
+Overfull \hbox (36.59444pt too wide) in paragraph at lines 132--133
 []\T1/cmtt/m/n/10.95 useEffect\T1/cmr/m/n/10.95 : Han-dles side ef-fects (like 
 data fetch-ing). Re-places life-cy-cle meth-ods like \T1/cmtt/m/n/10.95 compone
 ntDidMount\T1/cmr/m/n/10.95 . 
  []
 
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.896 \begin{lstlisting}[language=JavaScript]
-                                             
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.896 \begin{lstlisting}[language=JavaScript]
-                                             
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[30]
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.905 \begin{lstlisting}[language=JavaScript]
-                                             
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.905 \begin{lstlisting}[language=JavaScript]
-                                             
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[31]
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.949 \begin{lstlisting}[language=JavaScript]
-                                             
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.949 \begin{lstlisting}[language=JavaScript]
-                                             
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+[30]) [31] (chapters/ch6_express.tex
 
 ! LaTeX Error: Lonely \item--perhaps a missing list environment.
 
@@ -3706,22 +2942,22 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.973     \item \textbf
-                       {Third-party}: Community modules like \texttt{morgan}...
+l.47     \item \textbf
+                      {Third-party}: Community modules like \texttt{morgan} ...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 973
+Underfull \hbox (badness 10000) detected at line 47
 [][]
  []
 
 ! Undefined control sequence.
 \enit@endenumerate ->\enit@after 
                                  \endlist \ifx \enit@series \relax \else \if...
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3731,8 +2967,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@endenumerate ...\else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3742,8 +2978,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -3751,8 +2987,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3762,8 +2998,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3773,8 +3009,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -3782,8 +3018,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3793,8 +3029,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3804,8 +3040,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3815,15 +3051,15 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 I'm forgetting what you said and using zero instead.
 
 ! Undefined control sequence.
 \enit@endenumerate ...t \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3833,8 +3069,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -3842,8 +3078,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3853,8 +3089,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3864,8 +3100,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -3873,8 +3109,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3884,8 +3120,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3895,8 +3131,8 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 I'm forgetting what you said and using zero instead.
 
 
@@ -3906,8 +3142,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -3915,47 +3151,9 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.974 \end{enumerate}
-                     
+l.48 \end{enumerate}
+                    
 Things are pretty mixed up, but I think the worst is over.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.978 \begin{lstlisting}[language=JavaScript]
-                                             
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.978 \begin{lstlisting}[language=JavaScript]
-                                             
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
 
 [32]
 
@@ -3965,22 +3163,22 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.988     \item \textbf
-                       {Chaining}: Use \texttt{app.route()} to define multip...
+l.62     \item \textbf
+                      {Chaining}: Use \texttt{app.route()} to define multipl...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 988
+Underfull \hbox (badness 10000) detected at line 62
 [][]
  []
 
 ! Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3990,8 +3188,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@enditemize ...x \else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4001,8 +3199,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -4010,8 +3208,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4021,8 +3219,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4032,8 +3230,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -4041,8 +3239,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4052,8 +3250,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4063,8 +3261,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4074,15 +3272,15 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 I'm forgetting what you said and using zero instead.
 
 ! Undefined control sequence.
 \enit@enditemize ...ist \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4092,8 +3290,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -4101,8 +3299,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4112,8 +3310,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4123,8 +3321,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -4132,8 +3330,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4143,8 +3341,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4154,8 +3352,8 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 I'm forgetting what you said and using zero instead.
 
 
@@ -4165,8 +3363,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -4174,201 +3372,11 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.989 \end{itemize}
-                   
+l.63 \end{itemize}
+                  
 Things are pretty mixed up, but I think the worst is over.
 
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.993 \begin{lstlisting}[language=JavaScript]
-                                             
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.993 \begin{lstlisting}[language=JavaScript]
-                                             
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1016 \begin{lstlisting}[language=JavaScript]
-                                              
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1016 \begin{lstlisting}[language=JavaScript]
-                                              
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-(qa_fragments/ch6_qa.tex
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.12     \begin{lstlisting}[language=JavaScript]
-                                                
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.12     \begin{lstlisting}[language=JavaScript]
-                                                
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[33]
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.23 \begin{lstlisting}[language=JavaScript]
-                                            
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.23 \begin{lstlisting}[language=JavaScript]
-                                            
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-) [34]
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1086 \begin{lstlisting}[language=JavaScript]
-                                              
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1086 \begin{lstlisting}[language=JavaScript]
-                                              
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[35]
+(qa_fragments/ch6_qa.tex [33])) [34] (chapters/ch7_mongo.tex [35]
 
 ! LaTeX Error: Lonely \item--perhaps a missing list environment.
 
@@ -4376,13 +3384,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1102     \item \textbf
-                        {Schema}: Defines the structure of the document.
+l.65     \item \textbf
+                      {Schema}: Defines the structure of the document.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1102
+Underfull \hbox (badness 10000) detected at line 65
 [][]
  []
 
@@ -4393,22 +3401,22 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1103     \item \textbf
-                        {Model}: A constructor that creates documents based ...
+l.66     \item \textbf
+                      {Model}: A constructor that creates documents based on...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1103
+Underfull \hbox (badness 10000) detected at line 66
 [][]
  []
 
 ! Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4418,8 +3426,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@enditemize ...x \else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4429,8 +3437,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -4438,8 +3446,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4449,8 +3457,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4460,8 +3468,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -4469,8 +3477,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4480,8 +3488,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4491,8 +3499,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4502,15 +3510,15 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 I'm forgetting what you said and using zero instead.
 
 ! Undefined control sequence.
 \enit@enditemize ...ist \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4520,8 +3528,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -4529,8 +3537,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4540,8 +3548,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4551,8 +3559,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -4560,8 +3568,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4571,8 +3579,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4582,8 +3590,8 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 I'm forgetting what you said and using zero instead.
 
 
@@ -4593,8 +3601,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -4602,85 +3610,9 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.1104 \end{itemize}
-                    
+l.67 \end{itemize}
+                  
 Things are pretty mixed up, but I think the worst is over.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1107 \begin{lstlisting}[language=JavaScript]
-                                              
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1107 \begin{lstlisting}[language=JavaScript]
-                                              
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1121 \begin{lstlisting}[language=JavaScript]
-                                              
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1121 \begin{lstlisting}[language=JavaScript]
-                                              
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
 
 
 ! LaTeX Error: Lonely \item--perhaps a missing list environment.
@@ -4689,22 +3621,22 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1133     \item \textbf
-                        {Many-to-Many}: Create a third "junction" collection...
+l.96     \item \textbf
+                      {Many-to-Many}: Create a third "junction" collection t...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1133
+Underfull \hbox (badness 10000) detected at line 96
 [][]
  []
 
 ! Undefined control sequence.
 \enit@endenumerate ->\enit@after 
                                  \endlist \ifx \enit@series \relax \else \if...
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4714,8 +3646,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@endenumerate ...\else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4725,8 +3657,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -4734,8 +3666,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4745,8 +3677,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4756,8 +3688,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -4765,8 +3697,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4776,8 +3708,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4787,8 +3719,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4798,15 +3730,15 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 I'm forgetting what you said and using zero instead.
 
 ! Undefined control sequence.
 \enit@endenumerate ...t \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4816,8 +3748,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -4825,8 +3757,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4836,8 +3768,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4847,8 +3779,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -4856,8 +3788,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4867,8 +3799,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4878,8 +3810,8 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 I'm forgetting what you said and using zero instead.
 
 
@@ -4889,8 +3821,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -4898,47 +3830,9 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.1134 \end{enumerate}
-                      
+l.97 \end{enumerate}
+                    
 Things are pretty mixed up, but I think the worst is over.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1138 \begin{lstlisting}[language=JavaScript]
-                                              
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1138 \begin{lstlisting}[language=JavaScript]
-                                              
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
 
 [36] (qa_fragments/ch7_qa.tex
 ! Misplaced alignment tab character &.
@@ -4953,83 +3847,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.18 \begin{lstlisting}[language=JavaScript]
-                                            
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.18 \begin{lstlisting}[language=JavaScript]
-                                            
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 \begin{lstlisting}[language=JavaScript]
-                                            
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 \begin{lstlisting}[language=JavaScript]
-                                            
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-) [37] [38]
+)) [37] (chapters/ch8_node.tex [38]
 
 ! LaTeX Error: Lonely \item--perhaps a missing list environment.
 
@@ -5037,21 +3855,21 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1206     \item \textbf
-                        {Net}: Used to create TCP servers and clients.
+l.51     \item \textbf
+                      {Net}: Used to create TCP servers and clients.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1206
+Underfull \hbox (badness 10000) detected at line 51
 [][]
  []
 
 ! Undefined control sequence.
 \enit@endenumerate ->\enit@after 
                                  \endlist \ifx \enit@series \relax \else \if...
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5061,8 +3879,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@endenumerate ...\else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5072,8 +3890,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -5081,8 +3899,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5092,8 +3910,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5103,8 +3921,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -5112,8 +3930,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5123,8 +3941,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5134,8 +3952,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5145,15 +3963,15 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 I'm forgetting what you said and using zero instead.
 
 ! Undefined control sequence.
 \enit@endenumerate ...t \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5163,8 +3981,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -5172,8 +3990,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5183,8 +4001,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5194,8 +4012,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -5203,8 +4021,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5214,8 +4032,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5225,8 +4043,8 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 I'm forgetting what you said and using zero instead.
 
 
@@ -5236,8 +4054,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -5245,85 +4063,9 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.1207 \end{enumerate}
-                      
+l.52 \end{enumerate}
+                    
 Things are pretty mixed up, but I think the worst is over.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1211 \begin{lstlisting}[language=JavaScript]
-                                              
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1211 \begin{lstlisting}[language=JavaScript]
-                                              
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1231 \begin{lstlisting}[language=JavaScript]
-                                              
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1231 \begin{lstlisting}[language=JavaScript]
-                                              
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
 
 (qa_fragments/ch8_qa.tex
 ! Misplaced alignment tab character &.
@@ -5338,98 +4080,23 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-) [39] [40]
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1274 \begin{lstlisting}[language=JavaScript]
-                                              
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1274 \begin{lstlisting}[language=JavaScript]
-                                              
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-(qa_fragments/ch9_qa.tex [41]
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-)
-(C:\Users\dynamic computer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lst
-lang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! Package Listings Error: Couldn't load requested language.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \begin{lstlisting}[language=JavaScript]
-                                            
-The following languages weren't loadable:
-    ,javascript$
-This may cause errors in the sequel.
-
-
-! Package Listings Error: language javascript undefined.
-
-See the Listings package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \begin{lstlisting}[language=JavaScript]
-                                            
-The language is not loadable. Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-) (qa_fragments/mcq.tex) [42] (complete_notes.aux)
+) [39]) [40] (chapters/ch9_redux.tex (qa_fragments/ch9_qa.tex [41]))
+(qa_fragments/mcq.tex) [42] (complete_notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `complete_notes.out' has not changed.
-(rerunfilecheck)             Checksum: 953B738C532D96E03F7B857BD74DA444;16449.
+(rerunfilecheck)             Checksum: BF296D2E90F5E61D325670604D70EECD;16631.
  ) 
 Here is how much of TeX's memory you used:
- 23641 strings out of 474486
- 452858 string characters out of 5738526
- 2178542 words of memory out of 5000000
- 44510 multiletter control sequences out of 15000+600000
+ 23415 strings out of 474486
+ 435799 string characters out of 5738526
+ 2191542 words of memory out of 5000000
+ 44470 multiletter control sequences out of 15000+600000
  571087 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,6n,107p,462b,1958s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,6n,107p,482b,2012s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\dynamic computer\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
 dpi600\ecti1095.pk> <C:\Users\dynamic computer\AppData\Local\MiKTeX\fonts/pk/lj
 four/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\dynamic computer\AppData\Local\M
@@ -5446,9 +4113,9 @@ omputer\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C
 jknappen/ec/dpi600\ecbx1728.pk><C:/Users/dynamic computer/AppData/Local/Program
 s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/dynamic computer/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on complete_notes.pdf (42 pages, 494220 bytes).
+Output written on complete_notes.pdf (42 pages, 497554 bytes).
 PDF statistics:
- 2050 PDF objects out of 2073 (max. 8388607)
- 774 named destinations out of 1000 (max. 500000)
- 781 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2057 PDF objects out of 2073 (max. 8388607)
+ 775 named destinations out of 1000 (max. 500000)
+ 789 words of extra memory for PDF output out of 10000 (max. 10000000)
 

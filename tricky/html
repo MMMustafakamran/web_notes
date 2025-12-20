@@ -1,0 +1,152 @@
+
+---
+
+## **1. Forms in HTML**
+
+Forms allow users to **submit data** (like name, email, or comments).
+
+**Basic Syntax:**
+
+```html
+<form>
+
+    <!-- Name -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <!-- Gender (Radio Buttons) Same name + radio button = only one choice-->
+    <p>Gender:</p>
+    <label>
+        <input type="radio" name="gender" value="male" > Male
+    </label>
+    <label>
+        <input type="radio" name="gender" value="female"> Female
+    </label><br><br>
+
+    <!-- Skills (Checkboxes) -->
+    <p>Skills:</p>
+    <label>
+        <input type="checkbox" name="skills" value="html"> HTML
+    </label>
+    <label>
+        <input type="checkbox" name="skills" value="css"> CSS
+    </label>
+    <label>
+        <input type="checkbox" name="skills" value="javascript"> JavaScript
+    </label><br><br>
+
+    <!-- Dropdown Menu -->
+    <label for="course">Select Course:</label>
+    <select id="course" name="course" required>
+        <option value="" disabled selected>Select</option>
+        <option value="frontend">Frontend</option>
+        <option value="backend">Backend</option>
+        <option value="fullstack">Full Stack</option>
+    </select><br><br>
+
+    <!-- Comment -->
+    <label for="comment">Comment:</label><br>
+    <textarea id="comment" name="comment" rows="4" cols="40"></textarea><br><br>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+
+</form>
+
+```
+
+**Key Points:**
+
+* `<form>`: wraps the entire form.
+* `action`: URL where form data is sent.
+* `method`: `post` (data hidden) or `get` (data visible in URL).
+* `<label>`: descriptive text for input (good for accessibility).
+* `<input>`: text box, email, password, radio, checkbox, etc.
+* `<textarea>`: multi-line text input.
+* `<button type="submit">`: submits the form.
+* `required `: to make a field mandatory.
+
+
+
+✅ **Common Mistakes:**
+
+* Forgetting `type` or `name` in `<input>`
+* Using `<p>` instead of `<label>`
+* Forgetting to close `<textarea>`
+
+---
+
+## **2. Image Syntax**
+
+Images are displayed using the `<img>` tag.
+
+**Syntax:**
+
+```html
+<img src="image.jpg" alt="Description of the image" width="300" height="200">
+```
+
+**Key Points:**
+
+* `<img>` is a **void element** → no closing tag needed.
+* `src`: path or URL of the image.
+* `alt`: alternative text (for accessibility and if image fails to load).
+* `width` and `height`: optional size attributes (can also use CSS).
+---
+
+## **3. Link Syntax**
+
+Links allow users to **navigate to other pages or websites**.
+
+**Syntax:**
+
+```html
+<a href="https://www.example.com" target="_blank">Click Here</a>
+```
+
+**Key Points:**
+
+* `<a>` = anchor tag
+* `href`: URL to link to
+* `target="_blank"`: opens link in new tab
+* Link text goes **between `<a>` and `</a>`**
+---
+
+## **4. Tables**
+
+Tables organize **data in rows and columns**.
+
+**Syntax:**
+
+```html
+<table border="1">
+    <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+    </tr>
+    <tr>
+        <td>Row 1, Col 1</td>
+        <td>Row 1, Col 2</td>
+        <td>Row 1, Col 3</td>
+    </tr>
+    
+</table>
+```
+
+**Key Points:**
+
+* `<th>` = table header (bold, centered by default)
+* `<td>` = table data (normal cell)
+* `border="1"` = adds border around table (can also use CSS for styling)
+
+💡 **Quick Cheat Sheet:**
+
+| Feature | Tag/Attribute                                 | Example                                  |
+| ------- | --------------------------------------------- | ---------------------------------------- |
+| Form    | `<form>`, `<input>`, `<textarea>`, `<button>` | `<input type="text" name="name">`        |
+| Image   | `<img src="" alt="">`                         | `<img src="image.jpg" alt="A baboon">`   |
+| Link    | `<a href="">`                                 | `<a href="https://example.com">Link</a>` |
+| Table   | `<table>`, `<tr>`, `<th>`, `<td>`, `border`   | `<th>Header</th>` `<td>Data</td>`        |
+
+

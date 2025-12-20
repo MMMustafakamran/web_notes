@@ -29,6 +29,21 @@
 \definecolor{codepurple}{rgb}{0.5,0,0.5}
 \definecolor{backcolor}{rgb}{0.97,0.97,0.97}
 
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, const, let, async, await, class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{codeblue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{codegray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{codegreen}\ttfamily,
+  stringstyle=\color{codepurple}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
 \lstset{
     backgroundcolor=\color{backcolor},
     basicstyle=\ttfamily\small,
