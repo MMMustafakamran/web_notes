@@ -1,0 +1,53 @@
+\section{Chapter 9: Redux - State Management}
+
+Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Exam Tips \& Hints]
+\begin{itemize}
+    \item \textbf{Principles}: Single source of truth (Store), State is read-only (Actions), Changes are made with pure functions (Reducers).
+    \item \textbf{Data Flow}: Unidirectional data flow: Action $\rightarrow$ Reducer $\rightarrow$ Store $\rightarrow$ View.
+    \item \textbf{Hooks}: Familiarize yourself with \texttt{useSelector} and \texttt{useDispatch} for modern Redux.
+    \item \textbf{Immutability}: Never mutate the state directly in a reducer; always return a new object/array.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Core Concepts}
+\begin{enumerate}
+    \item \textbf{Store}: The centralized place where the state of the application is stored.
+    \item \textbf{Actions}: Plain JavaScript objects that describe "what happened". Every action must have a \texttt{type} property.
+    \item \textbf{Reducers}: Pure functions that specify how the application's state changes in response to an action.
+    \item \textbf{Dispatch}: The method used to send actions to the store.
+    \item \textbf{Connect}: A function (mostly used in class components) from \texttt{react-redux} to link React components to the Redux store.
+\end{enumerate}
+
+\begin{tcolorbox}[colback=blue!5,colframe=blue!75,title=Practical Example: Basic Redux Setup]
+A simple counter example:
+\begin{lstlisting}[language=JavaScript]
+// 1. Action Types
+const INCREMENT = 'INCREMENT';
+
+// 2. Action Creator
+const incrementAction = () => ({ type: INCREMENT });
+
+// 3. Reducer
+const counterReducer = (state = { count: 0 }, action) => {
+  switch (action.type) {
+    case INCREMENT:
+      return { ...state, count: state.count + 1 };
+    default:
+      return state;
+  }
+};
+
+// 4. Store
+import { createStore } from 'redux';
+const store = createStore(counterReducer);
+
+// 5. Usage
+store.dispatch(incrementAction());
+console.log(store.getState()); // { count: 1 }
+\end{lstlisting}
+\end{tcolorbox}
+
+\input{qa_fragments/ch9_qa}
+

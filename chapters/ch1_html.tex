@@ -1,0 +1,229 @@
+\section{Chapter 1: HTML - HyperText Markup Language}
+
+This document provides comprehensive teaching notes for HTML, covering everything from basic structure to advanced semantic elements and media integration.
+
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Exam Tips \& Hints]
+\begin{itemize}
+    \item \textbf{Semantic Tags}: Always use semantic tags like \texttt{<header>}, \texttt{<nav>}, and \texttt{<footer>} instead of just \texttt{<div>}. This is a frequent exam question.
+    \item \textbf{Tables}: Practice \texttt{rowspan} and \texttt{colspan} thoroughly. Designers often test your ability to structure complex tables from a visual diagram.
+    \item \textbf{Attributes}: Remember that \texttt{alt} is mandatory for accessibility in \texttt{<img>} tags.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Introduction to HTML}
+HTML stands for \textbf{HyperText Markup Language}. It was created by Tim Berners-Lee in 1989 to distribute information across a network of computers.
+
+\begin{itemize}
+    \item \textbf{Hypertext}: Documents contain links that allow jumping to other places or documents.
+    \item \textbf{Markup}: Uses tags and attributes to define the structure and presentation of data.
+    \item \textbf{Interpretation}: Directly interpreted by the web browser.
+    \item \textbf{Case Sensitivity}: HTML is \textbf{not} case-sensitive. Multiple spaces are ignored.
+\end{itemize}
+
+\subsection{Basic Construction of an HTML Page}
+Every HTML5 document should follow this basic structure:
+
+\end{lstlisting}
+
+\begin{tcolorbox}[colback=blue!5,colframe=blue!75,title=Practical Example: Basic HTML Page]
+A simple page demonstrating headings, lists, and links:
+\begin{lstlisting}[language=HTML]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My First Web Page</title>
+</head>
+<body>
+    <h1>Welcome to My Portfolo</h1>
+    <p>This is a small demonstration of <strong>HTML fundamentals</strong>.</p>
+    
+    <h2>My Skills</h2>
+    <ul>
+        <li>HTML5 (Structure)</li>
+        <li>CSS3 (Design)</li>
+        <li>JavaScript (Interactivity)</li>
+    </ul>
+
+    <h2>Projects</h2>
+    <ol>
+        <li><a href="https://github.com/user/project1">Weather App</a></li>
+        <li><a href="project2.html">Personal Blog</a></li>
+    </ol>
+</body>
+</html>
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsubsection{Key tags in the structure:}
+\begin{itemize}
+    \item \texttt{<!DOCTYPE html>}: Tells the browser to expect HTML5.
+    \item \texttt{<html>}: The root element that wraps all content.
+    \item \texttt{<head>}: Contains metadata (title, character set, links to external files) not visible on the page.
+    \item \texttt{<body>}: Contains the visible content of the web page.
+\end{itemize}
+
+\subsection{Elements, Tags, and Attributes}
+\begin{itemize}
+    \item \textbf{Element}: Defined by a start tag, content, and an end tag (e.g., \texttt{<p>Text</p>}).
+    \item \textbf{Tag}: The angle brackets surrounding an element name. Most occur in pairs (opening and closing).
+    \item \textbf{Attribute}: Provides additional information about an element (e.g., \texttt{id}, \texttt{class}, \texttt{src}, \texttt{href}). Defined within the opening tag.
+\end{itemize}
+
+\subsection{Text Formatting and Headings}
+\subsubsection{Headings}
+HTML provides six levels of headings from \texttt{<h1>} (most important) to \texttt{<h6>} (least important). Search engines use these to understand page hierarchy.
+
+\subsubsection{Text Elements}
+\begin{itemize}
+    \item \texttt{<p>}: Paragraph.
+    \item \texttt{<b>} or \texttt{<strong>}: Bold/Strong importance.
+    \item \texttt{<i>} or \texttt{<em>}: Italic/Emphasized text.
+    \item \texttt{<mark>}: Highlighted text.
+    \item \texttt{<small>}: Smaller text.
+    \item \texttt{<strike>}: Strikethrough text.
+    \item \texttt{<u>} or \texttt{<ins>}: Underlined/Inserted text.
+    \item \texttt{<sub>} and \texttt{<sup>}: Subscript and Superscript.
+\end{itemize}
+
+\subsubsection{Special Characters}
+Use entities for symbols not on the keyboard:
+\begin{itemize}
+    \item \texttt{\&nbsp;}: Non-breaking space
+    \item \texttt{\&copy;}: \copyright
+    \item \texttt{\&reg;}: \textregistered
+    \item \texttt{\&euro;}: \texteuro
+    \item \texttt{\&gt;}: $>$
+\end{itemize}
+
+\subsection{Lists}
+\subsubsection{Unordered Lists (\texttt{<ul>})}
+Used for items where order doesn't matter.
+\begin{itemize}
+    \item Each item is wrapped in \texttt{<li>}.
+    \item Attributes: \texttt{type} (circle, square, disc).
+\end{itemize}
+
+\subsubsection{Ordered Lists (\texttt{<ol>})}
+Used for sequential data.
+\begin{itemize}
+    \item Attributes: \texttt{type} (1, A, a, I, i), \texttt{start}, \texttt{reversed}.
+\end{itemize}
+
+\subsection{Links and Navigation}
+\subsubsection{Types of Links}
+\begin{itemize}
+    \item \textbf{Internal Links}: Link to another page in the same website using a \textbf{relative path}.
+    \item \textbf{External Links}: Link to a different website using an \textbf{absolute path} (starting with \texttt{http://} or \texttt{https://}).
+\end{itemize}
+
+\subsubsection{Implementation}
+\begin{lstlisting}[language=HTML]
+<a href="destination.html" target="_blank">Clickable Text</a>
+\end{lstlisting}
+\begin{itemize}
+    \item \texttt{href}: The destination URL.
+    \item \texttt{target="\_blank"}: Opens the link in a new tab.
+\end{itemize}
+
+\subsection{Media: Images, Video, and Audio}
+    \item \textbf{Image Maps}: Allow multiple links (hotspots) on a single image using \texttt{<map>} and \texttt{<area>}.
+\end{itemize}
+
+\begin{tcolorbox}[colback=orange!5,colframe=orange!75,title=Practical Example: Image Maps]
+Defining clickable regions on a local image:
+\begin{lstlisting}[language=HTML]
+<img src="world-map.jpg" alt="World Map" usemap="#mapname">
+
+<map name="mapname">
+  <!-- Circular hotspot -->
+  <area shape="circle" coords="100,100,50" href="europe.html" alt="Europe">
+  <!-- Rectangular hotspot -->
+  <area shape="rect" coords="200,50,400,150" href="asia.html" alt="Asia">
+</map>
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsubsection{Video and Audio (HTML5)}
+\begin{lstlisting}[language=HTML]
+<video controls autoplay loop muted>
+  <source src="movie.mp4" type="video/mp4">
+</video>
+
+<audio controls>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+\end{lstlisting}
+Attributes: \texttt{controls}, \texttt{autoplay}, \texttt{muted}, \texttt{loop}.
+
+\subsection{HTML Tables}
+Used to display data in a grid (rows and columns).
+
+\begin{itemize}
+    \item \texttt{<table>}: Starts the table.
+    \item \texttt{<tr>}: Table Row.
+    \item \texttt{<td>}: Table Data (cell).
+    \item \texttt{<th>}: Table Header cell (bold and centered by default).
+    \texttt{<caption>}: Adds a title to the table.
+\end{itemize}
+
+    \item \texttt{rowspan} and \texttt{colspan}: Allow cells to span multiple rows or columns.
+\end{itemize}
+
+\begin{tcolorbox}[colback=green!5,colframe=green!75,title=Practical Example: Advanced Table Layout]
+A complex schedule table using spanning:
+\begin{lstlisting}[language=HTML]
+<table border="1">
+  <tr>
+    <th rowspan="2">Day</th>
+    <th colspan="2">Activities</th>
+  </tr>
+  <tr>
+    <th>Morning</th>
+    <th>Evening</th>
+  </tr>
+  <tr>
+    <td>Monday</td>
+    <td>Coding</td>
+    <td>Gym</td>
+  </tr>
+  <tr>
+    <td>Tuesday</td>
+    <td colspan="2">Project Deadline (Full Day)</td>
+  </tr>
+</table>
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{HTML Forms}
+Used to collect user input and send it to a server.
+
+\begin{itemize}
+    \item \texttt{<form>}: Wraps the form elements.
+    \begin{itemize}
+        \item \texttt{action}: URL where data is sent.
+        \item \texttt{method}: \texttt{GET} (visible in URL) or \texttt{POST} (secure/hidden).
+    \end{itemize}
+    \item \textbf{Common Elements}:
+    \begin{itemize}
+        \item \texttt{<input>}: versatile input field (type="text", "password", "submit", etc.).
+        \item \textbf{HTML5 Enhancements}: \texttt{type="email"}, \texttt{type="date"}, \texttt{type="number"}, \texttt{type="color"}. These provide built-in validation.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Semantic HTML and Accessibility}
+Semantic HTML gives meaning to code, helping search engines and screen readers.
+
+\subsubsection{Block vs. Inline}
+\begin{itemize}
+    \item \textbf{Block-level}: Starts on a new line, takes full width (e.g., \texttt{<div>}, \texttt{<h1>}, \texttt{<p>}, \texttt{<ul>}).
+    \item \textbf{Inline-level}: Stays in the flow, only takes necessary width (e.g., \texttt{<span>}, \texttt{<a>}, \texttt{<img>}).
+\end{itemize}
+
+\end{itemize}
+
+\input{qa_fragments/ch1_qa}
+
+
+

@@ -1,0 +1,59 @@
+\subsection*{Comprehensive Exam Prep: JavaScript}
+
+\begin{tcolorbox}[colback=yellow!5,colframe=yellow!75,title=Past Paper Questions]
+\begin{enumerate}
+    \item \textbf{MCQ:} What will \texttt{console.log(typeof [])} output?
+    \textbf{Answer:} object (Arrays are objects in JS).
+
+    \item \textbf{Code Analysis (Sessional 2 2024):}
+    \begin{lstlisting}[language=JavaScript]
+var arr1 = "web".split('');
+var arr2 = arr1.reverse();
+var arr3 = "Programming".split('');
+arr2.push(arr3);
+console.log("array 2: " + arr2);
+    \end{lstlisting}
+    \textbf{Explanation:} 
+    1. \texttt{arr1} = ['w','e','b']. 
+    2. \texttt{arr2} reference refers to \texttt{arr1} reversed: ['b','e','w']. Note: \texttt{reverse()} mutates in place if referencing same array, but here \texttt{split} creates new.
+    3. \texttt{arr3} = ['P','r',...]. 
+    4. \texttt{push} adds the \textit{entire array} \texttt{arr3} as a single element at the end.
+    \newline \textbf{Output:} \texttt{b,e,w,P,r,o,g,r,a,m,m,i,n,g} (Browsers flatten for display string).
+
+    \item \textbf{DOM Manipulation:} Write code to display user name N times.
+    \begin{lstlisting}[language=JavaScript]
+function displayName() {
+  const num = document.getElementById('num').value;
+  const list = document.getElementById('list');
+  list.innerHTML = ''; // Clear previous
+  for(let i=0; i<num; i++) {
+     const li = document.createElement('li');
+     li.textContent = "My Name";
+     list.appendChild(li);
+  }
+}
+    \end{lstlisting}
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5,colframe=gray!75,title=Extra Practice Questions]
+\subsubsection*{ES6 Features}
+\begin{enumerate}[resume]
+    \item Which keyword allows declaring a variable that cannot be reassigned?
+    \textbf{Answer:} \texttt{const}
+
+    \item Rewrite this using Arrow Functions:
+    \begin{lstlisting}[language=JavaScript]
+    function sum(a, b) { return a + b; }
+    \end{lstlisting}
+    \textbf{Answer:} \texttt{const sum = (a, b) => a + b;}
+\end{enumerate}
+
+\subsubsection*{Advanced Scoping}
+\textbf{Question:} Output of the following?
+\begin{lstlisting}[language=JavaScript]
+console.log(a);
+var a = 5;
+\end{lstlisting}
+\textbf{Answer:} \texttt{undefined}. (Reason: \texttt{var} declarations are hoisted, but initializations are not).
+\end{tcolorbox}

@@ -1,0 +1,49 @@
+\subsection*{Comprehensive Exam Prep: React}
+
+\begin{tcolorbox}[colback=orange!5,colframe=orange!75,title=Past Paper Questions (Sessional 2 2024 \& Final)]
+\begin{enumerate}
+    \item \textbf{Theory:} Difference between Real DOM and Virtual DOM?
+    \begin{itemize}
+        \item \textbf{Real DOM}: The actual HTML structure. Slow updates (heavy reflow/repaint).
+        \item \textbf{Virtual DOM}: Lightweight JavaScript object copy. React updates this first, compares (diffing), and patches only changes to Real DOM (reconciliation).
+    \end{itemize}
+
+    \item \textbf{Theory:} List common React events.
+    \newline \textbf{Answer:} \texttt{onClick}, \texttt{onChange}, \texttt{onSubmit}, \texttt{onMouseEnter}.
+
+    \item \textbf{Theory:} What are Keys? Are they necessary?
+    \newline \textbf{Answer:} Keys help React identify which items in a list have changed, added, or removed. They are necessary for performance and avoiding bugs in dynamic lists.
+
+    \item \textbf{Task:} Create a Counter Component (Class-based).
+\begin{lstlisting}[language=JavaScript]
+class Counter extends React.Component {
+  state = { count: 0 };
+  increment = () => this.setState({ count: this.state.count + 1 });
+  render() {
+    return <button onClick={this.increment}>{this.state.count}</button>;
+  }
+}
+\end{lstlisting}
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5,colframe=gray!75,title=Extra Practice Questions]
+\subsubsection*{Hooks & Functional Components}
+\begin{enumerate}
+    \item How do you replicate \texttt{componentDidMount} with \texttt{useEffect}?
+    \newline \textbf{Answer:} \texttt{useEffect(() => \{ ... \}, [])} (Empty dependency array).
+
+    \item \textbf{Code Snippet:} Create a component using \texttt{useState} to toggle text visibility.
+\begin{lstlisting}[language=JavaScript]
+function Toggle() {
+  const [show, setShow] = useState(true);
+  return (
+    <div>
+      <button onClick={() => setShow(!show)}>Toggle</button>
+      {show && <p>Hidden Text</p>}
+    </div>
+  );
+}
+\end{lstlisting}
+\end{enumerate}
+\end{tcolorbox}

@@ -1,0 +1,26 @@
+\subsection*{Comprehensive Exam Prep: Node.js (Advanced)}
+
+\begin{tcolorbox}[colback=brown!5,colframe=brown!75,title=Past Paper Questions]
+\begin{enumerate}
+    \item \textbf{MCQ:} What is the default port for a Node.js application (conventionally)?
+    \textbf{Answer:} 3000 (though it can be anything distinct).
+
+    \item \textbf{MCQ:} Which command is used to initialize a new Node.js project?
+    \textbf{Answer:} \texttt{npm init}
+
+    \item \textbf{MCQ:} Which of the following is not a valid JS data type?
+    \textbf{Answer:} Character (JS has String, no distinct Char type).
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5,colframe=gray!75,title=Extra Practice Questions]
+\subsubsection*{Architecture & Globals}
+\textbf{Question:} Explain the Node.js Event Loop.
+\newline \textbf{Answer:} Node.js is single-threaded. the Event Loop handles asynchronous callbacks. It offloads operations (like I/O) to the system kernel (libuv) and puts their callbacks into a queue. When the Call Stack is empty, the Event Loop pushes tasks from the queue to the stack.
+
+\textbf{Question:} What is the difference between \texttt{module.exports} and \texttt{exports}?
+\newline \textbf{Answer:} \texttt{exports} is a reference to \texttt{module.exports}. If you assign a new object to \texttt{exports}, you break the link. Always use \texttt{module.exports} when exporting a single class or function.
+
+\textbf{Question:} What does \texttt{\_\_dirname} return?
+\newline \textbf{Answer:} The absolute path of the directory containing the currently executing file.
+\end{tcolorbox}

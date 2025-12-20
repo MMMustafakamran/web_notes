@@ -1,0 +1,35 @@
+\subsection*{Comprehensive Exam Prep: Redux}
+
+\begin{tcolorbox}[colback=purple!5,colframe=purple!75,title=Past Paper Questions (Final 2024)]
+\begin{enumerate}
+    \item \textbf{Theory:} Explain the Redux concept using practical example code.
+    \begin{itemize}
+        \item \textbf{Store}: Holds the state tree.
+        \item \textbf{Action}: Dispatched to trigger changes (must have \texttt{type}).
+        \item \textbf{Reducer}: Pure function \texttt{(state, action) => newState}.
+    \end{itemize}
+    \textit{(Refer to Chapter 9 notes for the full Book List code example)}
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5,colframe=gray!75,title=Extra Practice Questions]
+\subsubsection*{Core Concepts}
+\textbf{Question:} What is the "Single Source of Truth"?
+\newline \textbf{Answer:} In Redux, the state of your whole application is stored in an object tree within a single store.
+
+\textbf{Question:} Why must Reducers be "pure functions"?
+\newline \textbf{Answer:} They must not mutate the existing state. They should take the previous state and an action, and return a \textit{new} state object. This makes state changes predictable and allows features like time-travel debugging.
+
+\textbf{Task:} Write a reducer for a "Counter" that handles \texttt{INCREMENT}.
+\begin{lstlisting}[language=JavaScript]
+const initialState = { count: 0 };
+function counterReducer(state = initialState, action) {
+  switch(action.type) {
+    case 'INCREMENT':
+      return { ...state, count: state.count + 1 };
+    default:
+      return state;
+  }
+}
+\end{lstlisting}
+\end{tcolorbox}

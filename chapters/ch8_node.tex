@@ -1,0 +1,94 @@
+\section{Chapter 8: Node.js - Server-Side JavaScript Runtime}
+
+Node.js is a powerful JavaScript platform built on Chrome's V8 engine. It allows developers to use JavaScript to write server-side code, enabling "Full-stack JavaScript" development.
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Exam Tips \& Hints]
+\begin{itemize}
+    \item \textbf{Event Loop}: A fundamental concept. Understand the roles of the Call Stack, libuv, and the Task Queue.
+    \item \textbf{NPM}: Know the difference between \texttt{dependencies} and \texttt{devDependencies}.
+    \item \textbf{Global Objects}: Remember \texttt{\_\_dirname} and \texttt{\_\_filename} are provided by the Node.js wrapper, not part of standard JS.
+    \item \textbf{Callback Pattern}: Error-first callbacks (\texttt{err} as the first argument) is a standard convention.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Core Principles}
+\begin{itemize}
+    \item \textbf{Asynchronous \& Event-Driven}: All APIs of Node.js library are asynchronous (non-blocking). A Node-based server never waits for an API to return data.
+    \item \textbf{Single-Threaded}: Node.js uses a single-threaded model with event looping. This makes it highly scalable for I/O intensive apps, though it's not ideal for CPU-intensive tasks.
+    \item \textbf{Platform Independent}: Runs on Windows, Linux, and macOS.
+\end{itemize}
+
+\subsection{The Node.js Event Loop}
+\begin{itemize}
+    \item \textbf{libuv}: A library that Node.js uses to perform asynchronous I/O and manage a thread pool.
+    \item \textbf{Call Stack}: Where the code being executed lives.
+    \item \textbf{Event Queue}: When an async task (like a timer or file read) completes, its callback is sent to this queue.
+    \item \textbf{Event Loop}: Monitors the call stack and event queue. If the stack is empty, it pushes the first task from the queue to the stack for execution.
+\end{itemize}
+
+\subsection{Node Package Manager (NPM)}
+NPM is the default package manager for Node.js.
+\begin{itemize}
+    \item \textbf{\texttt{package.json}}: Holds metadata about the project and its dependencies.
+    \item \textbf{\texttt{package-lock.json}}: Records the exact version of every installed dependency to ensure consistent builds across environments.
+    \item \textbf{Commands}:
+    \begin{itemize}
+        \item \texttt{npm init}: Initialize a new project.
+        \item \texttt{npm install <pkg>}: Install a package and add it to \texttt{dependencies}.
+        \item \texttt{npm ci}: A cleaner, faster install for automated environments (CI/CD).
+        \item \texttt{npm audit}: Checks for security vulnerabilities in dependencies.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Global Objects and Modules}
+\begin{itemize}
+    \item \textbf{\texttt{\_\_dirname}}: Directory name of the current script.
+    \item \textbf{\texttt{\_\_filename}}: File name of the current script.
+    \item \textbf{\texttt{process}}: Provides information about, and control over, the current Node.js process.
+    \item \textbf{\texttt{console}}: Used for printing to stdout and stderr.
+\end{itemize}
+
+    \item \textbf{Net}: Used to create TCP servers and clients.
+\end{enumerate}
+
+\begin{tcolorbox}[colback=cyan!5,colframe=cyan!75,title=Practical Example: Reading and Writing Files]
+Using the built-in \texttt{fs} module (promises version):
+\begin{lstlisting}[language=JavaScript]
+const fs = require('fs').promises;
+
+async function manageFiles() {
+  try {
+    // Write to a file
+    await fs.writeFile('test.txt', 'Hello Node.js!');
+    // Read from the file
+    const data = await fs.readFile('test.txt', 'utf8');
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+manageFiles();
+\end{lstlisting}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=purple!5,colframe=purple!75,title=Practical Example: Simple HTTP Server]
+Creating a server without any frameworks:
+\begin{lstlisting}[language=JavaScript]
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello from Node.js Server!');
+});
+
+server.listen(3000, '127.0.0.1', () => {
+  console.log('Server running at http://127.0.0.1:3000/');
+});
+\end{lstlisting}
+\end{tcolorbox}
+
+\input{qa_fragments/ch8_qa}
+
+
+

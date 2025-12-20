@@ -1,0 +1,53 @@
+\subsection*{Comprehensive Exam Prep: Bootstrap \& RWD}
+
+\begin{tcolorbox}[colback=teal!5,colframe=teal!75,title=Past Paper Questions]
+\begin{enumerate}
+    \item \textbf{MCQ:} Which Bootstrap class provides a responsive fixed-width container?
+    \begin{enumerate}[label=\alph*.]
+        \item .container
+        \item .container-fluid
+        \item .fixed-container
+        \item .row
+    \end{enumerate}
+    \textbf{Answer:} a) .container (Note: .container-fluid is full width).
+
+    \item \textbf{MCQ:} How do you create a responsive grid system in Bootstrap?
+    \begin{enumerate}[label=\alph*.]
+        \item Using rows and columns
+        \item Using flexbox
+        \item Using tables
+        \item Using divs
+    \end{enumerate}
+    \textbf{Answer:} a) Using rows and columns
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5,colframe=gray!75,title=Extra Practice Questions]
+\subsubsection*{Bootstrap Grid System}
+\begin{enumerate}[resume]
+    \item Which class indicates that an element should take up 6 columns on medium screens and larger?
+    \begin{enumerate}[label=\alph*.]
+        \item \texttt{.col-6-md}
+        \item \texttt{.col-md-6}
+        \item \texttt{.col-medium-6}
+        \item \texttt{.col-xs-6}
+    \end{enumerate}
+    \textbf{Answer:} b) \texttt{.col-md-6}
+
+    \item What is the sum of columns in a single Bootstrap row?
+    \newline \textbf{Answer:} 12
+\end{enumerate}
+
+\subsubsection*{Responsive Design Theory}
+\textbf{Question:} Write the standard Media Query break points for tablet and desktop.
+\begin{lstlisting}[language=CSS]
+/* Tablet (Assessment of around 768px) */
+@media (min-width: 768px) { ... }
+
+/* Laptop/Desktop (Assessment of around 992px or 1024px) */
+@media (min-width: 992px) { ... }
+\end{lstlisting}
+
+\textbf{Question:} What does \texttt{<meta name="viewport" ...>} do?
+\newline \textbf{Answer:} It controls the page's dimensions and scaling, ensuring it renders correctly on mobile devices (e.g., setting width to device-width).
+\end{tcolorbox}

@@ -1,0 +1,111 @@
+\section{Chapter 6: Express.js - Web Application Framework}
+
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It is "unopinionated," meaning it gives developers freedom in how they structure their apps.
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Exam Tips \& Hints]
+\begin{itemize}
+    \item \textbf{Middleware}: The \texttt{next()} function is critical. If you don't call it, the request hangs.
+    \item \textbf{Routing}: Route parameters (e.g., \texttt{:id}) vs query strings (\texttt{?id=1}).
+    \item \textbf{Methods}: Use \texttt{GET} for retrieval and \texttt{POST} or \texttt{PUT} for data submission/update.
+    \item \textbf{RegEx Routing}: Practice the special characters (\texttt{?}, \texttt{+}, \texttt{*}) in route paths.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Getting Started}
+\subsubsection{Setup}
+\begin{enumerate}
+    \item Create a directory: \texttt{mkdir myapp}
+    \item Initialize npm: \texttt{npm init}
+    \item Install Express: \texttt{npm install express}
+\end{enumerate}
+
+\subsubsection{Hello World Example}
+\begin{lstlisting}[language=JavaScript]
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+\end{lstlisting}
+
+\subsection{Modules and Asynchrony}
+\begin{itemize}
+    \item \textbf{Modules}: Use \texttt{module.exports} to share code across files and \texttt{require()} to import it.
+    \item \textbf{Async Programming}: Node is single-threaded and non-blocking. Use asynchronous APIs (callbacks, Promises) to avoid blocking the event loop.
+    \item \textbf{Error-First Callbacks}: A convention where the first argument of a callback is the error object.
+\end{itemize}
+
+\subsection{Middleware}
+Middleware functions are the backbone of Express. They have access to the request (\texttt{req}), response (\texttt{res}), and the \texttt{next} function in the application’s request-response cycle.
+
+    \item \textbf{Third-party}: Community modules like \texttt{morgan} (logging) or \texttt{cors}.
+\end{enumerate}
+
+\begin{tcolorbox}[colback=gray!5,colframe=gray!75,title=Practical Example: Custom Logger Middleware]
+A function that logs the request method and URL:
+\begin{lstlisting}[language=JavaScript]
+const logger = (req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  next(); // Pass control to the next handler
+};
+
+app.use(logger); // Apply to all routes
+\end{lstlisting}
+\end{tcolorbox}
+
+    \item \textbf{Chaining}: Use \texttt{app.route()} to define multiple methods for a single path.
+\end{itemize}
+
+\begin{tcolorbox}[colback=blue!5,colframe=blue!75,title=Practical Example: URL Parameters]
+Extracting data from the request URL:
+\begin{lstlisting}[language=JavaScript]
+// GET /shop/electronics/iphone
+app.get('/shop/:category/:item', (req, res) => {
+  const { category, item } = req.params;
+  res.send(`Searching for ${item} in ${category}`);
+});
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{Templating with EJS}
+EJS (Embedded JavaScript) is a template engine that lets you generate HTML with plain JavaScript.
+\begin{itemize}
+    \item \textbf{Setup}: \texttt{app.set('view engine', 'ejs');}
+    \item \textbf{Syntax}:
+    \begin{itemize}
+        \item \texttt{<\% \%>}: Executes logic (loops, conditionals).
+        \item \texttt{<\%= \%>}: Outputs a value to the page.
+    \end{itemize}
+    \item \textbf{Rendering}: \texttt{res.render('index', \{ name: 'John' \});}
+\end{itemize}
+
+\begin{tcolorbox}[colback=green!5,colframe=green!75,title=Practical Example: RESTful API Implementation]
+Standard CRUD endpoints for a "Task" resource:
+\begin{lstlisting}[language=JavaScript]
+let tasks = [{ id: 1, title: 'Learn Express' }];
+
+app.get('/tasks', (req, res) => res.json(tasks));
+
+app.post('/tasks', (req, res) => {
+  const newTask = { id: Date.now(), ...req.body };
+  tasks.push(newTask);
+  res.status(201).json(newTask);
+});
+
+app.delete('/tasks/:id', (req, res) => {
+  tasks = tasks.filter(t => t.id != req.params.id);
+  res.status(204).send();
+});
+\end{lstlisting}
+\end{tcolorbox}
+
+\input{qa_fragments/ch6_qa}
+
+
+

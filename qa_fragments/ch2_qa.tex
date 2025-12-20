@@ -1,0 +1,76 @@
+\subsection*{Comprehensive Exam Prep: CSS}
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Past Paper Questions (Sessional \& Final)]
+\begin{enumerate}
+    \item \textbf{MCQ:} Which CSS property is used to change text color?
+    \begin{enumerate}[label=\alph*.]
+        \item font-style
+        \item color
+        \item text-color
+        \item background
+    \end{enumerate}
+    \textbf{Answer:} b) color
+
+    \item \textbf{MCQ:} In CSS, which of the following selectors has the highest specificity?
+    \begin{enumerate}[label=\alph*.]
+        \item .card
+        \item div p
+        \item \#header
+        \item p
+    \end{enumerate}
+    \textbf{Answer:} c) \#header (IDs have higher specificity than classes or tags).
+
+    \item \textbf{Snippet:} Write CSS to style \texttt{.btn-primary} with navy background, white text, 10px 20px padding, and no border.
+\begin{lstlisting}[language=CSS]
+.btn-primary {
+    background-color: navy;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+}
+\end{lstlisting}
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=gray!5,colframe=gray!75,title=Extra Practice Questions]
+\subsubsection*{Multiple Choice Questions}
+\begin{enumerate}[resume]
+    \item How do you make a list that lists its items with squares?
+    \begin{enumerate}[label=\alph*.]
+        \item \texttt{list: square;}
+        \item \texttt{list-type: square;}
+        \item \texttt{list-style-type: square;}
+        \item \texttt{list-style-image: square;}
+    \end{enumerate}
+    \textbf{Answer:} c) \texttt{list-style-type: square;}
+
+    \item What is the default value of the \texttt{position} property?
+    \begin{enumerate}[label=\alph*.]
+        \item relative
+        \item fixed
+        \item absolute
+        \item static
+    \end{enumerate}
+    \textbf{Answer:} d) static
+\end{enumerate}
+
+\subsubsection*{Advanced Styling Concepts}
+\textbf{Question:} Explain the CSS Box Model with a diagrammatic description.
+\newline \textbf{Answer:} The Box Model consists of four layers surrounding the HTML element:
+\begin{itemize}
+    \item \textbf{Content}: The actual text or image.
+    \item \textbf{Padding}: Transparent area between content and border.
+    \item \textbf{Border}: A line going around the padding and content.
+    \item \textbf{Margin}: Transparent area outside the border, separating the element from others.
+\end{itemize}
+
+\textbf{Question:} Center a \texttt{div} horizontally and vertically using Flexbox.
+\begin{lstlisting}[language=CSS]
+.container {
+    display: flex;
+    justify-content: center; /* Horizontal */
+    align-items: center;     /* Vertical */
+    height: 100vh;
+}
+\end{lstlisting}
+\end{tcolorbox}

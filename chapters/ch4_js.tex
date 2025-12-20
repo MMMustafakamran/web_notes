@@ -1,0 +1,170 @@
+\section{Chapter 4: JavaScript - The Language of the Web}
+
+JavaScript is a versatile, high-level language used for both client-side and server-side development. This chapter covers everything from basic syntax to advanced ES6 features and DOM manipulation.
+
+\begin{tcolorbox}[colback=red!5,colframe=red!75,title=Exam Tips \& Hints]
+\begin{itemize}
+    \item \textbf{Variables}: Difference between \texttt{var}, \texttt{let}, and \texttt{const} is a classic theoretical question. Mention block-scope vs function-scope.
+    \item \textbf{Hoisting}: Remember that \texttt{var} declarations are hoisted but not initialized. This can lead to \texttt{undefined} being logged if a variable is accessed before its declaration within the same scope.
+    \item \textbf{Equality}: Understand the difference between \texttt{==} (loose, with coercion) and \texttt{===} (strict). Multiple MCQs often focus on this.
+    \item \textbf{Array Methods}: \texttt{map()}, \texttt{filter()}, and \texttt{reduce()} are highly important. Be careful with \texttt{reverse()} and \texttt{sort()} as they modify the original array in-place.
+    \item \textbf{Types}: Remember that \texttt{typeof []} is \texttt{"object"}.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{JavaScript Fundamentals}
+\subsubsection{Variables}
+\begin{itemize}
+    \item \textbf{\texttt{var}}: Function-scoped, can be redeclared and hoisted.
+    \item \textbf{\texttt{let}}: Block-scoped, cannot be redeclared, not hoisted (preferred).
+    \item \textbf{\texttt{const}}: Block-scoped, constant value (cannot be reassigned).
+\end{itemize}
+
+\subsubsection{Data Types}
+\begin{itemize}
+    \item \textbf{Primitive}: \texttt{String}, \texttt{Number}, \texttt{Boolean}, \texttt{Undefined}, \texttt{Null}, \texttt{Symbol}, \texttt{BigInt}.
+    \item \textbf{Complex}: \texttt{Object}, \texttt{Array}, \texttt{Function}.
+    \item \textit{Note:} \texttt{typeof null} returns \texttt{"object"} (a known bug).
+\end{itemize}
+
+\subsubsection{Operators}
+\begin{itemize}
+    \item \textbf{Assignment}: \texttt{=}, \texttt{+=}, \texttt{-=}, etc.
+    \item \textbf{Comparison}: \texttt{==} (equal value), \texttt{===} (equal value and type), \texttt{!=}, \texttt{!==}.
+    \item \textbf{Logical}: \texttt{\&\&} (AND), \texttt{||} (OR), \texttt{!} (NOT).
+\end{itemize}
+
+\subsubsection{Control Structures}
+\begin{itemize}
+    \item \textbf{Conditionals}: \texttt{if}, \texttt{else if}, \texttt{else}, \texttt{switch}.
+    \item \textbf{Loops}: 
+    \begin{itemize}
+        \item \texttt{for}: Classic iterator.
+        \item \texttt{for...in}: Iterates over object keys.
+        \item \texttt{for...of}: Iterates over iterable values (like array elements).
+        \item \texttt{while} \& \texttt{do...while}.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Strings and Arrays}
+\subsubsection{String Methods}
+Common methods: \texttt{concat()}, \texttt{charAt()}, \texttt{replace()}, \texttt{toLowerCase()}, \texttt{toUpperCase()}, \texttt{trim()}, \texttt{split()}.
+
+    \item \textbf{Ordering}: \texttt{sort()} (alphabetical), \texttt{reverse()}.
+\end{itemize}
+
+\begin{tcolorbox}[colback=pink!5,colframe=pink!75,title=Practical Example: Functional Programming]
+Using \texttt{map} and \texttt{filter} to process data:
+\begin{lstlisting}[language=JavaScript]
+const products = [
+  { name: 'Laptop', price: 1200 },
+  { name: 'Phone', price: 800 },
+  { name: 'Tablet', price: 500 }
+];
+
+// 1. Filter products cheaper than 1000
+const affordable = products.filter(p => p.price < 1000);
+
+// 2. Map to an array of names
+const names = affordable.map(p => p.name); 
+
+console.log(names); // ['Phone', 'Tablet']
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{Functions}
+\subsubsection{Definitions}
+\begin{enumerate}
+    \item \textbf{Declaration}: \texttt{function name() \{ ... \}} (Hoisted)
+    \item \textbf{Expression}: \texttt{const name = function() \{ ... \}} (Anonymous or named)
+    \item \textbf{Arrow Function}: \texttt{const name = () =$>$ \{ ... \}} (Shorter syntax, no \texttt{this} binding)
+\end{enumerate}
+
+\subsubsection{Parameters and Arguments}
+\begin{itemize}
+    \item \textbf{Default Parameters}: \texttt{function greet(name = "Guest") \{ ... \}}
+    \item \textbf{Arguments Object}: Array-like object containing all arguments passed to a function.
+    \item \textbf{Rest Parameters}: \texttt{function sum(...nums) \{ ... \}} (Collects remaining arguments into an array).
+\end{itemize}
+
+\subsection{Object-Oriented JavaScript (Classes)}
+Classes are syntactical sugar over prototypes.
+\begin{lstlisting}[language=JavaScript]
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+  // Getter
+  get area() { return this.height * this.width; }
+  // Setter
+  set side(val) { this.height = val; this.width = val; }
+}
+const square = new Rectangle(10, 10);
+\end{lstlisting}
+
+\begin{tcolorbox}[colback=brown!5,colframe=brown!75,title=Practical Example: Class Inheritance]
+Creating specialized classes from a base class:
+\begin{lstlisting}[language=JavaScript]
+class Animal {
+  constructor(name) { this.name = name; }
+  speak() { console.log(`${this.name} makes a noise.`); }
+}
+
+class Dog extends Animal {
+  speak() { console.log(`${this.name} barks!`); }
+}
+
+const d = new Dog('Mitzie');
+d.speak(); // Mitzie barks!
+\end{lstlisting}
+\end{tcolorbox}
+
+\subsection{The Document Object Model (DOM)}
+The DOM is a programming interface for HTML documents. It represents the page as a tree of objects.
+
+\subsubsection{Selecting Elements}
+\begin{itemize}
+    \item \texttt{document.getElementById('id')}
+    \item \texttt{document.querySelector('.selector')}
+    \item \texttt{document.querySelectorAll('.selector')}
+\end{itemize}
+
+\subsubsection{Manipulating Elements}
+\begin{itemize}
+    \item \textbf{Content}: \texttt{element.innerHTML}, \texttt{element.textContent}, \texttt{element.value} (for inputs).
+    \item \textbf{Attributes}: \texttt{getAttribute()}, \texttt{setAttribute()}, \texttt{removeAttribute()}, \texttt{hasAttribute()}.
+    \item \textbf{Styles}: \texttt{element.style.color = 'red';} (uses camelCase for CSS properties).
+    \item \textbf{Creation}: \texttt{document.createElement('div')}, \texttt{parent.appendChild(child)}.
+\end{itemize}
+
+\input{qa_fragments/ch4_qa}
+\begin{lstlisting}[language=JavaScript]
+const btn = document.querySelector('#myBtn');
+btn.addEventListener('click', (event) => {
+  console.log('Button clicked!', event.target);
+});
+\end{lstlisting}
+
+\begin{tcolorbox}[colback=orange!5,colframe=orange!75,title=Practical Example: Dynamic DOM Update]
+Changing text and style on a button click:
+\begin{lstlisting}[language=JavaScript]
+const heading = document.querySelector('h1');
+const colorBtn = document.querySelector('#colorBtn');
+
+colorBtn.addEventListener('click', () => {
+  heading.textContent = 'Color Changed!';
+  heading.style.color = 'blue';
+  
+  // Create a new element
+  const p = document.createElement('p');
+  p.innerText = 'This was added dynamically.';
+  document.body.appendChild(p);
+});
+\end{lstlisting}
+\end{tcolorbox}
+
+\input{qa_fragments/ch4_qa}
+
+
+
