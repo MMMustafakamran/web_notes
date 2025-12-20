@@ -1,6 +1,28 @@
 
 ---
 
+## **0. HTML Basics**
+
+**<html>** – root element (contains all of HTML)
+
+**HTML element** – opening tag + content + closing tag
+
+**<nav>** – container for navigation links  
+Example:
+```html
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</nav>
+```
+
+**<span>** – styling hook, inline, no semantic meaning  
+Example:
+```html
+<p>This is <span style="color:red;">important</span> text.</p>
+```
+
 ## **1. Forms in HTML**
 
 Forms allow users to **submit data** (like name, email, or comments).
@@ -150,3 +172,28 @@ Tables organize **data in rows and columns**.
 | Table   | `<table>`, `<tr>`, `<th>`, `<td>`, `border`   | `<th>Header</th>` `<td>Data</td>`        |
 
 
+## Other Stuff I Don't Know
+
+### HTML Elements & Attributes – Quick Guide
+
+**1. Void elements (no closing tag):** `<img>`, `<br>`, `<hr>`
+
+**2. Common Attributes**  
+Attributes give extra information about an element.
+
+| Attribute | Use | Example |
+|-----------|-----|---------|
+| `id` | Unique element | `<p id="intro">` |
+| `class` | Group elements | `<div class="card">` |
+| `href` | Link URL | `<a href="page.html">` |
+| `src` | Image/video file | `<img src="pic.jpg">` |
+| `alt` | Image description | `<img alt="A cat">` |
+| `name` | Forms / radio buttons | `<input type="radio" name="gender">` |
+| `target` | Where link opens | `<a target="_blank">` |
+
+**3. ID vs Class**
+
+| Feature | ID | Class |
+|---------|----|-------|
+| Uniqueness | Must be unique | Can repeat |
+| CSS selector | `#id` | `.class` |
