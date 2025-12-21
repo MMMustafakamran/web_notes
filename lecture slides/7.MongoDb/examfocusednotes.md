@@ -1,5 +1,69 @@
 # MongoDB Exam-Focused Notes
+// server.js
 
+
+```javascript
+// 1. Import required modules
+const express = require('express');
+const mongoose = require('mongoose');
+const app = express();
+const PORT = 3001;
+
+// 2. MongoDB connection URI
+// Format: mongodb://[host]:[port]/[database_name]
+const mongoURI = 'mongodb://localhost:27017/mydatabase';
+// This connects to a database called 'mydatabase' on your local machine
+
+// 3. Connect to MongoDB
+mongoose.connect(mongoURI, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true 
+})
+.then(() => console.log('✅ MongoDB connected successfully'))
+.catch(err => console.log('❌ Connection error:', err));
+
+// 4. Define a User Schema
+// A schema defines the structure of your documents
+const userSchema = new mongoose.Schema({
+    name: String,      // Field for user's name
+    email: String,     // Field for user's email
+    age: Number        // Field for user's age
+});
+
+// 5. Create a Model from the Schema
+//model is the tool in mongoose u use to interact/with the mongodb like a waiter
+// This model will interact with the 'users' collection(table)
+const User = mongoose.model('User', userSchema);
+// Mongoose automatically looks for the plural, lowercase version of your model name
+// So 'User' model → 'users' collection
+
+// 6. Create a Route to Get Users
+app.get('/getUsers', async (req, res) => {
+    try {
+        // Find all users in the collection
+        // Empty object {} means "no filters, get all documents"
+        const users = await User.find({}); // await causes Execution PAUSE here until User.find() completes so that no empty return returneds
+        
+        // Send the users as JSON response
+        res.json({
+            success: true,
+            count: users.length,
+            data: users
+        });
+    } catch (err) {
+        // If there's an error, send error response
+        res.status(500).json({
+            success: false,
+            error: err.message
+        });
+    }
+});
+
+// 7. Start the Server
+app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
+});
+```
 ## 🔍 **Core Concepts (Must Know)**
 
 ### 1. **MongoDB Basics**

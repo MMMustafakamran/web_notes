@@ -55,8 +55,6 @@ MongoClient.connect(url, function(err, db) {
 });
 ```
 
-Save the code above in a file called `"demo_create_mongo_db.js"` and run:
-
 ```bash
 node demo_create_mongo_db.js
 ```
