@@ -1,0 +1,154 @@
+Hello Mustafa! Based on the past paper you provided and the syllabus (covering HTML, CSS, Bootstrap, JS/ES6, React, Node, Express, and MongoDB), I've designed a fresh final exam for **CS-4032: Web Programming**.
+
+I’ve maintained the difficulty level and mark distribution of your previous paper while introducing new scenarios like **React Hooks** (modern ES6), **Mongoose Schemas**, and **Express Middleware logic**.
+
+---
+
+## **CS-4032: Web Programming (BSCS)**
+
+**Final Exam - Fall 2025**
+
+**Total Time:** 3 Hours | **Total Marks:** 155
+
+---
+
+### **Q1: Objectives [60 Marks]**
+
+**a. Select the most appropriate answer. [40 Marks]**
+
+1. Which HTML5 element is used to specify a footer for a document or section?
+* a) `<bottom>` | b) `<section>` | c) `<footer>` | d) `<aside>`
+
+
+2. In CSS, what is the correct syntax to make all `<p>` elements bold?
+* a) `p {text-size: bold;}` | b) `p {font-weight: bold;}` | c) `<p style="text-size:bold">` | d) `p {style: bold;}`
+
+
+3. Which Bootstrap 5 class is used to create a "Jumbotron" style big box (padding/rounded corners)?
+* a) `.jumbotron` | b) `.big-box` | c) `.p-5 .bg-light .rounded-3` | d) `.container-header`
+
+
+4. What does `ES6` stand for?
+* a) EasyScript 6 | b) ECMAScript 6 | c) ElementScript 6 | d) EvolutionScript 6
+
+
+5. What is the result of `3 + 2 + "7"` in JavaScript?
+* a) 12 | b) 57 | c) "327" | d) NaN
+
+
+6. Which React Hook is used to handle side effects like data fetching?
+* a) `useState` | b) `useContext` | c) `useEffect` | d) `useReducer`
+
+
+7. How do you create a "Production" build of a React app?
+* a) `npm start` | b) `npm run build` | c) `npm deploy` | d) `npm production`
+
+
+8. In Express, which object is used to send a cookie to the client?
+* a) `req` | b) `res` | c) `next` | d) `cookie`
+
+
+9. Which Node.js module is used to handle file paths?
+* a) `fs` | b) `http` | c) `path` | d) `url`
+
+
+10. In MongoDB, which operator is used to match values that are greater than a specified value?
+* a) `$gt` | b) `$greater` | c) `$max` | d) `$high`
+
+
+11. (Continue with 30 more similar questions covering DOM, Axios, Serverless basics, and Middleware...)
+
+**b. Code Analysis & Short Answers [20 Marks]**
+
+1. **React State Update:** What will be the value displayed after clicking the button once? Explain why. **[5 Marks]**
+```javascript
+const Counter = () => {
+  const [val, setVal] = useState(10);
+  const handleUpdate = () => {
+    setVal(val + 5);
+    setVal(val + 2);
+  };
+  return <button onClick={handleUpdate}>{val}</button>;
+};
+
+```
+
+
+2. **JS Scoping:** Write the output of the following code. **[5 Marks]**
+```javascript
+console.log("A");
+setTimeout(() => console.log("B"), 0);
+Promise.resolve().then(() => console.log("C"));
+console.log("D");
+
+```
+
+
+3. **Express Logic:** Identify the error in this route definition. **[5 Marks]**
+```javascript
+app.get('/user/:id', (req, res) => {
+  const user = findUser(req.query.id);
+  res.send(user);
+});
+
+```
+
+
+4. **CSS Box Model:** If an element has `width: 200px`, `padding: 10px`, and `border: 5px`, what is its total calculated width in `content-box` vs `border-box`? **[5 Marks]**
+
+---
+
+### **Q2: Application Development [40 Marks]**
+
+**a. React & Hooks [15 Marks]**
+Create a Functional React component called `ProductSearch`.
+
+* It should have an input field.
+* As the user types, filter a local array of products: `[{name: 'Apple', price: 10}, {name: 'Banana', price: 5}]`.
+* Display the filtered list in real-time.
+
+**b. Express API & Validation [10 Marks]**
+Write an Express POST route `/register`.
+
+* It receives `username` and `password` in the request body.
+* If `password` length is less than 8, return status 400 with a JSON error message.
+* Otherwise, return status 201 with a success message.
+
+**c. Full-Stack Integration (MongoDB) [15 Marks]**
+Assume you have a MongoDB collection `Tasks`. Write the Node/Express code to:
+
+1. Connect to MongoDB using Mongoose.
+2. Define a Schema for `Task` (title: String, completed: Boolean).
+3. Create a GET route `/tasks` that returns only the tasks where `completed` is `false`.
+
+---
+
+### **Q3: Advanced Concepts & Routing [55 Marks]**
+
+**a. State Management (Context API vs Redux) [15 Marks]**
+Explain the "Prop Drilling" problem. Provide a code example of how the **React Context API** (`createContext`, `Provider`, `useContext`) solves this without using Redux.
+
+**b. Express Routing & Regex [28 Marks]**
+Explain what types of URLs will match the following Express routes and what parameters will be captured:
+
+1. `app.get('/item/:name([a-zA-Z]+)', ...)`
+2. `app.get('/files/*.*', ...)`
+3. `app.get('/post/:id?', ...)`
+4. `app.get('/user(name)?', ...)`
+5. `app.put('/api/v1/update/:id', ...)`
+6. `app.get(/.*test$/, ...)`
+7. `app.use('/admin', checkAuth, adminRouter)`
+
+**c. Templating Engine (EJS) [12 Marks]**
+You are given an array of objects: `const students = [{name: 'Mustafa', grade: 'A'}, {name: 'Ali', grade: 'B'}]`.
+Write the **EJS** code to display these students in an HTML table. If a student's grade is 'A', the text color should be green.
+
+---
+
+### **Bonus [2 Marks]**
+
+Draw a simple diagram of the **Client-Server Model** showing a Request and a Response.
+
+---
+
+**Would you like me to provide the marking key (solutions) for this specific exam so you can practice?**
