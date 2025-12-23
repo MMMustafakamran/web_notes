@@ -21,15 +21,14 @@
 \definecolor{codeorange}{rgb}{0.8,0.4,0}
 \definecolor{codered}{rgb}{0.8,0,0}
 
-\lstdefinelanguage{JavaScript}{
-  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with, as, async, await, const, let},
-  morekeywords=[2]{require, exports, module, process, console, express, app, mongoose, Schema, model, ObjectId, os, path, dns},
-  sensitive=true,
-  morecomment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  morestring=[b]',
+\lstdefinelanguage{HTMLCSS}{
+  keywords={html, body, div, img, meta, link, script, class, id, src, alt, name, content, href, rel, type, style, table, tr, th, td, form, label, input, select, option, textarea, button, a, br, hr},
+  morekeywords=[2]{width, height, max-width, min-width, box-sizing, border-box, auto, display, margin, padding, @media, screen, border, target, value, rows, cols, required, type, selected, disabled},
+  sensitive=false,
+  morecomment=[l]{<!--},
+  morecomment=[s]{<!--}{-->},
   morestring=[b]",
-  morestring=[b]`
+  morestring=[b]'
 }
 
 \lstset{
@@ -84,6 +83,49 @@
 \footnotesize % Set body font to footnotesize
 
 \begin{multicols*}{3}
+
+\topicsection{HTML FUNDAMENTALS}
+
+\compactsection{Basic Elements \& Attributes}
+\textbf{Links:} \texttt{<a href="URL" target="\_blank">} (\texttt{\_blank} opens new tab). \\
+\textbf{Void Elements:} No closing tag e.g. \texttt{<img>, <br> (break), <hr> (line)}. \\
+\textbf{Images:} \texttt{<img src="path" alt="desc" width="300">} (\texttt{alt} is for accessibility).
+
+\compactsection{Tables \& Formatting}
+\begin{lstlisting}[language=HTMLCSS]
+<table border="1">
+  <tr> <!-- Table Row -->
+    <th>H1</th> <th>H2</th> <!-- Headers (Bold) -->
+  </tr>
+  <tr>
+    <td>D1</td> <td>D2</td> <!-- Data cells -->
+  </tr>
+</table>
+\end{lstlisting}
+
+\compactsection{Forms \& Inputs (Exam Yield)}
+\begin{lstlisting}[language=HTMLCSS]
+<form>
+  <label for="n">Name:</label>
+  <input type="text" id="n" name="n" required>
+
+  <!-- Radio: Same 'name' = Only 1 choice -->
+  <input type="radio" name="g" value="m"> Male
+  <input type="radio" name="g" value="f"> Female
+
+  <!-- Checkbox: Multiple choices allowed -->
+  <input type="checkbox" name="s" value="js"> JS
+
+  <!-- Dropdown Menu -->
+  <select name="course" required>
+    <option value="" disabled selected>Select</option>
+    <option value="fs">Full Stack</option>
+  </select>
+
+  <textarea rows="4" cols="40"></textarea>
+  <button type="submit">Submit</button>
+</form>
+\end{lstlisting}
 
 \topicsection{EXPRESS JS}
 
@@ -237,6 +279,119 @@ function fetch(cb) {
   setTimeout(() => { const e = Math.random()>0.5?null:new Error('F'); cb(e, e?null:'D'); }, 10);
 }
 fetch((e, d) => { if(e) console.error(e.message); else console.log(d); });
+\end{lstlisting}
+
+\topicsection{REACT JS}
+
+\compactsection{Fundamentals \& Components}
+\textbf{Virtual DOM:} Lightweight copy of Real DOM. React uses "Diffing" to update only changed parts (fast) vs Real DOM (slow reflows/repaints). \\
+\textbf{Functional:} Presentations; uses props. \textbf{Class:} Logic/State; needs \texttt{render()}. \\
+\textbf{JSX Rules:} 1. Single Root element. 2. \texttt{className} instead of \texttt{class}. 3. JS in \texttt{\{ \}}.
+
+\compactsection{State vs. Props (Exam Heavy)}
+\textbf{State:} Internal to component; mutable via \texttt{setState}; triggers re-render on change. \\
+\textbf{Props:} Passed from parent (External); read-only (Immutable); triggers re-render when parent changes them.
+\textbf{Mutation Rule:} Never do \texttt{this.state.x = 1}. Always:
+\begin{lstlisting}
+this.setState({ name: 'Yoshi' }); // Triggers re-render
+// Arrays: Spread to add, Filter to remove (Avoid direct mutation)
+this.setState({ items: [...this.state.items, newItem] }); // Spread (...)
+const del = id => this.setState({ items: items.filter(n => n.id !== id) }); // Filter
+\end{lstlisting}
+
+\compactsection{Events, Lists \& Keys}
+\textbf{this Context:} Handlers lose \textit{this}. Use \textbf{Arrow Functions}. \\
+\textbf{Event Listeners:} Pass functions as props. Use \texttt{e.target} for values.
+\begin{lstlisting}
+// e.target.value captures content of the input
+handleChange = (e) => this.setState({ val: e.target.value });
+<input onChange={this.handleChange} value={this.state.val} /> // Controlled component
+
+// Key prop helps React track identity of items in list
+const list = ninjas.map(n => (
+  <div key={n.id}> {n.name} 
+    <button onClick={() => deleteN(n.id)}>X</button> // Arrow prevents immediate run
+  </div>
+));
+\end{lstlisting}
+
+\compactsection{Forms \& Data (Axios)}
+\textbf{Controlled Comp:} State handles data. Use \texttt{e.preventDefault()} on submit.
+\begin{lstlisting}
+handleSubmit = (e) => {
+  e.preventDefault(); // Stop page refresh
+  this.props.addNinja(this.state); // Send data to parent via function prop
+}
+// API requests usually go in componentDidMount (Classes)
+componentDidMount() {
+  axios.get(URL).then(res => this.setState({ data: res.data }));
+}
+\end{lstlisting}
+
+\compactsection{React Router (v5)}
+\texttt{<BrowserRouter>} wraps app. \texttt{<Switch>} renders 1st match. \\
+\textbf{Link vs NavLink:} Prevent reload. \texttt{NavLink} adds "active" class. \\
+\textbf{Params:} Access \texttt{/post/:id} via \texttt{this.props.match.params.id}.
+
+\compactsection{HOC \& Redux}
+\textbf{Higher-Order Component:} Func taking component $\to$ returns enhanced component (Loading, Auth).
+\begin{lstlisting}
+const withLoading = (Wrapped) => { // Takes component
+  return function({ isLoading, ...props }) { // Returns new component
+    if (isLoading) return <h2>Loading...</h2>; // Conditional logic
+    return <Wrapped {...props} />; // Renders original with spread props
+  };
+};
+\end{lstlisting}
+\textbf{Redux:} Store (data), Actions (intent), Reducers (how state changes).
+
+\compactsection{💡 Exam Strategy: Find the Error}
+\begin{itemize}
+    \item \textbf{this:} Is a class method missing arrow syntax?
+    \item \textbf{setState:} Mutating \texttt{this.state} directly?
+    \item \textbf{key:} \texttt{.map()} missing unique key prop?
+    \item \textbf{JSX:} Multiple root elements in one return?
+    \item \textbf{Props:} Is a child trying to modify \texttt{this.props}? (Read-only!)
+\end{itemize}
+
+\topicsection{RESPONSIVE DESIGN \& BOOTSTRAP}
+
+\compactsection{Responsive Fundamentals}
+\textbf{Viewport Meta:} Tells browser how to scale on mobile.
+\begin{lstlisting}[language=HTMLCSS]
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+\end{lstlisting}
+\textbf{Fluid Layouts:} Use \% or \texttt{relative} units.
+\begin{lstlisting}[language=HTMLCSS]
+* { box-sizing: border-box; } // Padding doesn't increase width
+img { max-width: 100%; height: auto; } // Responsive image
+\end{lstlisting}
+\textbf{Media Queries:} Apply CSS based on screen width.
+\begin{lstlisting}[language=HTMLCSS]
+.column { width: 100%; } // Default (Mobile)
+@media screen and (min-width: 768px) {
+  .column { width: 50%; } // Tablet/Desktop
+}
+\end{lstlisting}
+
+\compactsection{Bootstrap 5 Grid System}
+\textbf{Breakpoints:} \texttt{-sm} (576px), \texttt{-md} (768px), \texttt{-lg} (992px), \texttt{-xl} (1200px), \texttt{-xxl} (1400px). \\
+\textbf{Container:} Centers content. \textbf{Row:} Flex wrap. \textbf{Col:} 12-unit grid.
+\begin{lstlisting}[language=HTMLCSS]
+<div class="container">
+  <div class="row">
+    <!-- col-12=Mobile, col-lg-3=1/4 Desktop -->
+    <div class="col-12 col-lg-3">
+      <div class="card">
+        <img src="p1.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Profile</h5>
+          <p class="card-text">Skills: HTML, CSS</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 \end{lstlisting}
 
 \end{multicols*}
