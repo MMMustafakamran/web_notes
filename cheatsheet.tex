@@ -7,13 +7,14 @@
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{amsmath}
+\usepackage{microtype} % Better character spacing to save horizontal space
 
 % --- Visual Setup ---
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\setlength{\columnsep}{0.2cm}
+\setlength{\columnsep}{0.1cm} % Reduced from 0.2cm
 
-% --- Code Formatting (Compact) ---
+% --- Code Formatting (Extra Compact) ---
 \definecolor{codegreen}{rgb}{0,0.5,0}
 \definecolor{codeblue}{rgb}{0.0,0.0,0.8}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -21,17 +22,17 @@
 \lstset{
     language=JavaScript,
     backgroundcolor=\color{white},
-    basicstyle=\ttfamily\scriptsize,
-    commentstyle=\color{codegreen}\scriptsize,
-    keywordstyle=\color{codeblue}\scriptsize,
-    stringstyle=\color{codepurple}\scriptsize,
+    basicstyle=\ttfamily\tiny, % Changed from scriptsize to tiny for more space
+    commentstyle=\color{codegreen}\tiny,
+    keywordstyle=\color{codeblue}\tiny,
+    stringstyle=\color{codepurple}\tiny,
     breaklines=true,
     tabsize=2,
     frame=single,
-    framerule=0.4pt,
+    framerule=0.2pt, % Thinner frame
     xleftmargin=1pt,
     xrightmargin=1pt,
-    aboveskip=1pt,
+    aboveskip=0pt, % Removed skip
     belowskip=1pt,
     showstringspaces=false,
     escapeinside={(*@}{@*)}
@@ -40,26 +41,29 @@
 % --- Unified Heading Numbering with Compact Grey Box ---
 \newcounter{unifiedsection}
 \newcommand{\compactsection}[1]{%
-    \stepcounter{unifiedsection}% increment counter
-    \vspace{1pt}% top spacing
+    \stepcounter{unifiedsection}%
+    \vspace{0.5pt}% reduced from 1pt
     \noindent%
-    {\setlength{\fboxsep}{1pt}% reduce padding inside colorbox
+    {\setlength{\fboxsep}{0.5pt}% reduced from 1pt
     \colorbox{black!10}{%
-        \makebox[\dimexpr\linewidth-2\fboxsep\relax][l]{\textbf{\footnotesize \theunifiedsection. #1}}%
+        \makebox[\dimexpr\linewidth-2\fboxsep\relax][l]{\textbf{\scriptsize \theunifiedsection. #1}}%
     }}%
-    \vspace{1pt}% bottom spacing
+    \vspace{0.5pt}% reduced from 1pt
 }
 
-% --- Major Topic Header ---
+% --- Major Topic Header (Extreme Compact) ---
 \newcommand{\topicsection}[1]{%
-    \vspace{4pt}% top spacing
+    \vspace{2pt}% reduced from 4pt
     \noindent%
-    {\setlength{\fboxsep}{2pt}%
+    {\setlength{\fboxsep}{1.5pt}% reduced from 2pt
     \colorbox{black}{%
-        \makebox[\dimexpr\linewidth-2\fboxsep\relax][c]{\color{white}\textbf{\small #1}}%
+        \makebox[\dimexpr\linewidth-2\fboxsep\relax][c]{\color{white}\textbf{\scriptsize #1}}% font size scriptsize
     }}%
-    \vspace{2pt}% bottom spacing
+    \vspace{1pt}% reduced from 2pt
 }
+
+% Global List settings
+\setlist{nosep, leftmargin=*} 
 
 \begin{document}
 
@@ -68,237 +72,155 @@
 \topicsection{EXPRESS JS}
 
 \compactsection{Core Server Setup}
-To start a server, you need to require Express, initialize it, and listen on a port.
+Require Express, initialize, and listen on port.
 \begin{lstlisting}
 const express = require('express');
 const app = express();
 const PORT = 3000;
-
-// Basic Route
 app.get('/', (req, res) => res.send('Hello World!'));
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Run on ${PORT}`));
 \end{lstlisting}
 
-\compactsection{Route Path Patterns (Exam Heavy)}
-Express uses string patterns and Regex for route matching.\\
-\textbf{ab?cd} $\to$ ? means b is optional e.g $\to$ /acd, /abcd\\
-\textbf{ab+cd} $\to$ + means b repeats 1 or more e.g /abcd, /abbcd\\
-\textbf{ab*cd} $\to$ * means anything (0 or more) between e.g /abxcd, /ab123cd\\
-\textbf{/.*fly\$/} $\to$ .* = anything, \$ = ends with "fly" $\to$ /butterfly, /dragonfly\\
-\textbf{:id} $\to$ : marks route parameter $\to$ /user/34 (req.params.id = 34)
+\compactsection{Route Path Patterns (Exam)}
+\textbf{ab?cd} $\to$ b optional (\texttt{acd, abcd}) $\mid$ \textbf{ab+cd} $\to$ 1+ b (\texttt{abcd, abbcd}) $\mid$ \textbf{ab*cd} $\to$ anything between (\texttt{abxcd, ab12cd}) $\mid$ \textbf{/.*fly\$/} $\to$ ends with "fly" (\texttt{dragonfly}) $\mid$ \textbf{:id} $\to$ param (\texttt{/user/34} $\to$ \texttt{req.params.id=34})
 
-\compactsection{Middleware Execution Flow (Exam Focus)}
-Middleware func have to req, res, next. They execute in the order they are defined. If \texttt{next()} not called /res not sent to client, the request hangs and routes are never reached.\\
-\textbf{The "t1/t2" Analysis (From Question 4):}\\
-If a request is made to /about: (order= globalmiddleware with next, routespecific funcs up to down)
-\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
-    \item \texttt{app.use((req, res, next) \to \{ console.log("t1"); next(); \});} $\to$ output: t1, continues.
-    \item \texttt{app.get("/about1", ...)} $\to$ Path doesn't match, skipped.
-    \item \texttt{app.use((req, res, next) \to \{ console.log("t2"); \});} $\to$ Logs t2. No \texttt{next()} is called!
-    \item Execution Stops. The specific \texttt{app.get("/about")} lower in the code is never reached.
+\compactsection{Middleware Flow (Exam Focus)}
+Needs (req, res, next). Executes in order. If \texttt{next()} isn't called, request hangs.\\
+\textbf{t1/t2 Analysis:} Made to \texttt{/about}:
+\begin{enumerate}
+    \item \texttt{app.use((req, res, next) $\to$ \{ console.log("t1"); next(); \});} $\to$ output: t1.
+    \item \texttt{app.get("/about1", ...)} $\to$ Skipped (no match).
+    \item \texttt{app.use((req, res, next) $\to$ \{ console.log("t2"); \});} $\to$ Logs t2. \textbf{No next()!}
+    \item \texttt{app.get("/about")} is never reached.
 \end{enumerate}
 
 \compactsection{Types of Middleware}
-\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
-    \item \textbf{Application-level:} Bound to \texttt{app.use()}. Runs for all requests.
-    \item \textbf{Router-level:} Bound to \texttt{express.Router()}. Used to modularize code (e.g., all \texttt{/api} routes).
-    \item \textbf{Built-in:} \texttt{express.static()} (files), \texttt{express.json()} (parsing JSON body).
-    \item \textbf{Error-handling:} Takes four arguments: \texttt{(err, req, res, next)}.
+\begin{enumerate}
+    \item \textbf{Application:} \texttt{app.use()}. Runs for all.
+    \item \textbf{Router:} \texttt{express.Router()}. Modular (e.g., \texttt{/api}).
+    \item \textbf{Built-in:} \texttt{express.static}, \texttt{express.json}.
+    \item \textbf{Error:} 4 args: \texttt{(err, req, res, next)}.
 \end{enumerate}
 
 \compactsection{Response Methods}
-Use these to end the request-response cycle.
-\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
-    \item \textbf{res.send('Hello World')} – Sends basic text or HTML.
-    \item \textbf{res.json(\{ message: 'Success' \})} – Sends a JSON object (best for APIs).
-    \item \textbf{res.render('index', \{ title: 'Home Page' \})} – Renders an EJS or template file with parameters.
-    \item \textbf{res.status(404).send('Not Found')} – Sets the HTTP status code and optionally sends a message.
-    \item \textbf{res.redirect('/login')} – Redirects the user to a different URL.
+Ends the cycle.
+\begin{itemize}
+    \item \texttt{res.send('text/html')} $\mid$ \texttt{res.json(\{obj\})} (APIs)
+    \item \texttt{res.render('view', \{dat\})} (EJS/Templates)
+    \item \texttt{res.status(404).send('Msg')} $\mid$ \texttt{res.redirect('/url')}
 \end{itemize}
 
 \compactsection{EJS Templating}
-Node.js engine to write html pages dynamically. Server keeps data (e.g., books) and sends it to the EJS page which mixes it with HTML and sends it to the browser. Set engine and use \texttt{res.render(filename, data)}.\\
-\textbf{The Controller (app.js):} (Part that decides what data to send)
+Dynamic HTML. Server sends data $\to$ EJS $\to$ Browser.\\
+\textbf{Controller (app.js):} \texttt{app.set('view engine', 'ejs');}
 \begin{lstlisting}
-app.set('view engine', 'ejs');
-app.get('/showBooks', (req, res) => {
-    const books = [{ title: "Node JS", price: 20 }];
-    res.render('books', { books: books }); 
+app.get('/show', (req, res) => {
+    res.render('books', { books: [{ title: "Node", price: 20 }] }); 
 });
 \end{lstlisting}
-\textbf{The View (views/books.ejs):} (HTML page that shows data)
+\textbf{View (books.ejs):}
 \begin{lstlisting}[language=HTML]
-<ul>
-  <% books.forEach(function(book) { %> 
-    <li><%= book.title %> - $<%= book.price %></li> 
-  <% }); %>
-</ul>
+<% books.forEach(function(book) { %> <li><%= book.title %> - $<%= book.price %></li> <% }); %>
 \end{lstlisting}
 
-\compactsection{Handling Data (JSON vs. MongoDB)}
-Exam asks for difference between local arrays and database calls.\\
-\textbf{Local JSON Approach:}
+\compactsection{Handling Data (JSON vs. DB)}
+\textbf{Local JSON:} \texttt{res.json(usersArray);} (Immediate)\\
+\textbf{MongoDB (Mongoose):}
 \begin{lstlisting}
-app.get('/getUsers', (req, res) => {
-    res.json(usersArray); // Immediate response
-});
-\end{lstlisting}
-\textbf{MongoDB (Mongoose) Approach:}
-\begin{lstlisting}
-app.get('/getUsers', async (req, res) => {
-    try {
-        const users = await User.find({}); // Must be awaited
-        res.json(users);
-    } catch (err) {
-        res.status(500).send(err.message);
-    }
+app.get('/u', async (req, res) => {
+    try { const u = await User.find({}); res.json(u); }
+    catch (e) { res.status(500).send(e.message); }
 });
 \end{lstlisting}
 
 \topicsection{MONGODB \& MONGOOSE}
 
 \compactsection{MongoDB: Core Concepts}
-NoSQL, open-source, document-oriented database written in C++.\\
-\textbf{Database:} Physical container for collections.\\
-\textbf{Collection:} Group of documents; schema not enforced.\\
-\textbf{Document:} Set of key-value pairs with dynamic schema.\\
-\textbf{CRUD:} Create, Read, Update, Delete.
+NoSQL, document-oriented, written in C++.\\
+\textbf{DB:} Container for collections $\mid$ \textbf{Collection:} Doc group.\\
+\textbf{Doc:} Key-value pairs $\mid$ \textbf{CRUD:} Create, Read, Update, Delete.
 
-\compactsection{RDBMS vs. MongoDB Terminology}
-\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
-    \item Table $\to$ Collection
-    \item Tuple / Row $\to$ Document
-    \item Column $\to$ Field
-    \item Table Join $\to$ Embedded Docs / \texttt{\$lookup}
-    \item Primary Key $\to$ Primary Key (default \texttt{\_id})
-\end{itemize}
+\compactsection{RDBMS vs. MongoDB}
+Table $\to$ Coll $\mid$ Row $\to$ Doc $\mid$ Column $\to$ Field $\mid$ Join $\to$ Embed/\texttt{\$lookup} $\mid$ PK $\to$ \texttt{\_id}
 
-\compactsection{Basic Shell Commands}
-\textbf{Switch/Create DB:} \texttt{use DATABASE\_NAME}\\
-\textbf{Drop DB:} \texttt{db.dropDatabase()}\\
-\textbf{Create Collection:} \texttt{db.createCollection("name")}\\
-\textbf{Remove Collection:} \texttt{db.collection.drop()}\\
-\textbf{Retrieve All Docs:} \texttt{db.collection.find()}\\
-\textbf{\textit{Exam Tip:}} \texttt{db.collection.copy()} is \textbf{NOT} valid.
+\compactsection{Shell Commands}
+\texttt{use DB} (switch) $\mid$ \texttt{db.dropDatabase()} $\mid$ \texttt{db.createCollection("n")} $\mid$ \texttt{db.c.drop()} $\mid$ \texttt{db.c.find()}\\
+\textit{Note:} \texttt{db.c.copy()} is \textbf{INVALID}.
 
 \compactsection{Query Operators}
-Used within \texttt{find()}, \texttt{update()}, or \texttt{remove()}.\\
-\textbf{\$gt:} Greater Than. E.g. \texttt{db.users.find(\{ age: \{ \$gt: 25 \} \})}\\
-\textbf{\$set:} Modify specific fields without replacing whole doc.\\
-\textbf{Regex:} Query strings. E.g. \texttt{\{ address: /\^S/ \}} (starts with "S").
+\textbf{\$gt:} Greater than (\texttt{\{ age: \{ \$gt: 25 \} \}}) $\mid$ \textbf{\$set:} Partial update $\mid$ \textbf{Regex:} \texttt{\{ addr: /\^S/ \}} (starts with S).
 
-\compactsection{Mongoose Integration (Exam Focus)}
-\textbf{Connection \& Schema Setup:}
+\compactsection{Mongoose Integration}
 \begin{lstlisting}
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/examDB')
-  .then(() => console.log('Connected!'));
+mongoose.connect('mongodb://localhost/db');
+const Task = mongoose.model('Task', new mongoose.Schema({ title: String, completed: Boolean }));
 
-const taskSchema = new mongoose.Schema({
-  title: String,
-  completed: Boolean
-});
-const Task = mongoose.model('Task', taskSchema);
-\end{lstlisting}
-\textbf{Exam Scenario: GET /tasks (completed is false)}
-\begin{lstlisting}
-app.get('/tasks', async (req, res) => {
-  try {
-    const pendingTasks = await Task.find({ completed: false }); 
-    res.json(pendingTasks);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+app.get('/t', async (req, res) => {
+  const pending = await Task.find({ completed: false }); 
+  res.json(pending);
 });
 \end{lstlisting}
 
-\compactsection{Relationships in Mongoose}
-\textbf{One-to-One (Nesting):}
+\compactsection{Relationships (Connect Collections)}
+\textbf{1-1 (Nesting):} Child doc inside parent.
 \begin{lstlisting}
 const userSchema = new mongoose.Schema({
   name: String,
-  passport: { number: String, expiryDate: Date }
+  passport: { number: String, expiryDate: Date } // Embedded/Nested
 });
 \end{lstlisting}
-\textbf{One-to-Many (References):}
+\textbf{1-Many (Refs):}Use\texttt{mongoose.Types.ObjectId}+ \texttt{ref:"ColName".Use.popu()}.
 \begin{lstlisting}
 const postSchema = new mongoose.Schema({
-  content: String,
-  author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+  author: { 
+    type: mongoose.Schema.Types.ObjectId, // Stores ID
+    ref: 'User' // Links to User model
+  }
 });
-// Join:
-const posts = await Post.find().populate('author');
+const posts = await Post.find().populate('author'); // Joins data
 \end{lstlisting}
-\textbf{Many-to-Many (Junction):}
+\textbf{Many-Many (Junction):} Third model holding both IDs.
 \begin{lstlisting}
-const enrollmentSchema = new mongoose.Schema({
-  student: { type: mongoose.Schema.Types.ObjectId, ref: 'Student' },
-  course: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' }
+const enrollSchema = new mongoose.Schema({
+  student: { type: mongoose.Schema.Types.ObjectId, ref: 'Student' }, // ID Ref
+  course: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' }  // ID Ref
 });
+// Populates both linked documents:
+const e = await Enrollment.find().populate('student').populate('course');
 \end{lstlisting}
 
-\compactsection{Advanced Node.js Operations}
-Native mongodb driver (if asked):\\
-\textbf{Insert One:} \texttt{dbo.collection("customers").insertOne(obj, cb)}\\
-\textbf{Sort:} \texttt{find().sort(\{ name: 1 \})} (1 Asc, -1 Desc)\\
-\textbf{Limit:} \texttt{find().limit(5)}\\
-\textbf{Join (\$lookup):} Used in aggregation for left outer joins.
+\compactsection{Advanced Node.js/Mongo}
+\textbf{Insert:} \texttt{insertOne(obj, cb)} $\mid$ \textbf{Sort:} \texttt{find().sort(\{n:1\})} $\mid$ \textbf{Limit:} \texttt{find().limit(5)} $\mid$ \textbf{\$lookup:} Join pipeline.
 
 \topicsection{NODE.JS FUNDAMENTALS}
 
 \compactsection{Node.js Fundamentals}
-Asynchronous, single-threaded, event-driven runtime (V8 engine).\\
-\textbf{Traditional (Apache/IIS):} Multi-threaded.\\
-\textbf{Libuv:} C++ library managing thread pool for I/O tasks.\\
-\textbf{NPM \& Project Setup:}\\
-\texttt{npm init} (initialize), \texttt{npm install -g} (global).\\
-\textbf{dependencies:} Production (\texttt{--save}).\\
-\textbf{devDependencies:} Testing/Dev (\texttt{--save-dev}).\\
-\textbf{package.json:} Metadata. \textbf{package-lock.json:} Exact versions.\\
-\textbf{npm ci:} Exact versions from lockfile (CI/CD).
+Async, single-threaded runtime. \\
+\textbf{Libuv:} C++ library for I/O thread pool. \\
+\textbf{NPM:} \texttt{npm init} $\mid$ \texttt{npm install -g} (Global) $\mid$ \textbf{dep:} Prod $\mid$ \textbf{devDep:} Testing $\mid$ \textbf{lockfile:} Reproduction $\mid$ \textbf{npm ci:} Fast clean install.
 
 \compactsection{Global \& Utility Modules}
-\textbf{OS:} \texttt{os.platform()}, \texttt{os.totalmem()}, \texttt{os.type()}\\
-\textbf{Path:} \texttt{path.resolve()}, \texttt{path.extname()}\\
-\textbf{DNS:} \texttt{dns.lookup('google.com', callback)}\\
-\textbf{Console:} \texttt{console.time('label')} / \texttt{console.timeEnd('label')}\\
+\textbf{OS:} \texttt{platform(), totalmem()} $\mid$ \textbf{Path:} \texttt{resolve(), extname()}\\
+\textbf{DNS:} \texttt{lookup(domain, cb)} $\mid$ \textbf{Console:} \texttt{time(), timeEnd()}\\
 \textbf{Globals:} \texttt{\_\_dirname} (folder), \texttt{\_\_filename} (file)
 \begin{lstlisting}
-const os = require('os');
-const path = require('path');
-const dns = require('dns');
-console.time('run');
-console.log('Platform:', os.platform());
-console.log('Extension:', path.extname(__filename));
-dns.lookup('google.com', (err, ip) => { console.log('IP:', ip); });
-console.log('Dir:', __dirname);
-console.timeEnd('run');
+const os = require('os'), path = require('path'), dns = require('dns');
+console.time('r');
+dns.lookup('google.com', (e, ip) => { console.log(ip); });
+console.timeEnd('r');
 \end{lstlisting}
 
 \compactsection{Debugging \& Callbacks}
-\textbf{Console:} \texttt{console.trace()} (call stack).\\
-\textbf{Callbacks:} "Error-First" convention \texttt{function(err, data) \{ ... \}}.
+\textbf{Console:} \texttt{trace()} (stack). \textbf{Callbacks:} Error-First pattern.
 \begin{lstlisting}
-console.time('calc');
-let sum = 0;
-for (let i = 0; i < 1000000; i++) sum += i;
-console.timeEnd('calc');
+console.time('c'); let s=0; for(let i=0;i<1e6;i++) s+=i; console.timeEnd('c');
+function a() { b(); } function b() { console.trace(); } a();
 
-function a() { b(); }
-function b() { console.trace(); }
-a();
-
-function fetchData(callback) {
-    setTimeout(() => {
-        const error = Math.random() > 0.5 ? null : new Error('Failed');
-        callback(error, error ? null : 'Data');
-    }, 100);
+function fetch(cb) {
+  setTimeout(() => { const e = Math.random()>0.5?null:new Error('F'); cb(e, e?null:'D'); }, 10);
 }
-fetchData((err, data) => {
-    if (err) console.error(err.message);
-    else console.log(data);
-});
+fetch((e, d) => { if(e) console.error(e.message); else console.log(d); });
 \end{lstlisting}
 
 \end{multicols*}
