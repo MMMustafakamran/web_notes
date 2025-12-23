@@ -1,0 +1,203 @@
+**useState**: Manages local component state, used when you need reactive data that triggers re-renders when changed.
+
+**useEffect**: Performs side effects after render, used for data fetching, subscriptions, or manually changing the DOM.
+
+**useContext**: Accesses context values without prop drilling, used when multiple components need the same global data like theme or user.
+
+**useRef**: Creates mutable references that persist across renders, used for accessing DOM elements or storing values without re-renders.
+
+**useMemo**: Caches expensive computation results, used to optimize performance by avoiding recalculations on every render.
+
+**useId**: Generates unique stable IDs, used for accessibility attributes to connect labels with form elements.
+
+**useActionState**: Manages form state with built-in pending status, used for handling form submissions with loading states.
+
+**useReducer**: Manages complex state logic with actions, used when state transitions involve multiple sub-values or complex business rules.
+
+**useSyncExternalStore**: Subscribes to external data stores, used to integrate with state management libraries like Redux or Zustand.
+
+**useImperativeHandle**: Customizes what value is exposed when using ref, used to expose specific child component methods to parent components.
+
+**useTransition**: Marks state updates as non-urgent, used to keep the UI responsive during slow re-renders or data fetching.
+
+**useCallback**: Caches function definitions, used to prevent unnecessary re-renders of child components that depend on callback props.
+
+**useLayoutEffect**: Runs synchronously after DOM mutations, used for measurements or animations that need to happen before paint.
+
+**useDebugValue**: Displays custom labels in React DevTools, used to debug custom hooks by showing meaningful values.
+
+
+Q2: Solve on Answer book									[40 marks]
+a.	Create a React component that fetches data from an API endpoint and displays the data in a list.  Fetch the data when the component mounts.  {API url is www.webapi.com/users, each user object has name, email, and age.} [15 Marks]
+import React, { Component } from 'react';
+import axios from 'axios';
+
+class UserList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: [],
+      loading: true,
+      error: null,
+    };
+  }
+
+  componentDidMount() {
+    this.fetchUsers();
+  }
+
+  fetchUsers = async () => {
+    try {
+      const response = await axios.get('https://www.webapi.com/users');
+      this.setState({ users: response.data, loading: false });
+    } catch (error) {
+      this.setState({ error, loading: false });
+    }
+  };
+
+  render() {
+    const { users, loading, error } = this.state;
+
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    }
+
+    return (
+      <div>
+        <h1>User List</h1>
+        <ul>
+          {users.map((user) => (
+            <li key={user.email}>
+              <p>Name: {user.name}</p>
+              <p>Email: {user.email}</p>
+              <p>Age: {user.age}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default UserList;
+
+b.	Consider the question Q2 part a. and instead of third party API create your own web server with express and save the required info in json format and write a route /getUsers with get method. You are required to write a server code and just calling and receiving logic on client side. [10 Marks]
+
+// server.js
+const express = require('express');
+const app = express();
+const PORT = 3001;
+
+// In-memory JSON data
+const users = [
+  { name: "John Doe", email: "john@example.com", age: 30 },
+  { name: "Jane Smith", email: "jane@example.com", age: 25 },
+  { name: "Alice Johnson", email: "alice@example.com", age: 35 }
+];
+
+app.get('/getUsers', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(JSON.stringify(users));
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+// src/UserList.js
+import React, { Component } from 'react';
+import axios from 'axios';
+
+class UserList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: [],
+      loading: true,
+      error: null,
+    };
+  }
+
+  componentDidMount() {
+    this.fetchUsers();
+  }
+
+  fetchUsers = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/getUsers');
+      this.setState({ users: response.data, loading: false });
+    } catch (error) {
+      this.setState({ error, loading: false });
+    }
+  };
+
+  render() {
+    const { users, loading, error } = this.state;
+
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    }
+
+    return (
+      <div>
+        <h1>User List</h1>
+        <ul>
+          {users.map((user) => (
+            <li key={user.email}>
+              <p>Name: {user.name}</p>
+              <p>Email: {user.email}</p>
+              <p>Age: {user.age}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default UserList;
+
+c.	Consider the Q2 part b. and instead of sending information from json, Get the data from MongoDB. Consider the MongoDB has already contains the collection of users. You are required to write a code of accessing data from MongoDB and sending to the client only. [15 Marks]
+// server.js
+const express = require('express');
+const mongoose = require('mongoose');
+const app = express();
+const PORT = 3001;
+
+// MongoDB connection URI
+const mongoURI = 'mongodb://localhost:27017/mydatabase';
+
+// Connect to MongoDB
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
+
+// Define a user schema and model
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  age: Number
+});
+
+const User = mongoose.model('User', userSchema);
+
+// Route to get users
+app.get('/getUsers', async (req, res) => {
+  try {
+    const users = await User.find({});
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});

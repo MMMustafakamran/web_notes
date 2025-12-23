@@ -1,0 +1,83 @@
+import React, { Component } from 'react';//import comp class if comp based 
+import axios from 'axios';  // HTTP client for API calls
+
+class UserList extends Component {//class comp
+  constructor(props) {
+    super(props);//required in class compnd
+    this.state = {// Initialize component state
+      users: [],      // Will hold array of user objects
+      loading: true,  
+      error: null,    
+    };
+  }  
+  componentDidMount() {// Lifecycle method - runs after component mounts (appears on screen)
+    this.fetchUsers();  
+  }
+
+  fetchUsers = async () => {//func async fetches users
+    try {
+      // Make GET request to API endpoint
+      const response = await axios.get('https://www.webapi.com/users');
+      
+      // Update state with received data, set loading to false
+      this.setState({ 
+        users: response.data,  // Store users from API response
+        loading: false         // Data received, stop loading
+      });
+    } catch (error) {
+      this.setState({ 
+        error: error,  
+        loading: false 
+      });
+    }
+  };
+  render() {
+    
+    const { users, loading, error } = this.state;
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+    if (error) {
+      return <div>Error: {error.message}</div>; 
+    }
+    return (
+      <div>
+        <h1>User List</h1> 
+        
+        <ul>
+         
+          {users.map((user) => (
+            <li key={user.email}>  {/* Unique key for React's internal tracking */}
+              <p>Name: {user.name}</p>   
+              <p>Email: {user.email}</p> 
+              <p>Age: {user.age}</p>   
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default UserList;// Export component for use in other files
+
+key syntax 
+main class:
+	constructor(props):This.state(  users ,loading ,error)
+	
+	componentDidMount: call fetchUsers
+	fetchusers: async func 
+		const response = await axios.get('https://www.webapi.com/users');
+		and this.setState(user: response.data , loaded=false), error FileSystemHandle
+	 
+	render():
+		if loading = div loading.. or div error 
+		else 
+			return(orderlist of map(list =key= user.email, otherdata))
+
+
+
+
+
+
+

@@ -8,6 +8,7 @@
 \usepackage{titlesec}
 \usepackage{amsmath}
 \usepackage{microtype} % Better character spacing to save horizontal space
+\usepackage{anyfontsize} % Allow arbitrary font sizes
 
 % --- Visual Setup ---
 \setlength{\parindent}{0pt}
@@ -20,6 +21,17 @@
 \definecolor{codepurple}{rgb}{0.5,0,0.5}
 \definecolor{codeorange}{rgb}{0.8,0.4,0}
 \definecolor{codered}{rgb}{0.8,0,0}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with, as, async, await, const, let},
+  morekeywords=[2]{require, exports, module, process, console, express, app, mongoose, Schema, model, ObjectId, os, path, dns, React, Component, useState, useEffect, axios, BrowserRouter, Route, Link, Switch},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  morestring=[b]`
+}
 
 \lstdefinelanguage{HTMLCSS}{
   keywords={html, body, div, img, meta, link, script, class, id, src, alt, name, content, href, rel, type, style, table, tr, th, td, form, label, input, select, option, textarea, button, a, br, hr},
@@ -34,12 +46,12 @@
 \lstset{
     language=JavaScript,
     backgroundcolor=\color{white},
-    basicstyle=\ttfamily\tiny,
-    commentstyle=\color{codegreen}\tiny,
-    keywordstyle=\color{codeblue}\bfseries\tiny,
-    keywordstyle=[2]\color{codeorange}\tiny,
-    stringstyle=\color{codepurple}\tiny,
-    identifierstyle=\color{black}\tiny,
+    basicstyle=\ttfamily\fontsize{5}{5}\selectfont,
+    commentstyle=\color{codegreen}\fontsize{5}{5}\selectfont,
+    keywordstyle=\color{codeblue}\bfseries\fontsize{5}{5}\selectfont,
+    keywordstyle=[2]\color{codeorange}\fontsize{5}{5}\selectfont,
+    stringstyle=\color{codepurple}\fontsize{5}{5}\selectfont,
+    identifierstyle=\color{black}\fontsize{5}{5}\selectfont,
     breaklines=true,
     tabsize=2,
     frame=lr,
@@ -52,6 +64,25 @@
     escapeinside={(*@}{@*)}
 }
 
+% --- Force 5pt Font Globally ---
+\newcommand{\forcefivept}{\fontsize{5}{5}\selectfont}
+\renewcommand{\tiny}{\forcefivept}
+\renewcommand{\scriptsize}{\forcefivept}
+\renewcommand{\footnotesize}{\forcefivept}
+\renewcommand{\small}{\forcefivept}
+\renewcommand{\normalsize}{\forcefivept}
+\renewcommand{\large}{\forcefivept}
+\renewcommand{\Large}{\forcefivept}
+\renewcommand{\LARGE}{\forcefivept}
+\renewcommand{\huge}{\forcefivept}
+\renewcommand{\Huge}{\forcefivept}
+
+% Redefine \textbf to strictly use 5pt
+\let\oldtextbf\textbf
+\renewcommand{\textbf}[1]{\oldtextbf{\forcefivept #1}}
+
+\forcefivept 
+
 % --- Unified Heading Numbering with Compact Grey Box ---
 \newcounter{unifiedsection}
 \newcommand{\compactsection}[1]{%
@@ -60,7 +91,7 @@
     \noindent%
     {\setlength{\fboxsep}{0.5pt}% reduced from 1pt
     \colorbox{black!10}{%
-        \makebox[\dimexpr\linewidth-2\fboxsep\relax][l]{\textbf{\scriptsize \theunifiedsection. #1}}%
+        \makebox[\dimexpr\linewidth-2\fboxsep\relax][l]{\forcefivept\textbf{\theunifiedsection. #1}}%
     }}%
     \vspace{0.5pt}% reduced from 1pt
 }
@@ -71,7 +102,7 @@
     \noindent%
     {\setlength{\fboxsep}{1.5pt}% reduced from 2pt
     \colorbox{black}{%
-        \makebox[\dimexpr\linewidth-2\fboxsep\relax][c]{\color{white}\textbf{\scriptsize #1}}% font size scriptsize
+        \makebox[\dimexpr\linewidth-2\fboxsep\relax][c]{\color{white}\forcefivept\textbf{#1}}% font size 5pt
     }}%
     \vspace{1pt}% reduced from 2pt
 }
@@ -80,7 +111,7 @@
 \setlist{nosep, leftmargin=*} 
 
 \begin{document}
-\footnotesize % Set body font to footnotesize
+\forcefivept % Set body font to 5pt
 
 \begin{multicols*}{3}
 
@@ -92,10 +123,10 @@
 \begin{lstlisting}[language=HTMLCSS]
 <table border="1">
   <tr> <!-- Table Row -->
-    <th>H1</th> <th>H2</th> <!-- Headers (Bold) -->
+    <th>H1</th> <th>H2</th> 
   </tr>
   <tr>
-    <td>D1</td> <td>D2</td> <!-- Data cells -->
+    <td>D1</td> <td>D2</td> 
   </tr></table>
 \end{lstlisting}
 
@@ -112,7 +143,7 @@
   <select name="course" required>
     <option value="" disabled selected>Select</option>
     <option value="fs">Full Stack</option>
-  </select
+  </select>
   <textarea rows="4" cols="40"></textarea>
   <button type="submit">Submit</button></form>
 \end{lstlisting}
@@ -138,6 +169,38 @@ div {width: 300px;;transition: width 2s, transform 2s;} /* Smooth animation */
 div:hover {transform: rotate(180deg);}
 \end{lstlisting}
 
+\topicsection{RESPONSIVE DESIGN \& BOOTSTRAP}
+
+\begin{lstlisting}[language=HTMLCSS]
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+\end{lstlisting}
+
+\begin{lstlisting}[language=HTMLCSS]
+* { box-sizing: border-box; } // Padding doesn't increase width
+img { max-width: 100%; height: auto; } // Responsive image
+\end{lstlisting}
+
+\begin{lstlisting}[language=HTMLCSS]
+.column { width: 100%; }
+@media screen and (min-width: 768px) {
+.column { width: 50%; } // Tablet/Desktop
+} //Default (Mobile)
+\end{lstlisting}
+
+\compactsection{Bootstrap 5 Grid System}
+\textbf{Breakpoints:} \texttt{-sm} (576px), \texttt{-md} (768px), \texttt{-lg} (992px), \texttt{-xl} (1200px), \texttt{-xxl} (1400px). \\
+\textbf{Container:} Centers content. \textbf{Row:} Flex wrap. \textbf{Col:} 12-unit grid.
+\begin{lstlisting}[language=HTMLCSS]
+<div class="container">
+  <div class="row">
+    <!-- col-12=Mobile, col-lg-3=1/4 Desktop -->
+      <div class="card">
+        <img src="p1.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Profile</h5>
+          <p class="card-text">Skills: HTML, CSS</p>
+</div></div></div>
+\end{lstlisting}
 \topicsection{EXPRESS JS}
 
 \compactsection{Core Server Setup}
@@ -330,39 +393,9 @@ fetch((e, d) => { if(e) console.error(e.message); else console.log(d); });
     \item \textbf{Props:} Is a child trying to modify \texttt{this.props}? (Read-only!)
 \end{itemize}
 
-\topicsection{RESPONSIVE DESIGN \& BOOTSTRAP}
-
-\begin{lstlisting}[language=HTMLCSS]
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-\end{lstlisting}
-
-\begin{lstlisting}[language=HTMLCSS]
-* { box-sizing: border-box; } // Padding doesn't increase width
-img { max-width: 100%; height: auto; } // Responsive image
-\end{lstlisting}
-
-\begin{lstlisting}[language=HTMLCSS]
-.column { width: 100%; }
-@media screen and (min-width: 768px) {
-.column { width: 50%; } // Tablet/Desktop
-} //Default (Mobile)
-\end{lstlisting}
-
-\compactsection{Bootstrap 5 Grid System}
-\textbf{Breakpoints:} \texttt{-sm} (576px), \texttt{-md} (768px), \texttt{-lg} (992px), \texttt{-xl} (1200px), \texttt{-xxl} (1400px). \\
-\textbf{Container:} Centers content. \textbf{Row:} Flex wrap. \textbf{Col:} 12-unit grid.
-\begin{lstlisting}[language=HTMLCSS]
-<div class="container">
-  <div class="row">
-    <!-- col-12=Mobile, col-lg-3=1/4 Desktop -->
-    <div class="col-12 col-lg-3">
-      <div class="card">
-        <img src="p1.jpg" class="card-img-top">
-        </div>close all 
-\end{lstlisting}
 
 \compactsection{Detailed React Example (State, Routing, HOC)}
-\begin{lstlisting}[language=JavaScript, basicstyle=\fontsize{4}{4.4}\selectfont\ttfamily]
+\begin{lstlisting}[language=JavaScript, basicstyle=\fontsize{5}{5}\selectfont\ttfamily]
 import React, { Component, useState, useEffect } from 'react';
 import axios from 'axios'; 
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';

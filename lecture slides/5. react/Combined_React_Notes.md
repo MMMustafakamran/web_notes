@@ -257,7 +257,3 @@ class Home extends React.Component {
 ## 10. Tools
 
 - **React Developer Tools**: Chrome extension to inspect component hierarchy, props, and state.
-
----
-
-**End of Combined Notes**
