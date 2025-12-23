@@ -1,6 +1,6 @@
 \documentclass[8pt, a4paper, landscape]{extarticle}
 
-\usepackage[left=0.1cm,right=0.1cm,top=0.1cm,bottom=0.1cm]{geometry}
+\usepackage[left=0.2cm,right=0.1cm,top=0.1cm,bottom=0.1cm]{geometry}
 \usepackage{multicol}
 \usepackage{xcolor}
 \usepackage{listings}
@@ -42,10 +42,10 @@
     identifierstyle=\color{black}\tiny,
     breaklines=true,
     tabsize=2,
-    frame=single,
+    frame=lr,
     framerule=0.2pt,
-    xleftmargin=1pt,
-    xrightmargin=1pt,
+    xleftmargin=0pt,
+    xrightmargin=0pt,
     aboveskip=0pt,
     belowskip=1pt,
     showstringspaces=false,
@@ -86,7 +86,6 @@
 
 \topicsection{HTML FUNDAMENTALS}
 
-\compactsection{Basic Elements \& Attributes}
 \textbf{Links:} \texttt{<a href="URL" target="\_blank">} (\texttt{\_blank} opens new tab). \\
 \textbf{Void Elements:} No closing tag e.g. \texttt{<img>, <br> (break), <hr> (line)}. \\
 \textbf{Images:} \texttt{<img src="path" alt="desc" width="300">} (\texttt{alt} is for accessibility).
@@ -120,7 +119,6 @@
 
 \topicsection{CSS FUNDAMENTALS}
 
-\compactsection{Syntax \& Inclusion}
 \textbf{Rule:} \texttt{selector \{ property: value; \}}. \\
 \textbf{Methods:} 1. \textbf{Inline:} \texttt{<h1 style="color:red;">}. 2. \textbf{Internal:} \texttt{<style>} in head. 3. \textbf{External:} \texttt{<link rel="stylesheet" href="s.css">}. \\
 \textbf{Priority:} Inline $>$ Internal $>$ External (Cascading).
@@ -136,9 +134,8 @@
 \textbf{Transform:} \texttt{rotate(180deg), scale(2), translate(10px)}.
 
 \begin{lstlisting}[language=HTMLCSS]
-div {
-  width: 300px;;transition: width 2s, transform 2s; /* Smooth animation */
-}div:hover {transform: rotate(180deg);}
+div {width: 300px;;transition: width 2s, transform 2s;} /* Smooth animation */
+div:hover {transform: rotate(180deg);}
 \end{lstlisting}
 
 \topicsection{EXPRESS JS}
