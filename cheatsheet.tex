@@ -254,15 +254,15 @@ app.get('/show', (req, res) => {
 <% books.forEach(function(book) { %> <li><%= book.title %> - $<%= book.price %></li> <% }); %>
 \end{lstlisting}
 
-\compactsection{Handling Data (JSON vs. DB)}
-\textbf{Local JSON:} \texttt{res.json(usersArray);} (Immediate)\\
-\textbf{MongoDB (Mongoose):}
-\begin{lstlisting}
-app.get('/u', async (req, res) => {
-    try { const u = await User.find({}); res.json(u); }
-    catch (e) { res.status(500).send(e.message); }
-});
-\end{lstlisting}
+% \compactsection{Handling Data (JSON vs. DB)}
+% \textbf{Local JSON:} \texttt{res.json(usersArray);} (Immediate)\\
+% \textbf{MongoDB (Mongoose):}
+% \begin{lstlisting}
+% app.get('/u', async (req, res) => {
+%     try { const u = await User.find({}); res.json(u); }
+%     catch (e) { res.status(500).send(e.message); }
+% });
+% \end{lstlisting}
 
 \topicsection{MONGODB \& MONGOOSE}
 
@@ -282,46 +282,77 @@ Table $\to$ Coll $\mid$ Row $\to$ Doc $\mid$ Column $\to$ Field $\mid$ Join $\to
 
 \compactsection{Mongoose Integration}
 \begin{lstlisting}
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/db');
-const Task = mongoose.model('Task', new mongoose.Schema({ title: String, completed: Boolean }));
-
-app.get('/t', async (req, res) => {
-  const pending = await Task.find({ completed: false }); 
-  res.json(pending);
-});
-\end{lstlisting}
-
-\compactsection{Relationships (Connect Collections)}
-\textbf{1-1 (Nesting):} Child doc inside parent.
-\begin{lstlisting}
+const express = require('express');
+const mongoose = require('mongoose');//Install:npm init -y &&npm instal expres mongoos
+const app = express();
+app.use(express.json());
+mongoose.connect('mongodb://localhost:27017/test');
 const userSchema = new mongoose.Schema({
-  name: String,
-  passport: { number: String, expiryDate: Date } // Embedded/Nested
+    name: String,age: Number,email: String
 });
-\end{lstlisting}
-\textbf{1-Many (Refs):}Use\texttt{mongoose.Types.ObjectId}+ \texttt{ref:"ColName".Use.popu()}.
-\begin{lstlisting}
-const postSchema = new mongoose.Schema({
-  author: { 
-    type: mongoose.Schema.Types.ObjectId, // Stores ID
-    ref: 'User' // Links to User model
-  }
+const User = mongoose.model('User', userSchema);
+app.post('/users', async (req, res) => {//crud create
+    const user = new User(req.body);
+    await user.save();
+    res.json(user);});
+app.get('/users', async (req, res) => {//// READ ALL (with filtering/sorting)
+    const users = await User.find(req.query) // Filter from query params
+        .sort({name: 1}) // Sort by name
+        .limit(10); // Limit results
+    res.json(users);});
+app.get('/users/:id', async (req, res) => {// READ ONE
+    const user = await User.findById(req.params.id);
+    user ? res.json(user) : res.status(404).send('Not found');});
+app.put('/users/:id', async (req, res) => {// UPDATE
+    const user = await User.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    res.json(user);});
+app.delete('/users/:id', async (req, res) => {// DELETE
+    await User.findByIdAndDelete(req.params.id);res.send('Deleted');});
+app.get('/stats', async (req, res) => {//4. SPECIAL QUERIES AGGREGATION (count, average)
+    const stats = await User.aggregate([
+        {$group: {_id: null, count: {$sum: 1}, avgAge: {$avg: '$age'}}}
+    ]);res.json(stats[0]);});
+const postSchema = new mongoose.Schema({// 5. RELATIONSHIPS
+    title: String,
+    userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'} // Reference
 });
-const posts = await Post.find().populate('author'); // Joins data
-\end{lstlisting}
-\textbf{Many-Many (Junction):} Third model holding both IDs.
-\begin{lstlisting}
-const enrollSchema = new mongoose.Schema({
-  student: { type: mongoose.Schema.Types.ObjectId, ref: 'Student' }, // ID Ref
-  course: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' }  // ID Ref
-});
-// Populates both linked documents:
-const e = await Enrollment.find().populate('student').populate('course');
+const Post = mongoose.model('Post', postSchema);
+app.get('/posts', async (req, res) => {// JOIN with populate()
+    const posts = await Post.find().populate('userId', 'name'); // Get user name
+    res.json(posts);});
+// Many-Many (Junction): Model w/ both IDs. Use: .find().populate('a').populate('b');
+app.listen(3000, () => console.log('Server running on port 3000'));
 \end{lstlisting}
 
-\compactsection{Advanced Node.js/Mongo}
-\textbf{Insert:} \texttt{insertOne(obj, cb)} $\mid$ \textbf{Sort:} \texttt{find().sort(\{n:1\})} $\mid$ \textbf{Limit:} \texttt{find().limit(5)} $\mid$ \textbf{\$lookup:} Join pipeline.
+% \compactsection{Relationships (Connect Collections)}
+% \textbf{1-1 (Nesting):} Child doc inside parent.
+% \begin{lstlisting}
+% const userSchema = new mongoose.Schema({
+%   name: String,
+%   passport: { number: String, expiryDate: Date } // Embedded/Nested
+% });
+% \end{lstlisting}
+% \textbf{1-Many (Refs):}Use\texttt{mongoose.Types.ObjectId}+ \texttt{ref:"ColName".Use.popu()}.
+% \begin{lstlisting}
+% const postSchema = new mongoose.Schema({
+%   author: { 
+%     type: mongoose.Schema.Types.ObjectId, // Stores ID
+%     ref: 'User' // Links to User model
+%   }
+% });
+% const posts = await Post.find().populate('author'); // Joins data
+% \end{lstlisting}
+% \textbf{Many-Many (Junction):} Third model holding both IDs.
+% \begin{lstlisting}
+% const enrollSchema = new mongoose.Schema({
+%   student: { type: mongoose.Schema.Types.ObjectId, ref: 'Student' }, // ID Ref
+%   course: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' }  // ID Ref
+% });
+% // Populates both linked documents:
+% const e = await Enrollment.find().populate('student').populate('course');
+% \end{lstlisting}
+% \compactsection{Advanced Node.js/Mongo}
+% \textbf{Insert:} \texttt{insertOne(obj, cb)} $\mid$ \textbf{Sort:} \texttt{find().sort(\{n:1\})} $\mid$ \textbf{Limit:} \texttt{find().limit(5)} $\mid$ \textbf{\$lookup:} Join pipeline.
 
 \topicsection{NODE.JS FUNDAMENTALS}
 
@@ -334,50 +365,35 @@ Async, single-threaded runtime. \\
 \textbf{OS:} \texttt{platform(), totalmem()} $\mid$ \textbf{Path:} \texttt{resolve(), extname()}\\
 \textbf{DNS:} \texttt{lookup(domain, cb)} $\mid$ \textbf{Console:} \texttt{time(), timeEnd()}\\
 \textbf{Globals:} \texttt{\_\_dirname} (folder), \texttt{\_\_filename} (file)
-\begin{lstlisting}
-const os = require('os'), path = require('path'), dns = require('dns');
-console.time('r');
-dns.lookup('google.com', (e, ip) => { console.log(ip); });
-console.timeEnd('r');
-\end{lstlisting}
 
 \compactsection{Debugging \& Callbacks}
 \textbf{Console:} \texttt{trace()} (stack). \textbf{Callbacks:} Error-First pattern.
-\begin{lstlisting}
-console.time('c'); let s=0; for(let i=0;i<1e6;i++) s+=i; console.timeEnd('c');
-function a() { b(); } function b() { console.trace(); } a();
-
-function fetch(cb) {
-  setTimeout(() => { const e = Math.random()>0.5?null:new Error('F'); cb(e, e?null:'D'); }, 10);
-}
-fetch((e, d) => { if(e) console.error(e.message); else console.log(d); });
-\end{lstlisting}
 
 \topicsection{REACT JS}
 
-\compactsection{Fundamentals \& Components}
-\textbf{Virtual DOM:} Lightweight copy of Real DOM. React uses "Diffing" to update only changed parts (fast) vs Real DOM (slow reflows/repaints). \\
-\textbf{Functional:} Presentations; uses props. \textbf{Class:} Logic/State; needs \texttt{render()}. \\
-\textbf{JSX Rules:} 1. Single Root element. 2. \texttt{className} instead of \texttt{class}. 3. JS in \texttt{\{ \}}.
-
-\compactsection{State vs. Props (Exam Heavy)}
-\textbf{State:} Internal to component; mutable via \texttt{setState}; triggers re-render on change. \\
-\textbf{Props:} Passed from parent (External); read-only (Immutable); triggers re-render when parent changes them.
-
-
-\compactsection{Events, Lists \& Keys}
-\textbf{this Context:} Handlers lose \textit{this}. Use \textbf{Arrow Functions}. \\
-\textbf{Event Listeners:} Pass functions as props. Use \texttt{e.target} for values.
-
-
-\compactsection{Forms \& Data (Axios)}
-\textbf{Controlled Comp:} State handles data. Use \texttt{e.preventDefault()} on submit.
-
-
-\compactsection{React Router (v5)}
-\texttt{<BrowserRouter>} wraps app. \texttt{<Switch>} renders 1st match. \\
-\textbf{Link vs NavLink:} Prevent reload. \texttt{NavLink} adds "active" class. \\
-\textbf{Params:} Access \texttt{/post/:id} via \texttt{this.props.match.params.id}.
+% \compactsection{Fundamentals \& Components}
+% \textbf{Virtual DOM:} Lightweight copy of Real DOM. React uses "Diffing" to update only changed parts (fast) vs Real DOM (slow reflows/repaints). \\
+% \textbf{Functional:} Presentations; uses props. \textbf{Class:} Logic/State; needs \texttt{render()}. \\
+% \textbf{JSX Rules:} 1. Single Root element. 2. \texttt{className} instead of \texttt{class}. 3. JS in \texttt{\{ \}}.
+% 
+% \compactsection{State vs. Props (Exam Heavy)}
+% \textbf{State:} Internal to component; mutable via \texttt{setState}; triggers re-render on change. \\
+% \textbf{Props:} Passed from parent (External); read-only (Immutable); triggers re-render when parent changes them.
+% 
+% 
+% \compactsection{Events, Lists \& Keys}
+% \textbf{this Context:} Handlers lose \textit{this}. Use \textbf{Arrow Functions}. \\
+% \textbf{Event Listeners:} Pass functions as props. Use \texttt{e.target} for values.
+% 
+% 
+% \compactsection{Forms \& Data (Axios)}
+% \textbf{Controlled Comp:} State handles data. Use \texttt{e.preventDefault()} on submit.
+% 
+% 
+% \compactsection{React Router (v5)}
+% \texttt{<BrowserRouter>} wraps app. \texttt{<Switch>} renders 1st match. \\
+% \textbf{Link vs NavLink:} Prevent reload. \texttt{NavLink} adds "active" class. \\
+% \textbf{Params:} Access \texttt{/post/:id} via \texttt{this.props.match.params.id}.
 
 \compactsection{HOC \& Redux}
 \textbf{Higher-Order Component:} Func taking component $\to$ returns enhanced component (Loading, Auth).
@@ -394,79 +410,118 @@ fetch((e, d) => { if(e) console.error(e.message); else console.log(d); });
 \end{itemize}
 
 
-\compactsection{Detailed React Example (State, Routing, HOC)}
+\compactsection{Detailed React Example (State, Routing)}
 \begin{lstlisting}[language=JavaScript, basicstyle=\fontsize{5}{5}\selectfont\ttfamily]
-import React, { Component, useState, useEffect } from 'react';
-import axios from 'axios'; 
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
-
-const withLoading = (WrappedComponent) => {
-  return function WithLoadingComponent({ isLoading, ...props }) {
-    if (isLoading) return <h2>Loading Data from API...</h2>;
-    return <WrappedComponent {...props} />;
+import React, { Component } from 'react';import axios from 'axios'; 
+import { BrowserRouter, Route, Link } from 'react-router-dom'
+const BookList = ({ books, onRemove }) => (// FUNCTIONAL COMPONENT - Stateless, receives props
+  books.length === 0 ? <p>No books!</p> : 
+  <div>{books.map(book => (
+    <div key={book.id}> {/* KEY required for list items */}
+      <h3>{book.title}</h3>
+      <p>Author: {book.author}</p>
+      <button onClick={() => onRemove(book.id)}>Remove</button> {/* Event handler */}
+    </div>
+  ))}</div>
+);
+class LibraryApp extends Component {// CLASS COMPONENT - Has state and lifecycle methods
+  state = { books: [], loading: true, error: null, title: '', author: '' };
+  componentDidMount() { this.fetchBooks(); }// LIFECYCLE METHOD - Runs once after component mounts
+  fetchBooks = async () => {// ASYNC API CALL - Fetch data with axios
+    try {
+      this.setState({ loading: true }); // Update state - triggers re-render
+      const res = await axios.get('https://.com/books');
+      this.setState({ 
+        books: res.data.map((p,i) => ({ id:p.id, title:p.title, author:`Author ${i+1}` })),
+        loading: false 
+      });
+    } catch(e) {this.setState({ error: 'Load failed', loading: false });}
   };
-};
-
-const NinjaList = ({ ninjas, deleteNinja }) => {
-  const ninjaList = ninjas.length ? (
-    ninjas.map(ninja => (
-      <div className="ninja-card" key={ninja.id}>
-        <p>Name: {ninja.name}</p>
-        <p>Status: {ninja.age > 25 ? 'Senior' : 'Junior'}</p>
-        <button onClick={() => deleteNinja(ninja.id)}>Delete</button>
-      </div>
-    ))
-  ) : ( <p>No ninjas left!</p> );
-  return <div className="list">{ninjaList}</div>;
-};
-
-const EnhancedList = withLoading(NinjaList);
-
-class App extends Component {
-  state = {
-    ninjas: [ { name: 'Ryu', age: 30, id: 1 }, { name: 'Yoshi', age: 20, id: 2 } ],
-    isLoading: false, userInput: ''
+  handleAdd = (e) => {// EVENT HANDLER - Form submission
+    e.preventDefault(); // Prevent page reload
+    const { title, author, books } = this.state;
+    if(!title.trim() || !author.trim()) return;
+    this.setState({
+      books: [...books, { id:Date.now(), title, author }], // Spread operator
+      title: '', author: '' // Clear inputs
+    });
   };
-
-  componentDidMount() {
-    this.setState({ isLoading: true });
-    axios.get('URL').then(res => { this.setState({ isLoading: false }); });
-  }
-
-  handleChange = (e) => { this.setState({ userInput: e.target.value }); };
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const newNinja = { name: this.state.userInput, age: Math.floor(Math.random()*40), id: Math.random() };
-    this.setState({ ninjas: [...this.state.ninjas, newNinja], userInput: '' });
+  handleRemove = (id) => {// EVENT HANDLER - Delete item
+    this.setState({ books: this.state.books.filter(b => b.id !== id) }); // Update state
   };
-
-  deleteNinja = (id) => {
-    const filteredNinjas = this.state.ninjas.filter(n => n.id !== id);
-    this.setState({ ninjas: filteredNinjas });
-  };
-
   render() {
+    const { books, loading, error, title, author } = this.state; // Destructure
     return (
-      <BrowserRouter>
-        <div className="App">
-          <nav> <Link to="/">Home</Link> | <Link to="/about">About</Link> </nav>
-          <Switch>
-            <Route exact path="/">
-              <h1>Ninja Manager</h1>
-              <form onSubmit={this.handleSubmit}>
-                <input type="text" onChange={this.handleChange} value={this.state.userInput} />
-                <button>Add Ninja</button>
-              </form>
-              <EnhancedList isLoading={this.state.isLoading} ninjas={this.state.ninjas} deleteNinja={this.deleteNinja} />
-            </Route>
-            <Route path="/ninja/:id" render={(props) => ( <div>ID: {props.match.params.id}</div> )} />
-          </Switch>
-        </div>
-      </BrowserRouter>
-    );
-  }
-}
+      <BrowserRouter>// REACT ROUTER - Enables multiple pages
+        <div>
+          {/* NAVIGATION LINKS */}
+          <nav><Link to="/">Home</Link> | <Link to="/add">Add</Link></nav>
+          <Route exact path="/">
+            <h1>My Library</h1>
+            {loading && <p>Loading...</p>} {/* Conditional rendering */}
+            {error && <p style={{color:'red'}}>{error}</p>}
+            {/* PASSING PROPS - Parent to child */}
+            {!loading && <BookList books={books} onRemove={this.handleRemove} />}
+            <button onClick={this.fetchBooks}>Refresh</button>
+          </Route>
+		  <Route path="/add">
+            <h2>Add Book</h2>
+            {/* CONTROLLED COMPONENT - Input bound to state */}
+            <form onSubmit={this.handleAdd}>
+              <input value={title} onChange={e=>this.setState({title:e.target.value})} placeholder="Title"/>
+              <button>Add</button>
+            </form>
+            <Link to="/">← Back</Link>
+          </Route>
+          <Route path="/book/:id">{/* DYNAMIC ROUTE - URL parameters */}
+            {({match}) => {
+              const book = books.find(b => b.id === parseInt(match.params.id));
+              return book ? <div><h3>{book.title}</h3><p>By {book.author}</p></div> : <p>Not found</p>;
+            }}
+          </Route>
+}});</BrowserRouter></div>
+\end{lstlisting}
+
+\topicsection{REACT HOOKS}
+\forcefivept
+\fontsize{4}{4.8}\selectfont\ttfamily
+\begin{lstlisting}[language=JavaScript]
+// 1. useContext: Accesses Context to share data w/o prop drilling.Use: Multiple components need same data
+const ThemeContext = createContext();
+const ThemeToggle = () => {
+  const { theme, setTheme } = useContext(ThemeContext);
+  return <button onClick={() => setTheme('dark')}>Dark Mode</button>;
+};// 2. useRef: Mutable ref persists across renders. Use: DOM 
+access, prev values, timers. 
+function FocusInput() {
+  const inputRef = useRef(null); const focusIn = () => inputRef.current.focus();
+  return (<><input ref={inputRef} /><button onClick={focusIn}>Focus</button></>);
+}// Remember: Changing .current doesn't trigger re-render.
+// 3. useMemo: Memoizes expensive calcs to improve performance. Use: Heavy comps, derived values. 
+function ProductList({ products }) {
+  const total = useMemo(() => products.reduce((s, p) => s + p.price, 0), [products]);
+  return <div>Total: ${total}</div>;
+}// Remember: Only recalc when deps change.
+// 4. useId: Generates unique stable IDs for accessibility. Use: Form labels, ARIA. 
+function LoginForm() {
+  const emailId = useId(); const passId = useId();
+  return (<form><label htmlFor={emailId}>Email</label><input id={emailId} type="email" /></form>);
+}// Remember: Consistent across server/client.
+// 5. useReducer: Complex state logic w/ actions/reducers. Use: Complex state w/ multi sub-values. 
+const counterReducer = (s, a) => {
+  switch(a.type) { case 'inc': return {c:s.c+1}; case 'dec': return {c:s.c-1}; default: return s; }
+};// Remember: (state, action) => newState.
+function Counter() {
+  const [s, d] = useReducer(counterReducer, { c: 0 });
+  return (<div>{s.c}<button onClick={()=>d({type:'inc'})}>+</button></div>);
+}// 6. useActionState: Handles form states w/ built-in pending. Use: Form submits, async actions.
+// 7. useSyncExternalStore: Subscribes to external stores outside React. Use: Redux, Zustand, browser APIs.
+// 8. useImperativeHandle: Customizes value exposed to parent via ref. Use: Exposing child methods.
+// 9. useTransition: Marks updates as non-urgent. Use: Slow renders, search filtering, tab switching.
+// 10. useDeferredValue: Defers updating non-urgent values. Use: Search, large lists, responsive UI.
+// 11. useLayoutEffect: Runs sync after DOM mutations. Use: Measuring DOM, animations before paint.
+// 12. useDebugValue: Custom labels for hooks in DevTools. Use: Custom hooks for better debugging.
+// 13. useInsertionEffect: Runs before DOM mutations. Use: Injecting dynamic styles (CSS-in-JS).
 \end{lstlisting}
 
 \end{multicols*}
