@@ -1,0 +1,267 @@
+________________________________________1. Core Server Setup
+To start a server, you need to require Express, initialize it, and listen on a port.
+JavaScript
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+// Basic Route
+app.get('/', (req, res) => res.send('Hello World!'));
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+________________________________________
+2. Route Path Patterns (Exam Heavy)
+Express uses string patterns and Regex for route matching.
+ab?cd → ? means b is optional e.g→ /acd, /abcd
+ab+cd → + means b repeats 1 or more e.g /abcd, /abbcd
+ab*cd → * means anything (0 or more) between e.g /abxcd, /ab123cd
+/.*fly$/ → .* = anything, $ = ends with "fly" → /butterfly, /dragonfly
+:id → : marks route parameter → /user/34 (req.params.id = 34)
+________________________________________
+3. Middleware Execution Flow (Exam Focus)
+Middleware func have to req, res, next. They execute in the order they are defined.
+If next() not called /res not sent to client, the request hangs and routes are never reached.
+The "t1/t2" Analysis (From Question 4):
+If a request is made to /about: (order= globalmiddleware with next, routespecific funcs up to down)
+1.	app.use((req, res, next) => { console.log("t1"); next(); }); → output: t1, continues.
+2.	app.get("/about1", ...) → Path doesn't match, skipped.
+3.	app.use((req, res, next) => { console.log("t2"); }); → Logs t2. No next() is called!
+4.	Execution Stops. The specific app.get("/about") lower in the code is never reached.
+________________________________________
+4. Types of Middleware
+1.	Application-level: Bound to app.use(). Runs for all requests.
+2.	Router-level: Bound to express.Router(). Used to modularize code (e.g., all /api routes).
+3.	Built-in: express.static() (files), express.json() (parsing JSON body).
+4.	Error-handling: Takes four arguments: (err, req, res, next).
+________________________________________
+5. Response Methods
+Use these to end the request-response cycle. 
+- res.send('Hello World') – Sends basic text or HTML.
+- res.json({ message: 'Success' }) – Sends a JSON object (best for APIs).
+- res.render('index', { title: 'Home Page' }) – Renders an EJS or template file with parameters.
+- res.status(404).send('Not Found') – Sets the HTTP status code and optionally sends a message.
+- res.redirect('/login') – Redirects the user to a different URL.
+________________________________________
+6. EJS Templating= nodejs engine to write html pages dynamically
+- You have a server (Express) that keeps data, for example, a list of books.
+- When someone visits a page (like /showBooks), the server sends the data to the EJS page.
+- The EJS page mixes the data with HTML and sends it to the browser as a normal webpage.
+
+To use EJS, set the engine and use res.render(filename, data).
+The Controller (app.js)://controller= part of the server that decides what data to send.
+JavaScript
+app.set('view engine', 'ejs');
+app.get('/showBooks', (req, res) => {//Create a route that sends data to the view
+    const books = [{ title: "Node JS", price: 20 }];
+    res.render('books', { books: books }); // Passes the array to the view
+});
+The View (views/books.ejs)://view=The HTML page that shows the data.
+HTML
+<ul>
+  <% books.forEach(function(book) { %> <li><%= book.title %> - $<%= book.price %></li> <% }); %>
+</ul>
+________________________________________
+7. Handling Data (JSON vs. MongoDB)
+The exam asks for the difference in syntax between local arrays and database calls.
+Local JSON Approach:
+JavaScript
+app.get('/getUsers', (req, res) => {
+    res.json(usersArray); // Immediate response
+});
+MongoDB (Mongoose) Approach:
+JavaScript
+app.get('/getUsers', async (req, res) => {
+    try {
+        const users = await User.find({}); // Must be awaited
+        res.json(users);
+    } catch (err) {
+        res.status(500).send(err.message);
+    }
+});
+________________________________________
+mongoDb
+1. Core Concepts & Architecture
+MongoDB is a NoSQL, open-source, document-oriented database written in C++.
+Database: A physical container for collections; one server can host multiple databases.
+Collection: A group of documents; schema is not enforced.
+Document: A set of key-value pairs with a dynamic schema.
+ (CRUD): CRUD stands for Create, Read, Update, and Delete.
+________________________________________
+2. RDBMS vs. MongoDB Terminology
+* RDBMS→ MongoDB
+* Database → Database
+* Table → Collection
+* Tuple / Row → Document
+* Column → Field
+* Table Join → Embedded Documents / `$lookup`
+* Primary Key → Primary Key (default `_id`)
+________________________________________
+3. Basic Shell Commands
+Switch/Create DB: use DATABASE_NAME.
+Drop DB: db.dropDatabase().
+Create Collection: db.createCollection("name").
+Remove Collection: db.collection.drop().
+Retrieve All Docs: db.collection.find().
+💡 Exam Tip: In MongoDB, db.collection.copy() is NOT a valid operation.
+________________________________________
+4. Query Operators
+Used to filter data within find(), update(), or remove() methods.
+- $gt: Matches values Greater Than a specified value. E.g db.users.find({ age: { $gt: 25 } })
+- $set: Used in updates to modify specific fields without replacing the whole document.
+- Regular Expressions: Used to query strings (e.g., { address: /^S/ } finds addresses starting with "S").
+________________________________________
+5. Mongoose Integration (Exam Focus)
+Most Application Questions require you to use Mongoose to connect Node.js to MongoDB.
+Connection & Schema Setup
+To connect a database to Node.js, use mongoose.connect().
+JavaScript
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/examDB')//connect mongoos
+  .then(() => console.log('Connected!'));
+
+// 2. Define a Schema (Shape of the data)
+const taskSchema = new mongoose.Schema({
+  title: String,
+  completed: Boolean
+});
+
+// 3. Create a Model
+const Task = mongoose.model('Task', taskSchema);
+Handling Exam Scenarios (Q2 Part C)
+A common exam task is to create an Express route that fetches specific data from MongoDB.
+Scenario: Create a GET route /tasks that returns only tasks where completed is false.
+JavaScript
+app.get('/tasks', async (req, res) => {
+  try {
+    // find({ criteria }) filters the documents
+    const pendingTasks = await Task.find({ completed: false }); 
+    res.json(pendingTasks);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+________________________________________
+6. Relationships in Mongoose( how to structure your data when different collections (tables) need to be connected.)
+One-to-One
+Nesting: Place the child document directly inside the parent schema.
+// In your User schema
+const userSchema = new mongoose.Schema({
+  name: String,
+  passport: {  // The passport is embedded directly
+    number: String,
+    expiryDate: Date
+  }
+});
+One-to-Many
+References: Use type: mongoose.Types.ObjectId and ref: "CollectionName". Use .populate() to join.
+// Post Schema
+const postSchema = new mongoose.Schema({
+  content: String,
+  author: {
+    type: mongoose.Schema.Types.ObjectId,  // Stores the User's ID
+    ref: 'User'  // Tells Mongoose which model to use when populating
+  }
+});
+
+// Later, when querying:
+const posts = await Post.find().populate('author'); // This "joins" the User data
+Many-to-Many
+Junction Collection: Create a third model that holds the IDs of both related documents.
+// Enrollment Schema (the junction collection)
+const enrollmentSchema = new mongoose.Schema({
+  student: { type: mongoose.Schema.Types.ObjectId, ref: 'Student' },
+  course: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' },
+  enrolledAt: Date
+});
+
+// You can then populate both ways:
+const enrollments = await Enrollment.find()
+  .populate('student')
+  .populate('course');
+
+________________________________________
+7. Advanced Node.js Operations
+If exam asks for native mongodb driver instead of Mongoose:
+- Insert One: dbo.collection("customers").insertOne(myobj, callback).
+- Sort: find().sort({ name: 1 }) (1 for Ascending, -1 for Descending).
+- Limit: find().limit(5) restricts the number of results.
+- Join ($lookup): Used in an aggregation pipeline to perform left outer joins.
+________________________________________
+1. Node.js Fundamentals
+Node.js is an asynchronous, single-threaded, event-driven JavaScript runtime built on Chrome's V8 engine.
+The Web Server Model
+Traditional (Apache/IIS): Multi-threaded; each request gets a dedicated thread.
+Libuv: The internal C++ library that manages the thread pool for I/O tasks.
+NPM & Project Setup (High Exam Yield)
+Initialize project: npm init.
+Global Installation: npm install -g <package>.
+Production vs. Dev Dependencies:
+dependencies: Required for production (npm install --save).
+devDependencies: Required for testing/development (npm install --save-dev).
+Package Management:
+package.json: Contains project metadata.
+package-lock.json: Records exact versions for reproducible builds.
+npm ci: Installs exact versions from the lockfile (used in CI/CD).
+________________________________________
+2. Global & Utility Modules
+Essential for "Short Answer" or "Code Analysis" questions.
+Core Modules:
+OS - Operating system info: os.platform(), os.totalmem(), os.type()
+Path - File path handling: path.resolve(), path.extname()
+DNS - Domain name resolution: dns.lookup('www.google.com', callback)
+Utilities:
+Console - Debugging and timing: console.time('label') / console.timeEnd('label') (measures execution time)
+Globals - Built-in global variables: __dirname (current folder), __filename (current file)
+ ````
+const os = require('os');
+const path = require('path');
+const dns = require('dns');
+
+console.time('run');
+
+// OS
+console.log('Platform:', os.platform());
+
+// Path
+console.log('Extension:', path.extname(__filename));
+
+// DNS
+dns.lookup('google.com', (err, ip) => {
+  console.log('Google IP:', ip);
+});
+
+// Globals
+console.log('Dir:', __dirname);
+
+console.timeEnd('run');````
+________________________________________
+Debugging & Callbacks
+Console Module: console.time('label') and console.timeEnd('label') to measure performance.
+console.trace() to see the call stack.
+Callbacks: Node follows the "Error-First" convention: function(err, data) { ... }.// Console timing
+console.time('calc');
+let sum = 0;
+for (let i = 0; i < 1000000; i++) sum += i;
+console.timeEnd('calc');
+
+// Stack trace
+function a() { b(); }
+function b() { console.trace(); }
+a();
+
+// Error-first callback
+function fetchData(callback) {
+    setTimeout(() => {
+        const error = Math.random() > 0.5 ? null : new Error('Failed');
+        callback(error, error ? null : 'Data');
+    }, 100);
+}
+
+fetchData((err, data) => {
+    if (err) console.error(err.message);
+    else console.log(data);
+});
+
+
