@@ -1,0 +1,133 @@
+import React, { Component, useState, useEffect } from 'react';
+import axios from 'axios'; // Used for API calls
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'; // Routing
+
+// 1. HIGHER-ORDER COMPONENT (HOC)
+// Concept: A function that takes a component and returns a new one with extra logic
+const withLoading = (WrappedComponent) => {
+  return function WithLoadingComponent({ isLoading, ...props }) {
+    // Conditional Rendering inside HOC
+    if (isLoading) return <h2>Loading Data from API...</h2>;
+    return <WrappedComponent {...props} />;
+  };
+};
+
+// 2. FUNCTIONAL (STATELESS) COMPONENT
+// Concept: Used for UI/Presentation. Receives data via 'props'
+const NinjaList = ({ ninjas, deleteNinja }) => {
+  // Concept: LISTS & KEYS. Always use a unique 'key' for performance and tracking
+  const ninjaList = ninjas.length ? (
+    ninjas.map(ninja => (
+      <div className="ninja-card" key={ninja.id}>
+        <p>Name: {ninja.name}</p>
+        {/* Concept: CONDITIONAL OUTPUT using Ternary Operator */}
+        <p>Status: {ninja.age > 25 ? 'Senior' : 'Junior'}</p>
+        {/* Concept: FUNCTIONS AS PROPS. Child calls parent function */}
+        <button onClick={() => deleteNinja(ninja.id)}>Delete</button>
+      </div>
+    ))
+  ) : (
+    <p>No ninjas left!</p>
+  );
+
+  return <div className="list">{ninjaList}</div>;
+};
+
+// Wrap the list with our HOC
+const EnhancedList = withLoading(NinjaList);
+
+// 3. CLASS (STATEFUL) COMPONENT
+// Concept: Manages data (state) and logic. Must have render()
+class App extends Component {
+  // Concept: STATE. A JS object describing the component's current data
+  state = {
+    ninjas: [
+      { name: 'Ryu', age: 30, id: 1 },
+      { name: 'Yoshi', age: 20, id: 2 }
+    ],
+    isLoading: false,
+    userInput: ''
+  };
+
+  // 4. LIFECYCLE & AXIOS
+  // Concept: Use componentDidMount for initial API requests
+  componentDidMount() {
+    this.setState({ isLoading: true });
+    axios.get('https://jsonplaceholder.typicode.com/users')
+      .then(res => {
+        // Correct way to update state: use setState, never mutate directly
+        console.log("Data Fetched!");
+        this.setState({ isLoading: false });
+      });
+  }
+
+  // 5. EVENT HANDLING & ARROW FUNCTIONS
+  // Concept: Arrow functions preserve 'this' context automatically
+  handleChange = (e) => {
+    this.setState({ userInput: e.target.value });
+  };
+
+  // Concept: PREVENT DEFAULT. Stop forms from refreshing the page
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const newNinja = {
+      name: this.state.userInput,
+      age: Math.floor(Math.random() * 40),
+      id: Math.random()
+    };
+    // Concept: SPREAD OPERATOR. Create a new array instead of mutating old one
+    this.setState({
+      ninjas: [...this.state.ninjas, newNinja],
+      userInput: ''
+    });
+  };
+
+  deleteNinja = (id) => {
+    // Concept: FILTER. Efficient way to remove items from state
+    const filteredNinjas = this.state.ninjas.filter(n => n.id !== id);
+    this.setState({ ninjas: filteredNinjas });
+  };
+
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="App">
+          {/* Concept: REACT ROUTER & LINKS. Prevents page reloads in SPAs */}
+          <nav>
+            <Link to="/">Home</Link> | <Link to="/about">About</Link>
+          </nav>
+
+          <Switch>
+            <Route exact path="/">
+              <h1>Ninja Manager</h1>
+              
+              {/* 6. FORMS (CONTROLLED COMPONENTS) */}
+              <form onSubmit={this.handleSubmit}>
+                <input 
+                  type="text" 
+                  onChange={this.handleChange} 
+                  value={this.state.userInput} 
+                />
+                <button>Add Ninja</button>
+              </form>
+
+              {/* Concept: PASSING PROPS. Parent sends data to child */}
+              <EnhancedList 
+                isLoading={this.state.isLoading} 
+                ninjas={this.state.ninjas} 
+                deleteNinja={this.deleteNinja} 
+              />
+            </Route>
+
+            {/* Concept: ROUTE PARAMETERS */}
+            <Route path="/ninja/:id" render={(props) => (
+               <div>Viewing Ninja ID: {props.match.params.id}</div>
+            )} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
+}
+
+export default App;

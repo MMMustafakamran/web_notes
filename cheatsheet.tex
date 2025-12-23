@@ -303,42 +303,16 @@ fetch((e, d) => { if(e) console.error(e.message); else console.log(d); });
 \compactsection{State vs. Props (Exam Heavy)}
 \textbf{State:} Internal to component; mutable via \texttt{setState}; triggers re-render on change. \\
 \textbf{Props:} Passed from parent (External); read-only (Immutable); triggers re-render when parent changes them.
-\textbf{Mutation Rule:} Never do \texttt{this.state.x = 1}. Always:
-\begin{lstlisting}
-this.setState({ name: 'Yoshi' }); // Triggers re-render
-// Arrays: Spread to add, Filter to remove (Avoid direct mutation)
-this.setState({ items: [...this.state.items, newItem] }); // Spread (...)
-const del = id => this.setState({ items: items.filter(n => n.id !== id) }); // Filter
-\end{lstlisting}
+
 
 \compactsection{Events, Lists \& Keys}
 \textbf{this Context:} Handlers lose \textit{this}. Use \textbf{Arrow Functions}. \\
 \textbf{Event Listeners:} Pass functions as props. Use \texttt{e.target} for values.
-\begin{lstlisting}
-// e.target.value captures content of the input
-handleChange = (e) => this.setState({ val: e.target.value });
-<input onChange={this.handleChange} value={this.state.val} /> // Controlled component
 
-// Key prop helps React track identity of items in list
-const list = ninjas.map(n => (
-  <div key={n.id}> {n.name} 
-    <button onClick={() => deleteN(n.id)}>X</button> // Arrow prevents immediate run
-  </div>
-));
-\end{lstlisting}
 
 \compactsection{Forms \& Data (Axios)}
 \textbf{Controlled Comp:} State handles data. Use \texttt{e.preventDefault()} on submit.
-\begin{lstlisting}
-handleSubmit = (e) => {
-  e.preventDefault(); // Stop page refresh
-  this.props.addNinja(this.state); // Send data to parent via function prop
-}
-// API requests usually go in componentDidMount (Classes)
-componentDidMount() {
-  axios.get(URL).then(res => this.setState({ data: res.data }));
-}
-\end{lstlisting}
+
 
 \compactsection{React Router (v5)}
 \texttt{<BrowserRouter>} wraps app. \texttt{<Switch>} renders 1st match. \\
@@ -347,14 +321,7 @@ componentDidMount() {
 
 \compactsection{HOC \& Redux}
 \textbf{Higher-Order Component:} Func taking component $\to$ returns enhanced component (Loading, Auth).
-\begin{lstlisting}
-const withLoading = (Wrapped) => { // Takes component
-  return function({ isLoading, ...props }) { // Returns new component
-    if (isLoading) return <h2>Loading...</h2>; // Conditional logic
-    return <Wrapped {...props} />; // Renders original with spread props
-  };
-};
-\end{lstlisting}
+
 \textbf{Redux:} Store (data), Actions (intent), Reducers (how state changes).
 
 \compactsection{�� Exam Strategy: Find the Error}
@@ -394,10 +361,86 @@ img { max-width: 100%; height: auto; } // Responsive image
     <div class="col-12 col-lg-3">
       <div class="card">
         <img src="p1.jpg" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Profile</h5>
-          <p class="card-text">Skills: HTML, CSS</p>
-        </div>close all
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+\end{lstlisting}
+
+\compactsection{Detailed React Example (State, Routing, HOC)}
+\begin{lstlisting}[language=JavaScript, basicstyle=\fontsize{4}{4.4}\selectfont\ttfamily]
+import React, { Component, useState, useEffect } from 'react';
+import axios from 'axios'; 
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+
+const withLoading = (WrappedComponent) => {
+  return function WithLoadingComponent({ isLoading, ...props }) {
+    if (isLoading) return <h2>Loading Data from API...</h2>;
+    return <WrappedComponent {...props} />;
+  };
+};
+
+const NinjaList = ({ ninjas, deleteNinja }) => {
+  const ninjaList = ninjas.length ? (
+    ninjas.map(ninja => (
+      <div className="ninja-card" key={ninja.id}>
+        <p>Name: {ninja.name}</p>
+        <p>Status: {ninja.age > 25 ? 'Senior' : 'Junior'}</p>
+        <button onClick={() => deleteNinja(ninja.id)}>Delete</button>
+      </div>
+    ))
+  ) : ( <p>No ninjas left!</p> );
+  return <div className="list">{ninjaList}</div>;
+};
+
+const EnhancedList = withLoading(NinjaList);
+
+class App extends Component {
+  state = {
+    ninjas: [ { name: 'Ryu', age: 30, id: 1 }, { name: 'Yoshi', age: 20, id: 2 } ],
+    isLoading: false, userInput: ''
+  };
+
+  componentDidMount() {
+    this.setState({ isLoading: true });
+    axios.get('URL').then(res => { this.setState({ isLoading: false }); });
+  }
+
+  handleChange = (e) => { this.setState({ userInput: e.target.value }); };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const newNinja = { name: this.state.userInput, age: Math.floor(Math.random()*40), id: Math.random() };
+    this.setState({ ninjas: [...this.state.ninjas, newNinja], userInput: '' });
+  };
+
+  deleteNinja = (id) => {
+    const filteredNinjas = this.state.ninjas.filter(n => n.id !== id);
+    this.setState({ ninjas: filteredNinjas });
+  };
+
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="App">
+          <nav> <Link to="/">Home</Link> | <Link to="/about">About</Link> </nav>
+          <Switch>
+            <Route exact path="/">
+              <h1>Ninja Manager</h1>
+              <form onSubmit={this.handleSubmit}>
+                <input type="text" onChange={this.handleChange} value={this.state.userInput} />
+                <button>Add Ninja</button>
+              </form>
+              <EnhancedList isLoading={this.state.isLoading} ninjas={this.state.ninjas} deleteNinja={this.deleteNinja} />
+            </Route>
+            <Route path="/ninja/:id" render={(props) => ( <div>ID: {props.match.params.id}</div> )} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
+}
 \end{lstlisting}
 
 \end{multicols*}
