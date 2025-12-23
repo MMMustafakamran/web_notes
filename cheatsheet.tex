@@ -14,25 +14,40 @@
 \setlength{\parskip}{0pt}
 \setlength{\columnsep}{0.1cm} % Reduced from 0.2cm
 
-% --- Code Formatting (Extra Compact) ---
-\definecolor{codegreen}{rgb}{0,0.5,0}
-\definecolor{codeblue}{rgb}{0.0,0.0,0.8}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
+% --- Code Formatting (Rich & Multicolored) ---
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codeblue}{rgb}{0.0,0.3,0.7}
+\definecolor{codepurple}{rgb}{0.5,0,0.5}
+\definecolor{codeorange}{rgb}{0.8,0.4,0}
+\definecolor{codered}{rgb}{0.8,0,0}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with, as, async, await, const, let},
+  morekeywords=[2]{require, exports, module, process, console, express, app, mongoose, Schema, model, ObjectId, os, path, dns},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  morestring=[b]`
+}
 
 \lstset{
     language=JavaScript,
     backgroundcolor=\color{white},
-    basicstyle=\ttfamily\tiny, % Changed from scriptsize to tiny for more space
+    basicstyle=\ttfamily\tiny,
     commentstyle=\color{codegreen}\tiny,
-    keywordstyle=\color{codeblue}\tiny,
+    keywordstyle=\color{codeblue}\bfseries\tiny,
+    keywordstyle=[2]\color{codeorange}\tiny,
     stringstyle=\color{codepurple}\tiny,
+    identifierstyle=\color{black}\tiny,
     breaklines=true,
     tabsize=2,
     frame=single,
-    framerule=0.2pt, % Thinner frame
+    framerule=0.2pt,
     xleftmargin=1pt,
     xrightmargin=1pt,
-    aboveskip=0pt, % Removed skip
+    aboveskip=0pt,
     belowskip=1pt,
     showstringspaces=false,
     escapeinside={(*@}{@*)}
