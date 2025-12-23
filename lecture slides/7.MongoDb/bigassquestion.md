@@ -1,6 +1,3 @@
-Here is your LaTeX document converted to Markdown (MD) format:
-
-```markdown
 # MongoDB Comprehensive Examination Question with Complete Solution
 
 ## Examination Question: E-commerce Database System

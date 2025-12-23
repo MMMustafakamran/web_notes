@@ -55,6 +55,7 @@ MongoClient.connect(url, function(err, db) {
 });
 ```
 
+
 ```bash
 node demo_create_mongo_db.js
 ```

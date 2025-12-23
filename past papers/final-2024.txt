@@ -1,26 +1,9 @@
 
 CS-4032: Web Programming(BSCS-A,B)
-Date: 4th Jun, 2024
-Course Instructor(s)
-Mr. Aqib Rehman
 Final Exam
 
 Total Time: 3 Hours
 Total Marks: 155
-
-
-______________________        ______________     _______________      __________________
-Student Name                             Roll No.                   Course Section            Student Signature
-
-Do not write anything on the question paper except the information required above.
-
-Instructions: 
-1.	Read the question carefully, understand the question, and then attempt your answers in the provided answer booklet in the given questions order. 
-2.	Verify that you have Ten (10) printed page of the question paper including this page. There are Three (3) questions.
-3.	This exam is closed book. Mobiles, Internet and note-sharing is not allowed. Please see that the area in your threshold is free of any material classified as useful in the paper, i.e. mobile/internet or else there may be a charge of cheating.
-4.	Read the questions carefully for clarity of context and understanding of meaning and make assumptions wherever required, for neither the invigilator will address your queries, nor the teacher/examiner will come to the examination hall for any assistance. 
-5.	Use only your own stationary.
-6.	Use only permanent ink-pens. Only the questions attempted with permanent ink-pens will be considered. Any part done using soft pencil cannot be claimed for checking/rechecking.
 
 
 Q1: Objectives										[60 Marks]
@@ -848,3 +831,21 @@ app.all('/secret', (req, res, next) => {
 
 
 c.	Bonus: Draw a smiley. Keep smiling and brighten someone's day! [2 Marks]
+List of Topics Weeks Contact Hours CLO(s)
+Introduction to Web Development
+Front-end vs Back-end Development 0.5 1.5 1,2,7,12
+HTML, HTML5 1 3 1,2,3,5,8
+CSS, CSS3 1 3
+Bootstrap 1 3
+JavaScript fundamentals, ES6
+(ECMAScript 6) 2 6 1,2,3,5,8
+DOM 1 3
+Introduction to React
+Asynchronous JavaScript 3 9 1,2,3,5
+Introduction to Express, FETCH, AXIOS 2 6 1,2,3,5,8
+MongoDB 1.5 4.5 5,12,6
+Introduction to Node 1.5 4.5 1,2,3,5
+Advance topics- Serverless 0.5 1.5 1,2,3,4, 5,12
+Deployment and Web Programming
+practices and Demos 1 3 1,6,7,9,10,11
+Total
