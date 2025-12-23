@@ -23,7 +23,7 @@
 
 \lstdefinelanguage{HTMLCSS}{
   keywords={html, body, div, img, meta, link, script, class, id, src, alt, name, content, href, rel, type, style, table, tr, th, td, form, label, input, select, option, textarea, button, a, br, hr},
-  morekeywords=[2]{width, height, max-width, min-width, box-sizing, border-box, auto, display, margin, padding, @media, screen, border, target, value, rows, cols, required, type, selected, disabled},
+  morekeywords=[2]{width, height, max-width, min-width, box-sizing, border-box, auto, display, margin, padding, @media, screen, border, target, value, rows, cols, required, type, selected, disabled, transition, transform, rotate, scale, color, background, font-family, font-size, font-weight, text-align, text-decoration, border-style, border-width},
   sensitive=false,
   morecomment=[l]{<!--},
   morecomment=[s]{<!--}{-->},
@@ -90,8 +90,6 @@
 \textbf{Links:} \texttt{<a href="URL" target="\_blank">} (\texttt{\_blank} opens new tab). \\
 \textbf{Void Elements:} No closing tag e.g. \texttt{<img>, <br> (break), <hr> (line)}. \\
 \textbf{Images:} \texttt{<img src="path" alt="desc" width="300">} (\texttt{alt} is for accessibility).
-
-\compactsection{Tables \& Formatting}
 \begin{lstlisting}[language=HTMLCSS]
 <table border="1">
   <tr> <!-- Table Row -->
@@ -99,32 +97,48 @@
   </tr>
   <tr>
     <td>D1</td> <td>D2</td> <!-- Data cells -->
-  </tr>
-</table>
+  </tr></table>
 \end{lstlisting}
 
-\compactsection{Forms \& Inputs (Exam Yield)}
 \begin{lstlisting}[language=HTMLCSS]
 <form>
   <label for="n">Name:</label>
   <input type="text" id="n" name="n" required>
-
   <!-- Radio: Same 'name' = Only 1 choice -->
   <input type="radio" name="g" value="m"> Male
   <input type="radio" name="g" value="f"> Female
-
   <!-- Checkbox: Multiple choices allowed -->
   <input type="checkbox" name="s" value="js"> JS
-
   <!-- Dropdown Menu -->
   <select name="course" required>
     <option value="" disabled selected>Select</option>
     <option value="fs">Full Stack</option>
-  </select>
-
+  </select
   <textarea rows="4" cols="40"></textarea>
-  <button type="submit">Submit</button>
-</form>
+  <button type="submit">Submit</button></form>
+\end{lstlisting}
+
+\topicsection{CSS FUNDAMENTALS}
+
+\compactsection{Syntax \& Inclusion}
+\textbf{Rule:} \texttt{selector \{ property: value; \}}. \\
+\textbf{Methods:} 1. \textbf{Inline:} \texttt{<h1 style="color:red;">}. 2. \textbf{Internal:} \texttt{<style>} in head. 3. \textbf{External:} \texttt{<link rel="stylesheet" href="s.css">}. \\
+\textbf{Priority:} Inline $>$ Internal $>$ External (Cascading).
+
+\compactsection{Selectors \& Box Model}
+\textbf{Tag:} \texttt{p \{ \}} $\mid$ \textbf{ID:} \texttt{\#hdr \{ \}} (Unique) $\mid$ \textbf{Class:} \texttt{.btn \{ \}} (Multiple) $\mid$ \textbf{Group:} \texttt{h1, p \{ \}}. \\
+\textbf{Box Model:} 1. \textbf{Content} (Text/Img) $\to$ 2. \textbf{Padding} (Space inside border) $\to$ 3. \textbf{Border} $\to$ 4. \textbf{Margin} (Area outside border).
+
+\compactsection{Visual Properties \& Transitions}
+\textbf{Background Shorthand:}
+\texttt{background: \#fff url("i.png") no-repeat fixed right top;} \\
+\textbf{Links:} \texttt{a:link, a:visited, a:hover, a:active} (Order matters!). \\
+\textbf{Transform:} \texttt{rotate(180deg), scale(2), translate(10px)}.
+
+\begin{lstlisting}[language=HTMLCSS]
+div {
+  width: 300px;;transition: width 2s, transform 2s; /* Smooth animation */
+}div:hover {transform: rotate(180deg);}
 \end{lstlisting}
 
 \topicsection{EXPRESS JS}
@@ -161,7 +175,6 @@ Needs (req, res, next). Executes in order. If \texttt{next()} isn't called, requ
 \end{enumerate}
 
 \compactsection{Response Methods}
-Ends the cycle.
 \begin{itemize}
     \item \texttt{res.send('text/html')} $\mid$ \texttt{res.json(\{obj\})} (APIs)
     \item \texttt{res.render('view', \{dat\})} (EJS/Templates)
@@ -193,7 +206,6 @@ app.get('/u', async (req, res) => {
 
 \topicsection{MONGODB \& MONGOOSE}
 
-\compactsection{MongoDB: Core Concepts}
 NoSQL, document-oriented, written in C++.\\
 \textbf{DB:} Container for collections $\mid$ \textbf{Collection:} Doc group.\\
 \textbf{Doc:} Key-value pairs $\mid$ \textbf{CRUD:} Create, Read, Update, Delete.
@@ -345,7 +357,7 @@ const withLoading = (Wrapped) => { // Takes component
 \end{lstlisting}
 \textbf{Redux:} Store (data), Actions (intent), Reducers (how state changes).
 
-\compactsection{💡 Exam Strategy: Find the Error}
+\compactsection{�� Exam Strategy: Find the Error}
 \begin{itemize}
     \item \textbf{this:} Is a class method missing arrow syntax?
     \item \textbf{setState:} Mutating \texttt{this.state} directly?
@@ -387,11 +399,7 @@ img { max-width: 100%; height: auto; } // Responsive image
         <div class="card-body">
           <h5 class="card-title">Profile</h5>
           <p class="card-text">Skills: HTML, CSS</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        </div>close all
 \end{lstlisting}
 
 \end{multicols*}
