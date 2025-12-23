@@ -342,10 +342,10 @@ img { max-width: 100%; height: auto; } // Responsive image
 \end{lstlisting}
 
 \begin{lstlisting}[language=HTMLCSS]
-.column { width: 100%; } // Default (Mobile)//media query
+.column { width: 100%; }
 @media screen and (min-width: 768px) {
-  .column { width: 50%; } // Tablet/Desktop
-}
+.column { width: 50%; } // Tablet/Desktop
+} //Default (Mobile)
 \end{lstlisting}
 
 \compactsection{Bootstrap 5 Grid System}
@@ -358,11 +358,7 @@ img { max-width: 100%; height: auto; } // Responsive image
     <div class="col-12 col-lg-3">
       <div class="card">
         <img src="p1.jpg" class="card-img-top">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        </div>close all 
 \end{lstlisting}
 
 \compactsection{Detailed React Example (State, Routing, HOC)}
