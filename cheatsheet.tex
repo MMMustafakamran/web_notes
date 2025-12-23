@@ -368,19 +368,17 @@ const withLoading = (Wrapped) => { // Takes component
 
 \topicsection{RESPONSIVE DESIGN \& BOOTSTRAP}
 
-\compactsection{Responsive Fundamentals}
-\textbf{Viewport Meta:} Tells browser how to scale on mobile.
 \begin{lstlisting}[language=HTMLCSS]
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 \end{lstlisting}
-\textbf{Fluid Layouts:} Use \% or \texttt{relative} units.
+
 \begin{lstlisting}[language=HTMLCSS]
 * { box-sizing: border-box; } // Padding doesn't increase width
 img { max-width: 100%; height: auto; } // Responsive image
 \end{lstlisting}
-\textbf{Media Queries:} Apply CSS based on screen width.
+
 \begin{lstlisting}[language=HTMLCSS]
-.column { width: 100%; } // Default (Mobile)
+.column { width: 100%; } // Default (Mobile)//media query
 @media screen and (min-width: 768px) {
   .column { width: 50%; } // Tablet/Desktop
 }
